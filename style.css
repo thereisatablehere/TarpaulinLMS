@@ -1,0 +1,138 @@
+/* main */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+/* titles */
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
+
+:root {
+    --fontMain: "Quicksand";
+    --fontTitle: "Gothic A1";
+    --buttonBorderRadius: 30px;
+    --accentColor: #0066ff;
+    --accentDarkerColor: #004ab9;
+}
+
+body, button {
+    font-family: var(--fontMain), sans-serif;
+}
+
+button {
+    margin-left: 1em;
+    font-weight: bold;
+    width: fit-content;
+    height: fit-content;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    border-color: var(--accentDarkerColor);
+    background-color: var(--accentDarkerColor);
+}
+
+.buttonNormal {
+    border-radius: var(--buttonBorderRadius);
+    border: 2px solid var(--accentColor);
+    background-color: white;
+    color: var(--accentColor);
+}
+
+.buttonAccent {
+    border-radius: var(--buttonBorderRadius);
+    border: 2px solid var(--accentColor);
+    background-color: var(--accentColor);
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logoContainer img {
+    width: 50px;
+    height: 50px;
+}
+.logoContainer p {
+    color: var(--accentColor);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#navLoginSignUp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.landingMainContainer {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+}
+
+.landingIntro {
+    /* background-color: orchid; */
+    width: 32em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8em;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-top: 5em;
+}
+.landingIntro * {
+    margin: 0;
+}
+.landingIntro .giantTitle {
+    font-family: var(--fontTitle);
+    color: var(--accentColor);
+    font-size: 5.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.landingIntro .bigDescription {
+    font-size: 1.3em;
+}
+.landingIntro button {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landingIconCollage {
+    display: flex;
+    flex-direction: column;
+}
+.landingIconCollage img {
+    width: 8em;
+    height: 8em;
+}
+.landingIconCollage div {
+    display: flex;
+    flex-direction: row;
+}
+.landingIconCollage div img:first-child {
+    margin-right: 1.5em;
+}
+.landingIconCollage div:not(:last-child) {
+    margin-bottom: 1.5em;
+}
