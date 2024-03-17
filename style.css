@@ -12,6 +12,22 @@
     --accentDarkerColor: #004ab9;
 }
 
+::selection {
+    color: white;
+    background: var(--accentColor);
+}
+
+.preventSelection {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-moz-selection {
+    color: white;
+    background: var(--accentColor);
+}
+
 body, button {
     font-family: var(--fontMain), sans-serif;
 }
