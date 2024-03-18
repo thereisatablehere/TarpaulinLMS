@@ -1,4 +1,4 @@
-let home = "landing.html";
+import userData from "user.js";
 
 const header = 
 `<header>
@@ -14,7 +14,7 @@ const header =
 </header>`;
 
 function goToHome() {
-    window.open(home, "_self");
+    window.open(userData.homePage, "_self");
 }
 
 document.write(header);
