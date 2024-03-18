@@ -4,14 +4,26 @@
 /* titles */
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
 
+/* general stuff */
+
 :root {
     --fontMain: "Quicksand";
     --fontTitle: "Gothic A1";
+
     --buttonBorderRadius: 30px;
+
     --accentColor: #0066ff;
     --accentDarkerColor: #004ab9;
     --bgColor: #e4e4e4;
+
+    --standardSectionVertSpacing: 2em;
 }
+
+/* prevent scrollbar showing up from moving everything over to the left */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
 
 ::selection {
     color: var(--bgColor);
@@ -69,6 +81,10 @@ button:hover {
     color: var(--bgColor);
 }
 
+p {
+    margin: 0;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -105,16 +121,97 @@ header {
     align-items: center;
 }
 
-.landingMainContainer {
+.mainContainer {
     /* background-color: blue; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5em;
 }
+
+.mainContainerHorizontal {
+    flex-direction: row;
+}
+
+.titleBodySection {
+    max-width: 43em;
+    /* background-color: blue; */
+}
+.titleBodySection:not(:first-child) {
+    margin-top: var(--standardSectionVertSpacing);
+}
+
+.bodyText {
+    text-indent: 2em;
+}
+
+/* font sizes */
+
+.giantTitle, .bigTitle {
+    font-family: var(--fontTitle);
+    font-weight: bold;
+}
+.giantTitle {
+    color: var(--accentColor);
+    text-transform: uppercase;
+    font-size: 5.75em;
+}
+.bigTitle {
+    color: var(--accentColor);
+    font-size: 2.5em;
+}
+.bigDescription {
+    font-size: 1.3em;
+}
+
+/* FAQ */
+
+.faq {
+    margin-top: 0.5em;
+}
+.faq label div {
+    border-top: 1px solid #566573;
+    padding-top: 1em;
+    padding-bottom: 1em;;
+}
+.faq label div {
+    cursor: pointer;
+}
+.faq label:last-child div {
+    border-bottom: 1px solid #566573;
+}
+.faq .questionCheck {
+    display: none;
+}
+.faq .questionCheck:checked ~ .answer {
+    display: block;
+}
+.faq .questionCheck:checked ~ .questionText::after {
+    transform: rotate(0deg);
+}
+.faq .questionText {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    user-select: none;
+}
+.faq .questionText::after {
+    content: "^";
+    transform: rotate(180deg);
+    margin-bottom: 0.2em;
+    margin-top: -0.2em;
+}
+.faq .answer {
+    padding: 0;
+    margin: 0;
+    margin-top: 0.75em;
+    display: none;
+}
+
+/* landing page */
 
 .landingIntro {
     /* background-color: orchid; */
@@ -130,16 +227,7 @@ header {
 .landingIntro * {
     margin: 0;
 }
-.landingIntro .giantTitle {
-    font-family: var(--fontTitle);
-    color: var(--accentColor);
-    font-size: 5.75em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.landingIntro .bigDescription {
-    font-size: 1.3em;
-}
+
 .landingIntro button {
     margin-top: 2em;
     margin-left: auto;
