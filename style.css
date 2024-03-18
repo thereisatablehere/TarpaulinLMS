@@ -17,6 +17,8 @@
     --bgColor: #e4e4e4;
 
     --standardSectionVertSpacing: 2em;
+
+    --defaultAnimationTime: 0.25s;
 }
 
 /* prevent scrollbar showing up from moving everything over to the left */
@@ -60,13 +62,6 @@ button {
     padding-right: 2.5em;
 }
 
-button:hover {
-    cursor: pointer;
-    color: var(--bgColor);
-    border-color: var(--accentDarkerColor);
-    background-color: var(--accentDarkerColor);
-}
-
 .buttonNormal {
     border-radius: var(--buttonBorderRadius);
     border: 2px solid var(--accentColor);
@@ -79,6 +74,17 @@ button:hover {
     border: 2px solid var(--accentColor);
     background-color: var(--accentColor);
     color: var(--bgColor);
+}
+
+.buttonNormal, .buttonAccent {
+    transition: all 0.15s;
+}
+
+.buttonNormal:hover, .buttonAccent:hover {
+    cursor: pointer;
+    color: var(--bgColor);
+    border-color: var(--accentDarkerColor);
+    background-color: var(--accentDarkerColor);
 }
 
 p {
@@ -98,6 +104,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all 0.15s;
 }
 .logoContainer img {
     width: 50px;
@@ -110,9 +117,7 @@ header {
 }
 .logoContainer:hover {
     cursor: pointer;
-}
-.logoContainer:hover {
-    filter: contrast(3);
+    filter: contrast(2.15);
 }
 
 #navLoginSignUp {
@@ -190,12 +195,12 @@ header {
 .faq .questionCheck:checked ~ .answer {
     display: block;
     animation-name: faqAccordianOpen;
-    animation-duration: 0.25s;
+    animation-duration: var(--defaultAnimationTime);
     animation-fill-mode: forwards;
 }
 .faq .questionCheck:not(:checked) ~ .answer {
     animation-name: faqAccordianCollapse;
-    animation-duration: 0.25s;
+    animation-duration: var(--defaultAnimationTime);
     animation-fill-mode: forwards;
 }
 /* open/ collapse functionality */
