@@ -19,3 +19,5 @@ function goToHome() {
 
 document.write(header);
 document.getElementsByClassName("logoContainer")[0].addEventListener("click", goToHome);
+
+window.onload = () => document.body.style.visibility = "visible";

@@ -10,10 +10,11 @@
     --buttonBorderRadius: 30px;
     --accentColor: #0066ff;
     --accentDarkerColor: #004ab9;
+    --bgColor: #e4e4e4;
 }
 
 ::selection {
-    color: white;
+    color: var(--bgColor);
     background: var(--accentColor);
 }
 
@@ -24,8 +25,13 @@
 }
 
 ::-moz-selection {
-    color: white;
+    color: var(--bgColor);
     background: var(--accentColor);
+}
+
+body {
+    background-color: var(--bgColor);
+    visibility: hidden;
 }
 
 body, button {
@@ -44,7 +50,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    color: white;
+    color: var(--bgColor);
     border-color: var(--accentDarkerColor);
     background-color: var(--accentDarkerColor);
 }
@@ -52,7 +58,7 @@ button:hover {
 .buttonNormal {
     border-radius: var(--buttonBorderRadius);
     border: 2px solid var(--accentColor);
-    background-color: white;
+    background-color: var(--bgColor);
     color: var(--accentColor);
 }
 
@@ -60,7 +66,7 @@ button:hover {
     border-radius: var(--buttonBorderRadius);
     border: 2px solid var(--accentColor);
     background-color: var(--accentColor);
-    color: white;
+    color: var(--bgColor);
 }
 
 header {
