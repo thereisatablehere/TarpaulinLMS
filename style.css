@@ -16,7 +16,7 @@
     --accentDarkerColor: #004ab9;
     --bgColor: #e4e4e4;
 
-    --standardSectionVertSpacing: 2em;
+    --standardSectionVertSpacing: 2rem;
 
     --defaultAnimationTime: 0.25s;
 }
@@ -53,13 +53,13 @@ body, button {
 }
 
 button {
-    margin-left: 1em;
+    margin-left: 1rem;
     font-weight: bold;
     width: fit-content;
     height: fit-content;
-    padding: 1em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 .buttonNormal {
@@ -95,15 +95,15 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 1em;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
 }
 
 .logoContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-itrems: center;
     transition: all 0.15s;
 }
 .logoContainer img {
@@ -113,7 +113,7 @@ header {
 .logoContainer p {
     color: var(--accentColor);
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 .logoContainer:hover {
     cursor: pointer;
@@ -134,7 +134,7 @@ header {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5em;
+    margin-top: 5rem;
 }
 
 .mainContainerHorizontal {
@@ -142,7 +142,7 @@ header {
 }
 
 .titleBodySection {
-    max-width: 43em;
+    max-width: 43rem;
     /* background-color: blue; */
 }
 .titleBodySection:not(:first-child) {
@@ -150,7 +150,7 @@ header {
 }
 
 .bodyText {
-    text-indent: 2em;
+    text-indent: 2rem;
 }
 
 /* font sizes */
@@ -162,25 +162,25 @@ header {
 .giantTitle {
     color: var(--accentColor);
     text-transform: uppercase;
-    font-size: 5.75em;
+    font-size: 5.75rem;
 }
 .bigTitle {
     color: var(--accentColor);
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 .bigDescription {
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
 /* FAQ */
 
 .faq {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
 }
 .faq label div {
     border-top: 1px solid #566573;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .faq label div {
     cursor: pointer;
@@ -216,24 +216,25 @@ header {
 .faq .questionText::after {
     content: "^";
     transform: rotate(180deg);
-    margin-bottom: 0.2em;
-    margin-top: -0.2em;
+    margin-bottom: 0.2rem;
+    margin-top: -0.2rem;
+    transition: transform 1s;
 }
 .faq .answer {
     padding: 0;
     margin: 0;
-    margin-bottom: -0.75em;
-    margin-top: 0.75em;
+    margin-bottom: -0.75rem;
+    margin-top: 0.75rem;
     overflow: hidden;
     display: none;
 }
 /* animate open/ collapse */
 @keyframes faqAccordianOpen {
     from    {display: block; max-height: 0;}
-    to      {display: block; max-height: 5em;}
+    to      {display: block; max-height: 5rem;}
 }
 @keyframes faqAccordianCollapse {
-    from    {display: block; max-height: 5em;}
+    from    {display: block; max-height: 5rem;}
     to      {display: none; max-height: 0;}
 }
 
@@ -241,21 +242,21 @@ header {
 
 .landingIntro {
     /* background-color: orchid; */
-    width: 32em;
+    width: 32rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin-right: 8em;
+    margin-right: 8rem;
     align-items: flex-start;
     align-self: flex-start;
-    margin-top: 5em;
+    margin-top: 5rem;
 }
 .landingIntro * {
     margin: 0;
 }
 
 .landingIntro button {
-    margin-top: 2em;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -265,16 +266,16 @@ header {
     flex-direction: column;
 }
 .landingIconCollage img {
-    width: 8em;
-    height: 8em;
+    width: 8rem;
+    height: 8rem;
 }
 .landingIconCollage div {
     display: flex;
     flex-direction: row;
 }
 .landingIconCollage div img:first-child {
-    margin-right: 1.5em;
+    margin-right: 1.5rem;
 }
 .landingIconCollage div:not(:last-child) {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
 }
