@@ -103,7 +103,7 @@ header {
 .logoContainer {
     display: flex;
     flex-direction: row;
-    align-itrems: center;
+    align-items: center;
     transition: all 0.15s;
 }
 .logoContainer img {
@@ -215,10 +215,10 @@ header {
 }
 .faq .questionText::after {
     content: "^";
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
     margin-bottom: 0.2rem;
     margin-top: -0.2rem;
-    transition: transform 1s;
+    transition: transform var(--defaultAnimationTime);
 }
 .faq .answer {
     padding: 0;
