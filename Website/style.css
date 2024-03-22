@@ -16,7 +16,7 @@
     --accentDarkerColor: #004ab9;
     --bgColor: #e4e4e4;
 
-    --standardSectionVertSpacing: 2rem;
+    --standardSectionVertSpacing: 2em;
 
     --defaultAnimationTime: 0.25s;
 }
@@ -50,16 +50,17 @@ body {
 
 body, button {
     font-family: var(--fontMain), sans-serif;
+    font-size: 15px;
 }
 
 button {
-    margin-left: 1rem;
+    margin-left: 1em;
     font-weight: bold;
     width: fit-content;
     height: fit-content;
-    padding: 1rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
 }
 
 .buttonNormal {
@@ -95,9 +96,9 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
 }
 
 .logoContainer {
@@ -113,7 +114,7 @@ header {
 .logoContainer p {
     color: var(--accentColor);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 .logoContainer:hover {
     cursor: pointer;
@@ -134,7 +135,7 @@ header {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5rem;
+    margin-top: 5em;
 }
 
 .mainContainerHorizontal {
@@ -142,7 +143,7 @@ header {
 }
 
 .titleBodySection {
-    max-width: 43rem;
+    max-width: 43em;
     /* background-color: blue; */
 }
 .titleBodySection:not(:first-child) {
@@ -150,7 +151,7 @@ header {
 }
 
 .bodyText {
-    text-indent: 2rem;
+    text-indent: 2em;
 }
 
 /* font sizes */
@@ -162,101 +163,75 @@ header {
 .giantTitle {
     color: var(--accentColor);
     text-transform: uppercase;
-    font-size: 5.75rem;
+    font-size: 5.75em;
 }
 .bigTitle {
     color: var(--accentColor);
-    font-size: 2.5rem;
+    font-size: 2.5em;
 }
 .bigDescription {
-    font-size: 1.3rem;
+    font-size: 1.3em;
 }
 
 /* FAQ */
 
 .faq {
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
 }
-.faq label div {
+.faq div {
     border-top: 1px solid #566573;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
-.faq label div {
-    cursor: pointer;
-}
-.faq label:last-child div {
+.faq div:last-child{
     border-bottom: 1px solid #566573;
 }
-.faq .questionCheck {
-    display: none;
-}
-/* open/ collapse functionality */
-.faq .questionCheck:checked ~ .answer {
-    display: block;
-    animation-name: faqAccordianOpen;
-    animation-duration: var(--defaultAnimationTime);
-    animation-fill-mode: forwards;
-}
-.faq .questionCheck:not(:checked) ~ .answer {
-    animation-name: faqAccordianCollapse;
-    animation-duration: var(--defaultAnimationTime);
-    animation-fill-mode: forwards;
-}
-/* open/ collapse functionality */
-.faq .questionCheck:checked ~ .questionText::after {
-    transform: rotate(0deg);
-}
-.faq .questionText {
+.faq label {
     display: flex;
     justify-content: space-between;
-    font-weight: 500;
+    padding-top: 1em;
     user-select: none;
 }
-.faq .questionText::after {
-    content: "^";
+.faq label:hover {
+    cursor: pointer;
+}
+.faq input {
+    display: none;
+}
+.faq .questionText {
+    font-weight: 500;
+}
+.faq .questionTextArrow {
     transform: rotate(-180deg);
-    margin-bottom: 0.2rem;
-    margin-top: -0.2rem;
+    margin-bottom: 0.2em;
+    margin-top: -0.2em;
     transition: transform var(--defaultAnimationTime);
 }
 .faq .answer {
-    padding: 0;
-    margin: 0;
-    margin-bottom: -0.75rem;
-    margin-top: 0.75rem;
+    padding-top: 0.25em;
+    padding-bottom: 1em;
+    visibility: hidden;
     overflow: hidden;
-    display: none;
-}
-/* animate open/ collapse */
-@keyframes faqAccordianOpen {
-    from    {display: block; max-height: 0;}
-    to      {display: block; max-height: 5rem;}
-}
-@keyframes faqAccordianCollapse {
-    from    {display: block; max-height: 5rem;}
-    to      {display: none; max-height: 0;}
+    height: 0;
 }
 
 /* landing page */
 
 .landingIntro {
     /* background-color: orchid; */
-    width: 32rem;
+    width: 32em;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin-right: 8rem;
+    margin-right: 8em;
     align-items: flex-start;
     align-self: flex-start;
-    margin-top: 5rem;
+    margin-top: 5em;
 }
 .landingIntro * {
     margin: 0;
 }
 
 .landingIntro button {
-    margin-top: 2rem;
+    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -266,16 +241,16 @@ header {
     flex-direction: column;
 }
 .landingIconCollage img {
-    width: 8rem;
-    height: 8rem;
+    width: 8em;
+    height: 8em;
 }
 .landingIconCollage div {
     display: flex;
     flex-direction: row;
 }
 .landingIconCollage div img:first-child {
-    margin-right: 1.5rem;
+    margin-right: 1.5em;
 }
 .landingIconCollage div:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5em;
 }
