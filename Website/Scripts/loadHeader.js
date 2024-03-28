@@ -1,9 +1,9 @@
-let home = "landing.html";
+let home = "../Pages/landing.html";
 
 const header = 
 `<header>
     <div class="logoContainer">
-        <img draggable="false" src="Images/Tarpaulin_Logo_Alt_2.png">
+        <img draggable="false" src="../Images/Tarpaulin_Logo_Alt_2.png">
         <p>Tarpaulin</p>
     </div>
 
