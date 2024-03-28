@@ -8,7 +8,7 @@ const header =
     </div>
 
     <div id="navLoginSignUp">
-        <button class="buttonNormal">Login</button>
+        <button class="buttonNormal" onclick='goToLogin()'>Login</button>
         <button class="buttonAccent">Sign Up</button>
     </div>
 </header>`;
@@ -21,3 +21,7 @@ document.write(header);
 document.getElementsByClassName("logoContainer")[0].addEventListener("click", goToHome);
 
 window.onload = () => document.body.style.visibility = "visible";
+
+function goToLogin() {
+    window.open("../Pages/login.html", "_self");
+}
