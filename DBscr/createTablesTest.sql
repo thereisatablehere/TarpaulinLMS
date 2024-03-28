@@ -1,66 +1,155 @@
--- used to specify comments in sql scripts
-
--- PRODUCTDEALS_SALESREP
-DROP TABLE productdeals_salesrep CASCADE CONSTRAINTS;
-CREATE TABLE productdeals_salesrep (
-  slsrep_number integer,
-  last    varchar(20), 
-  first    varchar(20),
-  street   varchar(20),
-  city     varchar(20),
-  state   CHAR(2),
-  zip      CHAR(5),
-  commission_rate   decimal(3,2),
-  primary key (slsrep_number)
+-- tarp_student
+DROP TABLE tarp_student CASCADE CONSTRAINTS;
+CREATE TABLE tarp_student (
+  username  varchar(20),
+  f_name    varchar(20),
+  l_name    varchar(20), 
+  password  varchar(20),
+  primary key (username)
 );
 
--- ProductDeals_PART
-DROP TABLE productdeals_part CASCADE CONSTRAINTS;
-CREATE TABLE productdeals_part (
-  part_number   varchar(4),
-  part_description  varchar(20),
-  units_on_hand integer,
-  unit_price    decimal(5,2),
-  primary key (part_number)
+-- tarp_instructor
+DROP TABLE tarp_instructor CASCADE CONSTRAINTS;
+CREATE TABLE tarp_instructor (
+  username  varchar(20),
+  f_name    varchar(20),
+  l_name    varchar(20), 
+  password  varchar(20),
+  primary key (username)
 );
 
--- PRODUCTDEALS_CUSTOMER
-DROP TABLE productdeals_customer CASCADE CONSTRAINTS;
-CREATE TABLE productdeals_customer (
-  customer_number integer,
-  last    varchar(15), 
-  first    varchar(15),
-  street   varchar(20),
-  city     varchar(20),
-  state   varchar(2),
-  zip      varchar(5),
-  balance   decimal(6,2),
-  credit_limit  integer,
-  slsrep_number integer,
-  primary key (customer_number),
-  Constraint FK_PRODUCTDEALS_CUSTOMER foreign key (slsrep_number) references productdeals_salesrep(slsrep_number)
+-- tarp_community
+DROP TABLE tarp_community CASCADE CONSTRAINTS;
+CREATE TABLE tarp_community (
+  community_id  varchar(20),
+  username    varchar(20),
+  primary key (community_id),
+  Constraint FK_TARP_COMMUNITY foreign key (username) references tarp_student(username)
 );
 
--- ProductDeals_TRANS
-DROP TABLE productdeals_trans CASCADE CONSTRAINTS;
-CREATE TABLE productdeals_trans (
-  trans_number   integer,
-  trans_date date,
-  customer_number   integer,
-  primary key (trans_number),
-  Constraint FK_PRODUCTDEALS_TRANS foreign key (customer_number) references productdeals_customer(customer_number)
+-- tarp_course
+DROP TABLE tarp_course CASCADE CONSTRAINTS;
+CREATE TABLE tarp_course (
+  course_id  varchar(20),
+  username    varchar(20),
+  primary key (course_id),
+  Constraint FK_TARP_COURSE foreign key (username) references tarp_instructor(username)
 );
 
--- ProductDeals_TRANSPART
-DROP TABLE productdeals_transpart CASCADE CONSTRAINTS;
-CREATE TABLE productdeals_transpart (
-  trans_number   integer,
-  part_number varchar(4),
-  number_ordered   integer,
-  quoted_price  decimal(5,2),
-  primary key (trans_number, part_number),
-  Constraint FK_PRODUCTDEALS_TRANSPART1 foreign key (trans_number) references productdeals_trans(trans_number),
-  Constraint FK_PRODUCTDEALS_TRANSPART2 foreign key (part_number) references productdeals_part(part_number)
+-- tarp_s_comment
+DROP TABLE tarp_s_comment CASCADE CONSTRAINTS;
+CREATE TABLE tarp_s_comment (
+  course_id  varchar(20),
+  s_username    varchar(20),
+  comment varchar(200),
+  cdate date,
+  primary key (course_id, s_username),
+  Constraint FK_TARP_S_COMMENT1 foreign key (course_id) references tarp_course(course_id),
+  Constraint FK_TARP_S_COMMENT2 foreign key (s_username) references tarp_student(username)
 );
 
+-- tarp_i_comment
+DROP TABLE tarp_i_comment CASCADE CONSTRAINTS;
+CREATE TABLE tarp_i_comment (
+  course_id  varchar(20),
+  i_username    varchar(20),
+  comment varchar(200),
+  cdate date,
+  primary key (course_id, i_username),
+  Constraint FK_TARP_I_COMMENT1 foreign key (course_id) references tarp_course(course_id),
+  Constraint FK_TARP_I_COMMENT2 foreign key (i_username) references tarp_instructor(username)
+);
+
+-- tarp_lecture
+DROP TABLE tarp_lecture CASCADE CONSTRAINTS;
+CREATE TABLE tarp_lecture (
+  lecture_id varchar(20),
+  course_id  varchar(20),
+  length    decimal(3,2),
+  url   varchar(100),
+  primary key (lecture_id, course_id),
+  Constraint FK_TARP_LECTURE foreign key (course_id) references tarp_course(course_id)
+);
+
+-- tarp_test
+DROP TABLE tarp_test CASCADE CONSTRAINTS;
+CREATE TABLE tarp_test (
+  test_id varchar(20),
+  course_id  varchar(20),
+  primary key (test_id, course_id),
+  Constraint FK_TARP_TEST foreign key (course_id) references tarp_course(course_id)
+);
+
+-- tarp_question
+DROP TABLE tarp_question CASCADE CONSTRAINTS;
+CREATE TABLE tarp_question (
+  prompt  varchar(60),
+  a varchar(30),
+  b varchar(30),
+  c varchar(30),
+  d varchar(30),
+  answer varchar(30),
+  test_id varchar(20),
+  course_id  varchar(20),
+  primary key (prompt, test_id, course_id),
+  Constraint FK_TARP_QUESTION1 foreign key (test_id) references tarp_test(test_id),
+  Constraint FK_TARP_QUESTION2 foreign key (course_id) references tarp_test(course_id)
+);
+
+-- tarp_joined_by
+DROP TABLE tarp_joined_by CASCADE CONSTRAINTS;
+CREATE TABLE tarp_joined_by (
+  community_id  varchar(20),
+  username varchar(20),
+  rank int,
+  primary key (community_id, username),
+  Constraint FK_TARP_JOINED_BY1 foreign key (community_id) references tarp_community(community_id),
+  Constraint FK_TARP_JOINED_BY2 foreign key (username) references tarp_student(username)
+);
+
+-- tarp_taken_by
+DROP TABLE tarp_taken_by CASCADE CONSTRAINTS;
+CREATE TABLE tarp_taken_by (
+  test_id varchar(20),
+  course_id  varchar(20),
+  username varchar(20),
+  score int,
+  primary key (test_id, course_id, username),
+  Constraint FK_TARP_TAKEN_BY1 foreign key (course_id) references tarp_course(course_id),
+  Constraint FK_TARP_TAKEN_BY2 foreign key (username) references tarp_student(username)
+);
+
+-- tarp_enrolls
+DROP TABLE tarp_enrolls CASCADE CONSTRAINTS;
+CREATE TABLE tarp_enrolls (
+  course_id  varchar(20),
+  username    varchar(20),
+  primary key (course_id, username),
+  Constraint FK_TARP_ENROLLS1 foreign key (course_id) references tarp_course(course_id),
+  Constraint FK_TARP_ENROLLS2 foreign key (username) references tarp_student(username)
+);
+
+-- tarp_watches
+DROP TABLE tarp_watches CASCADE CONSTRAINTS;
+CREATE TABLE tarp_watches (
+  lecture_id varchar(20),
+  course_id  varchar(20),
+  username varchar(20),
+  completed boolean,
+  primary key (lecture_id, course_id, username),
+  Constraint FK_TARP_WATCHES1 foreign key (course_id) references tarp_lecture(course_id),
+  Constraint FK_TARP_WATCHES2 foreign key (lecture_id) references tarp_lecture(lecture_id),
+  Constraint FK_TARP_WATCHES3 foreign key (username) references tarp_student(username)
+);
+
+-- tarp_rates
+DROP TABLE tarp_rates CASCADE CONSTRAINTS;
+CREATE TABLE tarp_rates (
+  s_username varchar(20),
+  i_username varchar(20),
+  instructor_score int,
+  primary key (s_username, i_username),
+  Constraint FK_TARP_RATES1 foreign key (s_username) references tarp_student(s_username),
+  Constraint FK_TARP_RATES2 foreign key (i_username) references tarp_instructor(i_username)
+);
 
