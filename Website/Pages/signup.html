@@ -10,14 +10,17 @@
   <body class="loginBody">
     <script src="../Scripts/loadHeader.js"></script>
     <section class="mainContainer login">
-        <p class="bigTitle">Welcome Back!</p>
+        <p class="bigTitle">Let's Get Started!</p>
         
         <label for="email">Email</label>
         <input type="text" id="email" placeholder="email">
+
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="username">
         
         <label for="password">Password</label>
-        <img src="../Images/eye.png" onclick="
-            let input = document.getElementsByTagName('input')[1];
+        <img class="signupEye" src="../Images/eye.png" onclick="
+            let input = document.getElementsByTagName('input')[2];
             if(input.type == 'password') {
               this.src = '../Images/view.png';
               input.type = 'text';
@@ -29,7 +32,7 @@
         ">
         <input type="password" id="password" placeholder="password">
         
-        <button class="buttonAccent">Login</button>
+        <button class="buttonAccent">Sign Up</button>
     </section>
   </body>
 </html>

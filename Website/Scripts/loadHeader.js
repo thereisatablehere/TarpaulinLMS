@@ -9,7 +9,7 @@ const header =
 
     <div id="navLoginSignUp">
         <button class="buttonNormal" onclick='goToLogin()'>Login</button>
-        <button class="buttonAccent">Sign Up</button>
+        <button class="buttonAccent" onclick='goToSignup()'>Sign Up</button>
     </div>
 </header>`;
 
@@ -24,4 +24,8 @@ window.onload = () => document.body.style.visibility = "visible";
 
 function goToLogin() {
     window.open("../Pages/login.html", "_self");
+}
+
+function goToSignup() {
+    window.open("../Pages/signup.html", "_self");
 }

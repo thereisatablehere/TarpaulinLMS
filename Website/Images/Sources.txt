@@ -21,3 +21,6 @@ https://www.flaticon.com/free-icon/best-customer-experience_10936499?term=rating
 
 communities
 https://www.flaticon.com/free-icon/communities_4350908?term=community&page=1&position=1&origin=search&related_id=4350908
+
+login/signup background
+<a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
