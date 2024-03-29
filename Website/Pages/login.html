@@ -9,11 +9,27 @@
   </head>
   <body>
     <script src="../Scripts/loadHeader.js"></script>
-    <section class="mainContainer">
-        <p>Welcome Back!</p>
-        <input type="text" placeholder="email">
-        <input type="text" placeholder="password">
-        <button>Login</button>
+    <section class="mainContainer login">
+        <p class="bigTitle">Welcome Back!</p>
+        
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="email">
+        
+        <label for="password">Password</label>
+        <img src="../Images/eye.png" onclick="
+            let input = document.getElementsByTagName('input')[1];
+            if(input.type == 'password') {
+              this.src = '../Images/view.png';
+              input.type = 'text';
+            }
+            else{
+              this.src = '../Images/eye.png';
+              input.type = 'password';
+            }
+        ">
+        <input type="password" id="password" placeholder="password">
+        
+        <button class="buttonAccent">Login</button>
     </section>
   </body>
 </html>

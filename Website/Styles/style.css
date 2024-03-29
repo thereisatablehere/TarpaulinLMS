@@ -12,6 +12,7 @@
 
     --buttonBorderRadius: 30px;
 
+    --accentLighterColor: #247cff;
     --accentColor: #0066ff;
     --accentDarkerColor: #004ab9;
     --bgColor: white;
@@ -57,7 +58,8 @@ button {
     margin-left: 1em;
     font-weight: bold;
     width: fit-content;
-    height: fit-content;
+    height: calc(100% - 7px);
+    line-height: calc(100% - 7px);
     padding: 1em;
     padding-left: 2.5em;
     padding-right: 2.5em;
@@ -253,4 +255,62 @@ header {
 }
 .landingIconCollage div:not(:last-child) {
     margin-bottom: 1.5em;
+}
+
+/* login */
+
+.login {
+    display: flex;
+    padding: 40px;
+    border-radius: var(--buttonBorderRadius);
+    box-shadow: 1px 1px 5px var(--accentDarkerColor);
+}
+.login .bigTitle {
+    margin: 0;
+    margin-bottom: 0.85em;
+}
+.login label, .login input {
+    font-size: 1.2em;
+}
+.login label {
+    font-weight: 500;
+    margin-bottom: 0.35em;
+}
+.login input {
+    outline: none;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: var(--buttonBorderRadius);
+    border: none;
+    border: 1px solid var(--accentLighterColor);
+    background-color: var(--bgColor);
+}
+.login input:hover {
+    border: 1px solid var(--accentDarkerColor);
+}
+.login input:focus {
+    border: 2px solid var(--accentColor);
+    margin: -2px;
+}
+.login input:first-of-type {
+    margin-bottom: 0.75em;
+}
+.login input:last-of-type {
+    margin-bottom: 1.75em;
+}
+.login img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-top: 8em;
+    margin-left: 14.5em;
+}
+.login img:hover {
+    cursor: pointer;
+    filter: invert(20%);
+}
+.login .buttonAccent {
+    margin: 0;
+    width: 100%;
 }
