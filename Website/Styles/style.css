@@ -50,6 +50,7 @@ html {
 body {
     background-color: var(--bgColor);
     visibility: hidden;
+    padding-top: 1em;
 }
 
 .loginBody {
@@ -384,7 +385,7 @@ header button:active {
     width: 13em;
     height: 100%;
     margin: 0;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-left: -0.7em;
     padding: 2em;
     padding-top: 3em;
