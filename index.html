@@ -3,6 +3,18 @@
     <title>Tarpaulin</title>
 </head>
 <body>
-    <script>window.open("Website/Pages/landing.html", "_self");</script>
+    <script src="Website/Scripts/backendSubstitute.js"></script>
+    <script>
+        let load = "Website/Pages/";
+
+        if(backend_loggedIn) {
+            load += "studentHome.html";
+        }
+        else {
+            load += "landing.html";
+        }
+
+        window.open(load, "_self");
+    </script>
 </body>
 </html>

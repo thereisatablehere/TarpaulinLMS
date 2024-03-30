@@ -27,3 +27,6 @@ landing background
 
 login/signup background
 <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
+
+all other icons not listed
+https://www.zondicons.com/

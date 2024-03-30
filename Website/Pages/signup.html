@@ -8,19 +8,24 @@
     <title>Tarpaulin - Login</title>
   </head>
   <body class="loginBody">
+    <script src="../Scripts/backendSubstitute.js"></script>
     <script src="../Scripts/loadHeader.js"></script>
+    
     <section class="mainContainer login">
         <p class="bigTitle">Let's Get Started!</p>
-        
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="email">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="name">
 
         <label for="username">Username</label>
         <input type="text" id="username" placeholder="username">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="email">
         
         <label for="password">Password</label>
         <img class="signupEye" src="../Images/eye.png" onclick="
-            let input = document.getElementsByTagName('input')[2];
+            let input = document.getElementsByTagName('input')[3];
             if(input.type == 'password') {
               this.src = '../Images/view.png';
               input.type = 'text';
