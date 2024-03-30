@@ -1,32 +1,34 @@
 function getHeader() {
     let header = "";
     
-    if(backend_loggedIn) {
-        header = 
-        `<header>
-            <div class="logoContainer">
-                <img draggable="false" src="../Images/Tarpaulin_Logo_Alt_2.png">
-                <p>Tarpaulin</p>
-            </div>
+    switch(localStorage.getItem("userType")) {
+        case "student":
+            header = 
+            `<header>
+                <div class="logoContainer">
+                    <img draggable="false" src="../Images/Tarpaulin_Logo_Alt_2.png">
+                    <p>Tarpaulin</p>
+                </div>
 
-            <div>
-                <button class="buttonNormal">Logout</button>
-            </div>
-        </header>`;
-    }
-    else {
-        header = 
-        `<header>
-            <div class="logoContainer">
-                <img draggable="false" src="../Images/Tarpaulin_Logo_Alt_2.png">
-                <p>Tarpaulin</p>
-            </div>
+                <div>
+                    <button class="buttonNormal" onclick='logout()'>Logout</button>
+                </div>
+            </header>`;
+            break;
         
-            <div id="navLoginSignUp">
-                <button class="buttonNormal" onclick='goToLogin()'>Login</button>
-                <button class="buttonAccent" onclick='goToSignup()'>Sign Up</button>
-            </div>
-        </header>`;
+        default: 
+            header = 
+            `<header>
+                <div class="logoContainer">
+                    <img draggable="false" src="../Images/Tarpaulin_Logo_Alt_2.png">
+                    <p>Tarpaulin</p>
+                </div>
+            
+                <div id="navLoginSignUp">
+                    <button class="buttonNormal" onclick='goToLogin()'>Login</button>
+                    <button class="buttonAccent" onclick='goToSignup()'>Sign Up</button>
+                </div>
+            </header>`;
     }
 
     return header;
@@ -35,11 +37,12 @@ function getHeader() {
 function goToHome() {
     let home = "../Pages/";
 
-    if(backend_loggedIn) {
-        home += "studentHome.html";
-    }
-    else {
-        home += "landing.html";
+    switch(localStorage.getItem("userType")) {
+        case "student":
+            home += "studentHome.html";
+            break;
+        default:
+            home += "landing.html";
     }
 
     window.open(home, "_self");

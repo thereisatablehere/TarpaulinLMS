@@ -105,15 +105,17 @@ p {
 }
 
 header {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 1em;
-    width: 100vw;
+    width: 100%;
     margin: -10px;
     background-color: var(--bgColor);
-    padding-bottom: 20px;
-    padding-left: 1.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
     /* box-shadow: 0 0 2px var(--accentDarkerColor); */
 }
 header .logoContainer:active {
@@ -167,6 +169,12 @@ header button:active {
 
 .mainContainerHorizontal {
     flex-direction: row;
+}
+
+.mainContainerLeft {
+    margin-top: 3em;
+    margin-left: max(20vw, 17em);
+    padding-right: 1em;
 }
 
 .titleBodySection {
@@ -376,7 +384,7 @@ header button:active {
     width: 13em;
     height: 100%;
     margin: 0;
-    margin-top: 0.65em;
+    margin-top: 1em;
     margin-left: -0.7em;
     padding: 2em;
     padding-top: 3em;
@@ -464,7 +472,6 @@ header button:active {
 .studentWelcome #username {
     margin-left: 0.5em;
 }
-
 .studentHomeMainContainer {
     display: flex;
     flex-direction: row;
@@ -480,13 +487,15 @@ header button:active {
 }
 .studentHomeMainContainer .list {
     padding: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     border-radius: 20px;
 }
 .studentHomeMainContainer .coursesList {
     /* background-color: #b4c3df; */
     background-image: linear-gradient(to right, #b4c3df 80%, #b4c3dfbb 100%);
     /* box-shadow: 0 0 4px black; */
-    margin-right: 13em;
+    margin-right: max(13vw, 1em);
 }
 .studentHomeMainContainer .list .preview:first-child {
     border-top: 1px solid #00000056;

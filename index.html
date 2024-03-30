@@ -7,11 +7,12 @@
     <script>
         let load = "Website/Pages/";
 
-        if(backend_loggedIn) {
-            load += "studentHome.html";
-        }
-        else {
-            load += "landing.html";
+        switch(localStorage.getItem("userType")) {
+            case "student":
+                load += "studentHome.html";
+                break;
+            default:
+                load += "landing.html";
         }
 
         window.open(load, "_self");
