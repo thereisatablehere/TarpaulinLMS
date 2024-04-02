@@ -43,7 +43,7 @@ DROP TABLE tarp_s_comment CASCADE CONSTRAINTS;
 CREATE TABLE tarp_s_comment (
   course_id  varchar(20),
   s_username    varchar(20),
-  comment varchar(200),
+  s_comment varchar(200),
   cdate date,
   primary key (course_id, s_username),
   Constraint FK_TARP_S_COMMENT1 foreign key (course_id) references tarp_course(course_id),
@@ -55,7 +55,7 @@ DROP TABLE tarp_i_comment CASCADE CONSTRAINTS;
 CREATE TABLE tarp_i_comment (
   course_id  varchar(20),
   i_username    varchar(20),
-  comment varchar(200),
+  i_comment varchar(200),
   cdate date,
   primary key (course_id, i_username),
   Constraint FK_TARP_I_COMMENT1 foreign key (course_id) references tarp_course(course_id),
@@ -85,7 +85,7 @@ CREATE TABLE tarp_test (
 -- tarp_question
 DROP TABLE tarp_question CASCADE CONSTRAINTS;
 CREATE TABLE tarp_question (
-  prompt  varchar(60),
+  t_prompt  varchar(60),
   a varchar(30),
   b varchar(30),
   c varchar(30),
@@ -93,9 +93,8 @@ CREATE TABLE tarp_question (
   answer varchar(30),
   test_id varchar(20),
   course_id  varchar(20),
-  primary key (prompt, test_id, course_id),
-  Constraint FK_TARP_QUESTION1 foreign key (test_id) references tarp_test(test_id),
-  Constraint FK_TARP_QUESTION2 foreign key (course_id) references tarp_test(course_id)
+  primary key (t_prompt, test_id, course_id),
+  Constraint FK_TARP_QUESTION1 foreign key (test_id,course_id) references tarp_test(test_id,course_id)
 );
 
 -- tarp_joined_by
@@ -103,7 +102,7 @@ DROP TABLE tarp_joined_by CASCADE CONSTRAINTS;
 CREATE TABLE tarp_joined_by (
   community_id  varchar(20),
   username varchar(20),
-  rank int,
+  c_rank int,
   primary key (community_id, username),
   Constraint FK_TARP_JOINED_BY1 foreign key (community_id) references tarp_community(community_id),
   Constraint FK_TARP_JOINED_BY2 foreign key (username) references tarp_student(username)
@@ -137,11 +136,10 @@ CREATE TABLE tarp_watches (
   lecture_id varchar(20),
   course_id  varchar(20),
   username varchar(20),
-  completed boolean,
+  completed CHAR(1),
   primary key (lecture_id, course_id, username),
-  Constraint FK_TARP_WATCHES1 foreign key (course_id) references tarp_lecture(course_id),
-  Constraint FK_TARP_WATCHES2 foreign key (lecture_id) references tarp_lecture(lecture_id),
-  Constraint FK_TARP_WATCHES3 foreign key (username) references tarp_student(username)
+  Constraint FK_TARP_WATCHES1 foreign key (course_id, lecture_id) references tarp_lecture(course_id, lecture_id),
+  Constraint FK_TARP_WATCHES2 foreign key (username) references tarp_student(username)
 );
 
 -- tarp_rates
@@ -151,7 +149,7 @@ CREATE TABLE tarp_rates (
   i_username varchar(20),
   instructor_score int,
   primary key (s_username, i_username),
-  Constraint FK_TARP_RATES1 foreign key (s_username) references tarp_student(s_username),
-  Constraint FK_TARP_RATES2 foreign key (i_username) references tarp_instructor(i_username)
+  Constraint FK_TARP_RATES1 foreign key (s_username) references tarp_student(username),
+  Constraint FK_TARP_RATES2 foreign key (i_username) references tarp_instructor(username)
 );
 
