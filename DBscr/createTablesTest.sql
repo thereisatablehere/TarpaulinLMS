@@ -67,7 +67,7 @@ DROP TABLE tarp_lecture CASCADE CONSTRAINTS;
 CREATE TABLE tarp_lecture (
   lecture_id varchar(20),
   course_id  varchar(20),
-  length    decimal(3,2),
+  length    decimal(3,1),
   url   varchar(100),
   primary key (lecture_id, course_id),
   Constraint FK_TARP_LECTURE foreign key (course_id) references tarp_course(course_id)
