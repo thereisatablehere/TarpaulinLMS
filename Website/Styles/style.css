@@ -899,26 +899,36 @@ header .profile:hover {
 }
 
 /* take test */
-.testContainer .title {
+.entireTestContainer .title {
     color: var(--accentColor);
     font-weight: 500;
     margin-bottom: 1em;
 }
-.testContainer .questionContainer {
+.entireTestContainer .questionContainer {
     display: flex;
     flex-direction: column;
     align-content: center;
     font-size: 1.1em;
 }
-.testContainer .questionContainer:not(:first-of-type) {
+.entireTestContainer .questionContainer:not(:first-of-type) {
     margin-top: 2em;
 }
-.testContainer .questionContainer p:first-child {
+.entireTestContainer .questionContainer p:first-child {
     font-weight: 500;
     font-size: 1.2em;
 }
-.testContainer button {
+.entireTestContainer button {
     margin-top: 3em;
+    align-self: center;
+}
+
+.entireTestContainer .correctAnswer {
+    font-weight: bold;
+    color: green;
+}
+.entireTestContainer .incorrectAnswer {
+    font-weight: bold;
+    color: red;
 }
 
 /* instructor home */

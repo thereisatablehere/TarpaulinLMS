@@ -1,6 +1,5 @@
 const sidebar = `
 <nav class="sidebar">
-      <img class="close" src="../Images/close.svg">
 
       <a href="allGradeReport.html">
         <img src="../Images/news-paper.svg">
@@ -28,6 +27,6 @@ const sidebar = `
       </a>
     </nav>`;
 
-if(localStorage.getItem("userType") == "studnet") {
+if(localStorage.getItem("userType") == "student") {
   document.write(sidebar);
 }
