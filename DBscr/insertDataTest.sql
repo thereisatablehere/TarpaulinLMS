@@ -33,8 +33,8 @@ INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('bill34'
 INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('erin1234', 'Erin', 'Bert', 'password9');
 
 
-INSERT INTO tarp_community (community_id, username, date_created, c_description, num_students) VALUES ('csbsju', 'davis12',TIMESTAMP '2024-03-29 10:30:00', 'This group is for CSBSJU students!', 5);
-INSERT INTO tarp_community (community_id, username, date_created, c_description, num_students) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!', 0);
+INSERT INTO tarp_community (comm_id, username, date_created, c_description, num_students) VALUES ('csbsju', 'davis12',TIMESTAMP '2024-03-29 10:30:00', 'This group is for CSBSJU students!', 0);
+INSERT INTO tarp_community (comm_id, username, date_created, c_description, num_students) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!', 0);
 
 
 INSERT INTO tarp_course (course_id, username) VALUES ('CSCI101', 'imad2000');
@@ -79,6 +79,7 @@ INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'maahs35')
 INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'grove5');
 INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'bartness2');
 INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'erickson25');
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('MN', 'davis12');
 
 
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'grove5', 90);
