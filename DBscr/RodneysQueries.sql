@@ -54,3 +54,38 @@
 --EXEC join_community('MN', 'grove5');
 --SELECT * FROM tarp_community WHERE comm_id = 'MN';
 
+
+
+
+
+
+
+
+--test 9
+--SELECT *
+--FROM view_comments
+--WHERE course_id = 'CSCI101';
+
+
+
+--CREATE OR REPLACE VIEW view_courses AS
+--SELECT course_id
+--FROM tarp_course
+--WHERE username = 'username_here';
+--
+--
+--
+--
+--CREATE OR REPLACE VIEW list_lectures AS
+--SELECT lecture_id
+--FROM tarp_lecture
+--WHERE course_id IN (SELECT course_id FROM tarp_enrolls WHERE username = 'username_here');
+--
+--
+--
+--
+--CREATE OR REPLACE VIEW view_all_grades AS
+--SELECT course_id, score
+--FROM tarp_taken_by
+--WHERE username = 'username_here';
+
