@@ -12,7 +12,7 @@ const sidebar = `
         <p>My Courses</p>
       </a>
 
-      <a>
+      <a href="joinedCommunitiesList.html">
         <img src="../Images/user-group.svg">
         <p>My Communities</p>
       </a>
