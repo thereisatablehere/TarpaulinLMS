@@ -33,8 +33,8 @@ INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('bill34'
 INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('erin1234', 'Erin', 'Bert', 'password9');
 
 
-INSERT INTO tarp_community (community_id, username) VALUES ('csbsju', 'davis12');
-INSERT INTO tarp_community (community_id, username) VALUES ('MN', 'maahs35');
+INSERT INTO tarp_community (community_id, username, date_created, c_description) VALUES ('csbsju', 'davis12',TIMESTAMP '2024-03-29 10:30:00', 'This group is for CSBSJU students!');
+INSERT INTO tarp_community (community_id, username, date_created, c_description) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!');
 
 
 INSERT INTO tarp_course (course_id, username) VALUES ('CSCI101', 'imad2000');
@@ -74,11 +74,11 @@ INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VAL
 INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 3 / 1?', '33', '4', '3', '6', 'C', 'test 1', 'MATH101');
 
 
-INSERT INTO tarp_joined_by (community_id, username, c_rank) VALUES ('csbsju', 'davis12', 1);
-INSERT INTO tarp_joined_by (community_id, username, c_rank) VALUES ('csbsju', 'maahs35', 2);
-INSERT INTO tarp_joined_by (community_id, username, c_rank) VALUES ('csbsju', 'grove5', 3);
-INSERT INTO tarp_joined_by (community_id, username, c_rank) VALUES ('csbsju', 'bartness2', 4);
-INSERT INTO tarp_joined_by (community_id, username, c_rank) VALUES ('csbsju', 'erickson25', 5);
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'davis12');
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'maahs35');
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'grove5');
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'bartness2');
+INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'erickson25');
 
 
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'grove5', 90);

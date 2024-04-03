@@ -25,6 +25,8 @@ DROP TABLE tarp_community CASCADE CONSTRAINTS;
 CREATE TABLE tarp_community (
   community_id  varchar(20),
   username    varchar(20),
+  date_created  date,
+  c_description varchar(50),
   primary key (community_id),
   Constraint FK_TARP_COMMUNITY foreign key (username) references tarp_student(username)
 );
@@ -102,7 +104,6 @@ DROP TABLE tarp_joined_by CASCADE CONSTRAINTS;
 CREATE TABLE tarp_joined_by (
   community_id  varchar(20),
   username varchar(20),
-  c_rank int,
   primary key (community_id, username),
   Constraint FK_TARP_JOINED_BY1 foreign key (community_id) references tarp_community(community_id),
   Constraint FK_TARP_JOINED_BY2 foreign key (username) references tarp_student(username)
