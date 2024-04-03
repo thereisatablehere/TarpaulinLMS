@@ -23,12 +23,12 @@ CREATE TABLE tarp_instructor (
 -- tarp_community
 DROP TABLE tarp_community CASCADE CONSTRAINTS;
 CREATE TABLE tarp_community (
-  community_id  varchar(20),
+  comm_id  varchar(20),
   username    varchar(20),
   date_created  date,
   c_description varchar(50),
   num_students int,
-  primary key (community_id),
+  primary key (comm_id),
   Constraint FK_TARP_COMMUNITY foreign key (username) references tarp_student(username)
 );
 
@@ -106,7 +106,7 @@ CREATE TABLE tarp_joined_by (
   community_id  varchar(20),
   username varchar(20),
   primary key (community_id, username),
-  Constraint FK_TARP_JOINED_BY1 foreign key (community_id) references tarp_community(community_id),
+  Constraint FK_TARP_JOINED_BY1 foreign key (community_id) references tarp_community(comm_id),
   Constraint FK_TARP_JOINED_BY2 foreign key (username) references tarp_student(username)
 );
 
