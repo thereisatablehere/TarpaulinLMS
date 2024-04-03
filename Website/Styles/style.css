@@ -901,7 +901,7 @@ header .profile:hover {
 
 /* instructor home */
 
-.createCourse {
+.createCourseButton {
     margin: 0;
     margin-top: 2.5em;
     /* box-shadow: 0 0 3px black; */
@@ -976,6 +976,44 @@ header .profile:hover {
     cursor: pointer;
     color: var(--accentDarkerColor);
     border-color: var(--accentDarkerColor);
+}
+
+/* create course */
+
+.createCourse {
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+}
+.createCourse div {
+    display: flex;
+}
+.createCourse div p {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.createCourse div input {
+    outline: none;
+    border: 1px solid #00000050;
+    border-radius: 10px;
+    padding: 8px;
+}
+.createCourse div input:focus {
+    color: var(--accentColor);
+    border-color: black;
+}
+.createCourse .nameContainer {
+    flex-direction: row;
+    justify-content: space-between;
+}
+.createCourse .descriptionContainer {
+    margin-top: 2em;
+    flex-direction: column;
+}
+.createCourse button {
+    width: 100%;
+    margin-top: 3em;
+    align-self: center;
 }
 
 /* profile */
