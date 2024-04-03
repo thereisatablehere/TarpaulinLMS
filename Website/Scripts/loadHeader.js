@@ -2,6 +2,8 @@ function getHeader() {
     let header = "";
     
     switch(localStorage.getItem("userType")) {
+        // instructors and students should have the same header
+        case "instructor":
         case "student":
             header = 
             `<header>

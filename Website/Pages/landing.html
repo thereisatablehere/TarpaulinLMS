@@ -9,6 +9,15 @@
   </head>
   <body class="landingBody">  
     <script src="../Scripts/backendSubstitute.js"></script>
+
+    <script>
+      let check = localStorage.getItem("userType");
+      
+      if(check == "student" || check == "instructor") {
+        window.open("../../index.html", "_self");
+      }
+    </script>
+
     <script src="../Scripts/loadHeader.js"></script>
 
     <section class="mainContainer mainContainerHorizontal">

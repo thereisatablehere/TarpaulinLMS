@@ -7,7 +7,13 @@ function logout() {
     window.open("../../index.html", "_self");
 }
 
-function setUserTypeToStudent() {
-    localStorage.setItem("userType", "student");
-    window.open("../../index.html", "_self");
+function setUserType(input) {
+    let type = "";
+
+    if(input.toLowerCase() == "student" || input.toLowerCase() == "instructor") {
+        type = input.toLowerCase();
+        
+        localStorage.setItem("userType", type);
+        window.open("../../index.html", "_self");
+    }
 }
