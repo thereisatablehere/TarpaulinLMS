@@ -724,6 +724,99 @@ header .profile:hover {
     border-color: black;
 }
 
+/* search for a course */
+
+.courseSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5em;
+}
+
+.courseSearch .search {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    margin-right: 8em;
+}
+.courseSearch .search .title {
+    font-weight: bold;
+    color: var(--accentColor);
+}
+.courseSearch .search .bigDescription {
+    margin-bottom: 1em;
+}
+.courseSearch .search div {
+    display: flex;
+    flex-direction: column;
+}
+.courseSearch .search div:not(:last-of-type) {
+    margin-bottom: 1.5em;
+}
+.courseSearch .search div p {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.courseSearch .search div input {
+    width: 30%;
+    border-radius: calc(var(--buttonBorderRadius) * 0.35);
+    border: 1px solid black;
+    outline: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.courseSearch .search button {
+    width: 10em;
+    height: 2.75em;
+    margin: 0;
+    margin-top: 2.5em;
+}
+
+.courseSearch .results {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+}
+.courseSearch .results{
+    display: none;
+}
+.courseSearch .results .title {
+    font-weight: bold;
+    color: var(--accentColor);
+}
+.courseSearch .results select {
+    width: 7em;
+    outline: none;
+    border: 2px solid black;
+    border-radius: var(--buttonBorderRadius);
+    padding: 5px;
+    margin-bottom: 2em;
+}
+.courseSearch .results .course {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+.courseSearch .results .course:not(:first-of-type) {
+    padding-top: 0.5em;
+    border-top: 1px solid #00000056;
+}
+.courseSearch .results .course div {
+    display: flex;
+    flex-direction: row;
+}
+.courseSearch .results .course .name {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.courseSearch .results .course .instructor {
+    font-weight: 500;
+}
+.courseSearch .results .course div :not(.star):first-of-type {
+    margin-right: 0.5em;
+}
+
 /* instructor home */
 
 .createCourse {
@@ -772,6 +865,7 @@ header .profile:hover {
 .star, .emptyStar {
     width: 15px;
     height: 15px;
+    user-select: none;
 }
 .emptyStar {
     filter: invert(1);
@@ -803,6 +897,7 @@ header .profile:hover {
 }
 
 /* profile */
+
 .profile {
     display: flex;
     flex-direction: column;
