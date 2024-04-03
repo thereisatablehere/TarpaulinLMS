@@ -677,7 +677,7 @@ header .profile:hover {
     padding: 40px;
     border-radius: var(--buttonBorderRadius);
     box-shadow: 0 0 3px darkcyan;
-    width: 15em;
+    width: 25em;
 }
 
 .communitiesListContainer .community {
@@ -692,6 +692,7 @@ header .profile:hover {
     font-size: 1.4em;
     color: #4ba382;
     font-weight: bold;
+    text-align: center  ;
 }
 .communitiesListContainer .community div {
     display: flex;
@@ -839,6 +840,63 @@ header .profile:hover {
 .createCommunity button {
     align-self: center;
     margin-top: 2em
+}
+
+/* community view */
+
+.communityViewTitle {
+    color:#4ba382;
+    margin-bottom: 0.5em;
+}
+.communityView {
+    background-color: #e3fffb;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+    padding: 40px;
+    border-radius: var(--buttonBorderRadius);
+    border: 1px solid rgba(0, 0, 0, 0.459);
+}
+.communityView div {
+    display: flex;
+    flex-direction: row;
+}
+.communityView div *:first-child {
+    margin-right: 0.5em;
+}
+.communityView .controls {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+.communityView .invite {
+    color: black;
+    border-color: black;
+}
+.communityView .leave {
+    background-color: black;
+    border-color: black;
+}
+.communityView .invite:hover, .communityView .leave:hover {
+    background-color: #4ba382;
+    color: white;
+}
+.communityView .title {
+    margin-left: 1em;
+}
+.communityView .leaderboard {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+.communityView .leaderboard div {
+    display: flex;
+    flex-direction: row;
+}
+.communityView .leaderboard div p:first-of-type {
+    margin-right: 0.75em;
+}
+.communityView .leaderboard div .you {
+    font-weight: bold;
 }
 
 /* instructor home */
