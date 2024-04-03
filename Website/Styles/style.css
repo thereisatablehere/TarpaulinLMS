@@ -49,7 +49,6 @@ html {
 
 body {
     background-color: var(--bgColor);
-    visibility: hidden;
     padding-top: 1em;
 }
 
@@ -897,6 +896,29 @@ header .profile:hover {
 }
 .communityView .leaderboard div .you {
     font-weight: bold;
+}
+
+/* take test */
+.testContainer .title {
+    color: var(--accentColor);
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+.testContainer .questionContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-size: 1.1em;
+}
+.testContainer .questionContainer:not(:first-of-type) {
+    margin-top: 2em;
+}
+.testContainer .questionContainer p:first-child {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.testContainer button {
+    margin-top: 3em;
 }
 
 /* instructor home */
