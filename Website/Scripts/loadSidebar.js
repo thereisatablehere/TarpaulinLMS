@@ -2,7 +2,7 @@ const sidebar = `
 <nav class="sidebar">
       <img class="close" src="../Images/close.svg">
 
-      <a>
+      <a href="allGradeReport.html">
         <img src="../Images/news-paper.svg">
         <p>Grade Report</p>
       </a>

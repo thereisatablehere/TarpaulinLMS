@@ -592,7 +592,6 @@ header button:active {
 }
 
 .coursesList .course .controls {
-    justify-content: space-evenly;
     margin-top: 0.5em;
 }
 
@@ -608,8 +607,46 @@ header button:active {
     padding-left: 10px;
     padding-right: 10px;
 }
+.coursesList .course .controls a:first-of-type {
+    margin-right: 0.75em;
+}
 
+/* all grade report */
 
+.allGradeReportContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: var(--buttonBorderRadius);
+    padding: 3em;
+    margin-top: 1em;
+    width: 18em;
+    align-self: center;
+}
+
+.allGradeReportContainer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.allGradeReportContainer div:not(:last-of-type) {
+    margin-bottom: 1.5em;
+}
+.allGradeReportContainer div p {
+    font-size: 1.2em;
+}
+.allGradeReportContainer div p:first-of-type {
+    font-weight: 500;
+}
+.allGradeReportContainer div:first-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.301);
+    padding-bottom: 0.5em;
+}
+.allGradeReportContainer div:first-of-type p {
+    font-weight: bold;
+}
+ 
 /* instructor home */
 
 .createCourse {
@@ -664,7 +701,6 @@ header button:active {
 }
 
 .instructorCoursePreview .controls {
-    justify-content: space-between;
     margin-top: 0.5em;
     width: 14em;
 }
@@ -679,6 +715,9 @@ header button:active {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+}
+.instructorCoursePreview .controls a:not(:last-of-type) {
+    margin-right: 0.5em;
 }
 .instructorCoursePreview .controls a:hover {
     cursor: pointer;
