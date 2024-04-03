@@ -1,94 +1,56 @@
+--test 1
 
-SELECT * FROM TARP_COMMUNITY;
-DELETE FROM tarp_joined_by WHERE community_id = 'MN' and username = 'grove5';
-SELECT * FROM TARP_COMMUNITY;
-
-
-
---CREATE OR REPLACE PROCEDURE modify_profile(
---    p_username VARCHAR,
---    p_new_password VARCHAR
---)
---AS
---BEGIN
---    UPDATE tarp_student
---    SET password = p_new_password
---    WHERE username = p_username;
---
---    UPDATE tarp_instructor
---    SET password = p_new_password
---    WHERE username = p_username;
---END;
+--SELECT * FROM TARP_COMMUNITY;
+--DELETE FROM tarp_joined_by WHERE community_id = 'MN' and username = 'grove5';
+--SELECT * FROM TARP_COMMUNITY;
 
 
 
---CREATE OR REPLACE PROCEDURE delete_course(
---    p_course_id VARCHAR
---)
---AS
---BEGIN
---    DELETE FROM tarp_course
---    WHERE course_id = p_course_id;
---END;
+--test 2
+--SELECT * FROM tarp_student where username = 'erickson25';
+--EXEC modify_student_profile('erickson25','passwordChanged');
+--SELECT * FROM tarp_student where username = 'erickson25';
+
+
+--test 3
+--SELECT * FROM tarp_course;
+--INSERT INTO tarp_course (course_id, username) VALUES ('CSCI222', 'imad2000');
+--SELECT * FROM tarp_course;
+--EXEC delete_course('CSCI222');
+--SELECT * FROM tarp_course;
 
 
 
---CREATE OR REPLACE PROCEDURE create_lecture(
---    p_lecture_id VARCHAR,
---    p_course_id VARCHAR,
---    p_length DECIMAL,
---    p_url VARCHAR
---)
---AS
---BEGIN
---    INSERT INTO tarp_lecture (lecture_id, course_id, length, url)
---    VALUES (p_lecture_id, p_course_id, p_length, p_url);
---END;
+--test 4
+--SELECT * FROM tarp_lecture WHERE course_id = 'CSCI101';
+--EXEC create_lecture('SQL Queries', 'CSCI101', 25.0, 'https://example.com/SQLQueries/CSCI101');
+--SELECT * FROM tarp_lecture WHERE course_id = 'CSCI101';
 
 
---CREATE OR REPLACE PROCEDURE enroll_in_course(
---    p_course_id VARCHAR,
---    p_username VARCHAR
---)
---AS
---BEGIN
---    INSERT INTO tarp_enrolls (course_id, username)
---    VALUES (p_course_id, p_username);
---END;
+--Test 5 
+--SELECT username FROM tarp_enrolls WHERE course_id = 'CSCI101';
+--EXEC enroll_in_course('CSCI101', 'erickson25');
+--SELECT username FROM tarp_enrolls WHERE course_id = 'CSCI101';
 
 
 
---CREATE OR REPLACE PROCEDURE create_community(
---    p_community_id VARCHAR,
---    p_username VARCHAR,
---    p_date_created TIMESTAMP,
---    p_c_description VARCHAR,
---    p_num_students INT
---)
---AS
---BEGIN
---    INSERT INTO tarp_community (community_id, username, date_created, c_description, num_students)
---    VALUES (p_community_id, p_username, p_date_created, p_c_description, p_num_students);
---END;
+
+--test 6
+--SELECT * FROM tarp_community;
+--EXEC create_community('USA', 'erickson25', TIMESTAMP '2024-01-29 10:30:00', 'This group is for USA students!', 0);
+--SELECT * FROM tarp_community;
 
 
 
---CREATE OR REPLACE PROCEDURE delete_community(
---    p_community_id VARCHAR
---)
---AS
---BEGIN
---    DELETE FROM tarp_community
---    WHERE community_id = p_community_id;
---END;
+--test 7
+--SELECT * FROM tarp_community;
+--EXEC delete_community('USA');
+--SELECT * FROM tarp_community;
 
 
---CREATE OR REPLACE PROCEDURE join_community(
---    p_community_id VARCHAR,
---    p_username VARCHAR
---)
---AS
---BEGIN
---    INSERT INTO tarp_joined_by (community_id, username)
---    VALUES (p_community_id, p_username);
---END;
+
+--test 8
+--SELECT * FROM tarp_community WHERE comm_id = 'MN';
+--EXEC join_community('MN', 'grove5');
+--SELECT * FROM tarp_community WHERE comm_id = 'MN';
+
