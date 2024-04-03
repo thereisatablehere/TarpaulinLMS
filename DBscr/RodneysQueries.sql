@@ -1,1 +1,2 @@
-SELECT * FROM TARP_COMMUNTIY; 
+SELECT * FROM tarp_community; 
+
