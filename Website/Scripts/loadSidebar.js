@@ -28,4 +28,6 @@ const sidebar = `
       </a>
     </nav>`;
 
-document.write(sidebar);
+if(localStorage.getItem("userType") == "studnet") {
+  document.write(sidebar);
+}

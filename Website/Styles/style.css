@@ -1088,3 +1088,167 @@ header .profile:hover {
     cursor: pointer;
     filter: invert(0.2);
 }
+
+/* course view */
+
+.courseView {
+    font-size: 1.1em;
+    width: 35em;
+}
+
+.courseView .title {
+    text-align: center;
+    color: var(--accentColor);
+    font-family: var(--fontTitle);
+    font-weight: bold;
+}
+
+.courseView nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1em;
+    margin-bottom: 2.5em;
+    width: 85%;
+    align-self: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #00000070;
+}
+.courseView nav p {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+}
+.courseView nav p:hover {
+    cursor: pointer;
+    color: var(--accentColor);
+    margin-top: 2px;
+    margin-bottom: -2px;
+}
+
+.courseView .tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #00000050;
+}
+
+.courseView #join {
+    font-size: 0.7em;
+    margin: 0;
+    margin-bottom: 0.75em;
+}
+
+.courseView .topInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.courseView .topInfo p:first-child {
+    font-weight: bold;
+}
+.courseView .topInfo div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.courseView .topInfo div p {
+    margin-left: 0.5em;
+}
+
+.courseView .description {
+    margin-top: 1em;
+}
+.courseView .description p:first-child {
+    font-weight: 550;
+}
+
+.courseView .tab:not(:first-of-type) {
+    display: none;
+}
+
+.courseView .lectureContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.courseView .lectureContainer:not(:first-of-type) {
+    padding-top: 1em;
+    border-top: 1px solid #00000070;
+}
+.courseView .lectureContainer p {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+.courseView .lectureContainer .video {
+    width: 80%;
+    height: 8em;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #00000010;
+    text-align: center;
+    align-content: center;
+}
+.courseView .lectureContainer:not(:last-of-type) {
+    margin-bottom: 3em;
+}
+
+.courseView .testContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.courseView .testContainer:not(:first-of-type) {
+    margin-top: 3em;
+    border-top: 1px solid #00000040;
+    padding-top: 1em;
+}
+.courseView .testContainer p {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+.courseView .testContainer p:first-of-type {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.courseView .testContainer button {
+    margin-top: 1.5em;
+    font-size: 1em;
+    align-self: center;
+    text-align: center;
+}
+
+.courseView .questionContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    font-size: 1.1em;
+}
+.courseView .questionContainer:not(:last-of-type) {
+    margin-bottom: 1em;
+}
+.courseView .questionContainer div {
+    display: flex;
+    flex-direction: row;
+}
+
+.courseView .questionContainer div #instructor {
+    color: var(--accentColor);
+}
+.courseView .questionContainer div p:not(:last-of-type) {
+    margin-right: 0.5em;
+}
+.courseView .questionContainer div p:first-of-type {
+    font-weight: bold;
+}
