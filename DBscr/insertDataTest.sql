@@ -33,8 +33,8 @@ INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('bill34'
 INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('erin1234', 'Erin', 'Bert', 'password9');
 
 
-INSERT INTO tarp_community (community_id, username, date_created, c_description) VALUES ('csbsju', 'davis12',TIMESTAMP '2024-03-29 10:30:00', 'This group is for CSBSJU students!', 5);
-INSERT INTO tarp_community (community_id, username, date_created, c_description) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!', 0);
+INSERT INTO tarp_community (community_id, username, date_created, c_description, num_students) VALUES ('csbsju', 'davis12',TIMESTAMP '2024-03-29 10:30:00', 'This group is for CSBSJU students!', 5);
+INSERT INTO tarp_community (community_id, username, date_created, c_description, num_students) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!', 0);
 
 
 INSERT INTO tarp_course (course_id, username) VALUES ('CSCI101', 'imad2000');
