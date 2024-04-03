@@ -119,6 +119,14 @@ header {
     padding-left: 1em;
     /* box-shadow: 0 0 2px var(--accentDarkerColor); */
 }
+header div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header div *:first-child {
+    margin-right: 1em;
+}
 header .logoContainer:active {
     margin-top: 0.25em;
     margin-bottom: -0.25em;
@@ -129,6 +137,17 @@ header *:last-child {
 header button:active {
     margin-top: 0.35em;
     margin-bottom: -0.35em;
+}
+header .profile {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+}
+header .profile:hover {
+    cursor: pointer;
+    filter: contrast(0.1);
 }
 
 .logoContainer {
@@ -781,4 +800,76 @@ header button:active {
     cursor: pointer;
     color: var(--accentDarkerColor);
     border-color: var(--accentDarkerColor);
+}
+
+/* profile */
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3em;
+    align-self: flex-start;
+}
+.profile .top .profileIcon {
+    width: 50px;
+    height: 50px;
+}
+.profile .top div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+.profile .top div p:first-of-type {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.profile .profileSettings {
+    display: flex;
+    flex-direction: column;
+    width: 35em;
+    align-self: flex-start;
+}
+.profile .profileSettings div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: em;
+}
+.profile .profileSettings div:not(:first-of-type) {
+    padding-top: 1em;
+    border-top: 1px solid #00000040;
+}
+.profile .profileSettings div:not(:last-of-type) {
+    margin-bottom: 2em;
+}
+.profile .profileSettings div p:first-of-type {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.profile .profileSettings div input {
+    outline: none;
+    background-color: white;
+    border: 1px solid #00000070;
+    border-radius: 5px;
+    padding: 5px;
+}
+.profile .profileSettings div input:focus {
+    color: var(--accentLighterColor)
+}
+.profile .profileSettings div .passwordToggleIcon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-left: 32.75em;
+    align-self: center;
+}
+.profile .profileSettings div .passwordToggleIcon:hover {
+    cursor: pointer;
+    filter: invert(0.2);
 }

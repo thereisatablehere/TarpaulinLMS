@@ -14,6 +14,7 @@ function getHeader() {
 
                 <div>
                     <button class="buttonNormal" onclick='logout()'>Logout</button>
+                    <img class="profile" draggable="false" src="../Images/user.svg" onclick="goToProfile()">
                 </div>
             </header>`;
             break;
@@ -43,11 +44,18 @@ function goToHome() {
         case "student":
             home += "studentHome.html";
             break;
+        case "instructor":
+                home += "instructorHome.html";
+                break;
         default:
             home += "landing.html";
     }
 
     window.open(home, "_self");
+}
+
+function goToProfile() {
+    window.open("../Pages/profile.html", "_self");
 }
 
 document.write(getHeader());
