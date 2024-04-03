@@ -27,6 +27,7 @@ CREATE TABLE tarp_community (
   username    varchar(20),
   date_created  date,
   c_description varchar(50),
+  num_students int,
   primary key (community_id),
   Constraint FK_TARP_COMMUNITY foreign key (username) references tarp_student(username)
 );
