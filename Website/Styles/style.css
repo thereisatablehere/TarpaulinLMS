@@ -394,6 +394,7 @@ header button:active {
     flex-direction: column;
 }
 .sidebar a {
+    text-decoration: none;
     font-weight: 500;
     color: white;
     display: flex;
@@ -548,6 +549,66 @@ header button:active {
     background-image: linear-gradient(to right, #dfe3e4 60%, #dfe3e4c2 100%);
     /* box-shadow: 0 0 5px grey; */
 }
+
+/* enrolled courses list */
+
+.coursesList {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: calc(var(--buttonBorderRadius) * 0.25);
+    padding: 3em;
+    margin-top: 1em;
+}
+
+.coursesList .course {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-bottom: 1.2em;
+    padding-top: 1.2em;
+    border-bottom: 1px solid #00000056;
+}
+.coursesList .course:first-child {
+    border-top: 1px solid #00000056;
+}
+
+.coursesList .course .bigDescription {
+    font-weight: bold;
+    margin-bottom: 0.1em;
+}
+
+.coursesList .course div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.coursesList .course div p:first-of-type {
+    margin-right: 0.35em;
+}
+.coursesList .course div .instructorName {
+    font-weight: 500;
+}
+
+.coursesList .course .controls {
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+}
+
+.coursesList .course .controls a {
+    font-size: 0.92em;
+    border-radius: var(--buttonBorderRadius);
+    border: 2px solid var(--accentColor);
+    color: var(--accentLighterColor);
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 
 /* instructor home */
 
