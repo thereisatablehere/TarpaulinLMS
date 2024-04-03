@@ -817,6 +817,30 @@ header .profile:hover {
     margin-right: 0.5em;
 }
 
+/* create community */
+
+.createCommunity {
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+}
+.createCommunity p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.createCommunity div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+.createCommunity input {
+    outline: none;
+}
+.createCommunity button {
+    align-self: center;
+    margin-top: 2em
+}
+
 /* instructor home */
 
 .createCourse {

@@ -22,7 +22,7 @@ const sidebar = `
         <p>My Communities</p>
       </a>
       
-      <a>
+      <a href="createCommunity.html">
         <img src="../Images/add-outline.svg">
         <p>Create a Community</p>
       </a>
