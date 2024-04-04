@@ -6,7 +6,7 @@ function changeTab(request) {
 
     for(let t of tabs) {
         if(t.id == tab) {
-            t.style.display = "block";
+            t.style.display = "flex";
         }
         else {
             t.style.display = "none";
