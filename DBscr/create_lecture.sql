@@ -1,3 +1,7 @@
+-- DESCRIPTION: This procedure creates a new lecture using 4 parameters
+-- and inserts it into TARP_LECTURE
+
+-- CODE
 CREATE OR REPLACE PROCEDURE create_lecture(p_lecture_id VARCHAR, p_course_id VARCHAR, p_length DECIMAL, p_url VARCHAR)
 AS
 BEGIN
