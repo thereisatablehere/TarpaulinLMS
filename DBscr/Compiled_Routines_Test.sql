@@ -143,18 +143,15 @@
 
 --******************************************************************************************************************************************************************
 
--- TEST VIEW_COMMENTS (10)
+-- TEST VIEW_GRADE (9)
 
---SELECT *
---FROM view_comments
---WHERE course_id = 'CSCI101';
+--Select VIEW_GRADE('grove5', 'MATH101') from dual;
 
 --OUTPUT
---COURSE_ID            S_USERNAME           S_COMMENT                                                                                                                                                                                                CDATE    
----------------------- -------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------
---CSCI101              imad2000             Cool course!                                                                                                                                                                                             28-FEB-24
---CSCI101              grove5               Great course!                                                                                                                                                                                            28-MAR-24
---CSCI101              erickson25           Awesome course! 
+--VIEW_GRADE('GROVE5','MATH101')
+--------------------------------
+--                    85.7142857
+
 
 --******************************************************************************************************************************************************************
 
@@ -219,3 +216,63 @@
 --LOGIN('GROVE5','PASSWORD3')
 -----------------------------
 --                          0
+
+
+--******************************************************************************************************************************************************************
+
+-- TEST CREATE_NEW_USER (16)
+
+SELECT * FROM tarp_student;
+EXEC create_new_user('kerry8','Kerry', 'Maahs', 'kerryPass', 'S');
+SELECT * FROM tarp_student;
+
+-- OUTPUT
+--USERNAME             F_NAME               L_NAME               PASSWORD            
+---------------------- -------------------- -------------------- --------------------
+--erickson25           Rodney               Erickson             password1           
+--maahs35              Keiley               Maahs                password2           
+--davis12              Carson               Davis                password3           
+--grove5               Carter               Grove                password4           
+--bartness2            Dylan                Bartness             password5           
+--
+--
+--PL/SQL procedure successfully completed.
+--
+--
+--USERNAME             F_NAME               L_NAME               PASSWORD            
+---------------------- -------------------- -------------------- --------------------
+--erickson25           Rodney               Erickson             password1           
+--maahs35              Keiley               Maahs                password2           
+--davis12              Carson               Davis                password3           
+--grove5               Carter               Grove                password4           
+--bartness2            Dylan                Bartness             password5           
+--kerry8               Kerry                Maahs                kerryPass      
+
+--******************************************************************************************************************************************************************
+
+-- TEST COUNT_STUDENT_COMPLETED_LECTURES (19)
+
+Select Count(*) from TARP_WATCHES T where 'grove5' = T.username and T.completed = 'y';
+SELECT count_student_completed_lectures('grove5')  from DUal;
+Select Count(*) from TARP_WATCHES T where 'bartness2' = T.username and T.completed = 'y';
+SELECT count_student_completed_lectures('bartness2')  from DUal;
+
+--
+--  COUNT(*)
+------------
+--         1
+--
+--
+--COUNT_STUDENT_COMPLETED_LECTURES('GROVE5')
+--------------------------------------------
+--                                         1
+--
+--
+--  COUNT(*)
+------------
+--         2
+--
+--
+--COUNT_STUDENT_COMPLETED_LECTURES('BARTNESS2')
+-----------------------------------------------
+--                                            2

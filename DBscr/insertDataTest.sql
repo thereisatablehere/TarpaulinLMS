@@ -88,6 +88,7 @@ INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1'
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'davis12', 65);
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'bartness2', 95);
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'erickson25', 80);
+INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'THEO111', 'grove5', 100);
 
 
 INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'grove5');
@@ -95,6 +96,7 @@ INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'maahs35');
 INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'davis12');
 INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'bartness2');
 INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'erickson25');
+INSERT INTO tarp_enrolls (course_id, username) VALUES ('THEO111', 'grove5');
 
 
 INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'bartness2', 'y');

@@ -1,3 +1,6 @@
+-- DESCRIPTION: This procedure creates a new user using the provided parameters
+
+-- CODE
 CREATE OR REPLACE PROCEDURE create_new_user(uname VARCHAR, f VARCHAR, l VARCHAR, pass VARCHAR, typeUser VARCHAR)
 AS
 BEGIN
@@ -9,3 +12,4 @@ BEGIN
         VALUES (uname, f, l, pass);
     END IF;
 END;
+
