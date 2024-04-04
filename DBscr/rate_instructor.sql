@@ -1,3 +1,7 @@
+-- DESCRIPTION: The procedure allows a student to give an instructor a 
+-- score between 0 and 10
+
+-- CODE
 CREATE OR REPLACE PROCEDURE rate_instructor(
     p_course_id VARCHAR,
     p_student_username VARCHAR,

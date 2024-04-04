@@ -1,3 +1,6 @@
+-- DESCRIPTION: This procedure changes the completion to 'y'
+
+-- CODE
 CREATE OR REPLACE PROCEDURE watch_lecture(
     p_lecture_id VARCHAR,
     p_course_id VARCHAR,

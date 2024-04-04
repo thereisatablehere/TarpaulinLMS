@@ -1,8 +1,52 @@
+-- TEST view_score (7)
+
+-- DESCRIPTION: View the score for a student
+
+-- CODE
+
+SELECT 
+    e.username,
+    (count_student_completed_lectures(e.username) * 10) 
+    + sum_student_tests(e.username) AS total_score
+FROM 
+    tarp_enrolls e
+INNER JOIN 
+    tarp_course c ON e.course_id = c.course_id
+WHERE 
+    e.username = 'grove5';
+    
+    
+--OUTPUT
+
+--USERNAME             TOTAL_SCORE
+---------------------- -----------
+--grove5                       180
+
+--******************************************************************************************************************************************************************
+
+-- TEST view_courses_taking (8)
+
+-- DESCRIPTION: View the courses a student is enrolled in
+
+-- CODE
+
+SELECT course_id 
+FROM tarp_enrolls 
+WHERE username = 'erickson25';
+
+--OUTPUT
+
+--COURSE_ID           
+----------------------
+--MATH101
+
+--******************************************************************************************************************************************************************
+
 -- TEST VIEW_COMMENTS (10)
 
---SELECT *
---FROM view_comments
---WHERE course_id = 'CSCI101';
+SELECT *
+FROM view_comments
+WHERE course_id = 'CSCI101';
 
 --OUTPUT
 --COURSE_ID            S_USERNAME           S_COMMENT                                                                                                                                                                                                CDATE    
@@ -19,15 +63,39 @@
 
 -- CODE
 
---SELECT course_id
---FROM TARP_COURSE tp
---WHERE tp.username = 'bill34';
+SELECT course_id
+FROM TARP_COURSE tp
+WHERE tp.username = 'bill34';
 
 -- OUTPUT
 --COURSE_ID           
 ----------------------
 --MATH101
 --MATH231
+
+--******************************************************************************************************************************************************************
+
+-- TEST list_lectures
+
+-- DESCRIPTION: View the lectures for a student based on a course
+
+-- CODE
+
+
+SELECT lecture_id, length, url
+FROM tarp_lecture
+WHERE course_id IN (
+    SELECT course_id
+    FROM tarp_enrolls
+    WHERE username = 'erickson25' and course_id = 'MATH101'
+);
+
+--OUTPUT
+
+--LECTURE_ID               LENGTH URL                                                                                                 
+---------------------- ---------- ----------------------------------------------------------------------------------------------------
+--Lecture 1                    25 https://example.com/lecture1/MATH101                                                                
+--Lecture 2                    15 https://example.com/lecture2/MATH101   
 
 --******************************************************************************************************************************************************************
 
@@ -39,9 +107,9 @@
 
 -- CODE
 
---SELECT COURSE_ID, VIEW_GRADE('grove5', TE.course_id) AS GRADE
---FROM TARP_ENROLLS TE
---WHERE username = 'grove5';
+SELECT COURSE_ID, VIEW_GRADE('grove5', TE.course_id) AS GRADE
+FROM TARP_ENROLLS TE
+WHERE username = 'grove5';
 
 --COURSE_ID                 GRADE
 ---------------------- ----------
