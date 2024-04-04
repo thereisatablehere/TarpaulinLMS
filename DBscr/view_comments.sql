@@ -1,3 +1,4 @@
+--DESCRIPTION: 
 CREATE OR REPLACE VIEW view_comments AS
 SELECT course_id, s_username, s_comment, cdate
 FROM tarp_s_comment

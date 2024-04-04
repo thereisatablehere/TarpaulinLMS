@@ -1,5 +1,3 @@
---this is a test push by carson
-
 -- tarp_student
 DROP TABLE tarp_student CASCADE CONSTRAINTS;
 CREATE TABLE tarp_student (
