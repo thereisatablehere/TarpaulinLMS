@@ -1,9 +1,8 @@
 --test 1
 
 --SELECT * FROM TARP_COMMUNITY;
---DELETE FROM tarp_joined_by WHERE community_id = 'MN' and username = 'grove5';
+--INSERT INTO tarp_joined_by (community_id, username) VALUES('MN','grove5');
 --SELECT * FROM TARP_COMMUNITY;
-
 
 
 --test 2

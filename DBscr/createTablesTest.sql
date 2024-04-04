@@ -46,7 +46,7 @@ CREATE TABLE tarp_s_comment (
   s_username    varchar(20),
   s_comment varchar(200),
   cdate date,
-  primary key (course_id, s_username),
+  primary key (course_id, s_username, cdate),
   Constraint FK_TARP_S_COMMENT1 foreign key (course_id) references tarp_course(course_id),
   Constraint FK_TARP_S_COMMENT2 foreign key (s_username) references tarp_student(username)
 );
@@ -58,7 +58,7 @@ CREATE TABLE tarp_i_comment (
   i_username    varchar(20),
   i_comment varchar(200),
   cdate date,
-  primary key (course_id, i_username),
+  primary key (course_id, i_username, cdate),
   Constraint FK_TARP_I_COMMENT1 foreign key (course_id) references tarp_course(course_id),
   Constraint FK_TARP_I_COMMENT2 foreign key (i_username) references tarp_instructor(username)
 );
