@@ -66,11 +66,49 @@
 --WHERE course_id = 'CSCI101';
 
 
---test 10
-SELECT course_id 
-FROM tarp_enrolls 
-WHERE username = 'erickson25';
+--TEST rate_instructor (20)
+--SELECT * FROM tarp_rates WHERE I_username = 'bill34';
+--EXEC rate_instructor('MATH101', 'grove5', 8);
+--SELECT * FROM tarp_rates WHERE I_username = 'bill34';
+  
+--OUTPUT
+--
+--S_USERNAME           I_USERNAME           INSTRUCTOR_SCORE
+---------------------- -------------------- ----------------
+--davis12              bill34                              4
+--erickson25           bill34                              7
+--maahs35              bill34                             10
+--
+--
+--PL/SQL procedure successfully completed.
+--
+--
+--S_USERNAME           I_USERNAME           INSTRUCTOR_SCORE
+---------------------- -------------------- ----------------
+--davis12              bill34                              4
+--erickson25           bill34                              7
+--grove5               bill34                              8
+--maahs35              bill34                             10
 
+
+--TEST watch_lecture (11)
+SELECT * FROM tarp_watches WHERE username = 'maahs35' and lecture_id = 'Lecture 2' and course_id = 'MATH101';
+EXEC watch_lecture('Lecture 2', 'MATH101', 'maahs35');
+SELECT * FROM tarp_watches WHERE username = 'maahs35' and lecture_id = 'Lecture 2' and course_id = 'MATH101';
+
+--OUTPUT
+--
+--LECTURE_ID           COURSE_ID            USERNAME             C
+---------------------- -------------------- -------------------- -
+--Lecture 2            MATH101              maahs35              n
+--
+--
+--PL/SQL procedure successfully completed.
+--
+--
+--LECTURE_ID           COURSE_ID            USERNAME             C
+---------------------- -------------------- -------------------- -
+--Lecture 2            MATH101              maahs35              y
 
 
 
