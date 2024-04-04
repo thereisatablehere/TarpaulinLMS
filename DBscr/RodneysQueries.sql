@@ -67,6 +67,14 @@
 --WHERE course_id = 'CSCI101';
 
 
+--test 10
+SELECT course_id 
+FROM tarp_enrolls 
+WHERE username = 'erickson25';
+
+
+
+
 
 --CREATE OR REPLACE VIEW view_courses AS
 --SELECT course_id
