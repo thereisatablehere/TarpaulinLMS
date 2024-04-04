@@ -16,53 +16,81 @@
 
     <section class="mainContainer courseView">
         
-        <p class="title">Course - Some Random Course</p>
+        <p class="title">CSCI 101</p>
 
         <nav id="nav">
             <p onclick="changeTab(this)" style="font-weight: bold;">Overview</p>
             <p onclick="changeTab(this)">Lectures</p>
             <p onclick="changeTab(this)">Tests</p>
             <p onclick="changeTab(this)">Q Board</p>
+            <p onclick="changeTab(this)">Comments</p>
         </nav>
 
         <div id="overview" class="tab">
 
-            <button id="join" class="buttonNormal">Enroll</button>
+            <div class="topInfo">
+                <button id="join" class="buttonNormal">Unenroll</button>
+                <button id="join" class="buttonAccent" onclick='window.open("courseGrades.html", "_self")'>View Grades</button>
+            </div>
 
             <div class="topInfo">
-                <p>Instructor Name</p>
+                <p class="instructor" onclick='window.open("instructorPage.html", "_self")'>Professor Prof</p>
                 <div>
                     <img draggable="false" class="star" src="../Images/star-full.svg">
                     <img draggable="false" class="star" src="../Images/star-full.svg">
                     <img draggable="false" class="star" src="../Images/star-full.svg">
                     
-                    <p>(3)</p>
+                    <p>(3.2)</p>
                 </div>
             </div>
 
             <div class="description">
                 <p>Description</p>
-                <p>The description of this course would go right here.</p>
+                <p>This is a very good coures. You should enroll.</p>
             </div>
 
         </div>
 
         <div id="lectures" class="tab">
 
-            <div class="lectureContainer">
-                <p>Lecture Title</p>
-                <div class="video">Video placeholder</div>
+            <div class="todo">
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Unfinished Lectures</p>
+
+                <div class="lectureContainer">
+                    <p>Data Types Part 3</p>
+                    <div class="video">Video placeholder</div>
+                </div>
+    
+                <div class="lectureContainer">
+                    <p>Intro to Data Structures</p>
+                    <div class="video">Video placeholder</div>
+                </div>
+    
+                <div class="lectureContainer">
+                    <p>Data Structures Part 2</p>
+                    <div class="video">Video placeholder</div>
+                </div>
             </div>
 
-            <div class="lectureContainer">
-                <p>Lecture Title</p>
-                <div class="video">Video placeholder</div>
+            <div class="finished">
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Completed Lectures</p>
+
+                <div class="lectureContainer">
+                    <p>Your First Program</p>
+                    <div class="video">Video placeholder</div>
+                </div>
+    
+                <div class="lectureContainer">
+                    <p>Intro to Data Types</p>
+                    <div class="video">Video placeholder</div>
+                </div>
+    
+                <div class="lectureContainer">
+                    <p>Data Types Part 2</p>
+                    <div class="video">Video placeholder</div>
+                </div>
             </div>
 
-            <div class="lectureContainer">
-                <p>Lecture Title</p>
-                <div class="video">Video placeholder</div>
-            </div>
 
         </div>
 
@@ -106,7 +134,7 @@
 
             <div class="questionContainer">
                 <div>
-                    <p id="instructor">theProf (instructor)</p>
+                    <p class="instructor">theProf (instructor)</p>
                     <p>at</p>
                     <p>5:00pm</p>
                 </div>
@@ -122,6 +150,47 @@
                 </div>
                 
                 <p>Is this a question?</p>
+            </div>
+            
+        </div>
+
+        <div id="comments" class="tab">
+            <input type="text" placeholder="comment" style="
+                width: 50%;
+                padding: 10px;
+                outline: none;
+                border: 1px solid black;
+                border-radius: 10px;
+                font-size: 1em;
+                margin-left: 10%;
+            ">
+            <button class="buttonAccent" style="font-size: 0.7em; margin: 0; margin-top: 0.5em; margin-bottom: 2em; margin-left: 10%;">Comment</button>
+
+            <div class="questionContainer">
+                <div>
+                    <p class="instructor">Bruce The Prof (instructor)</p>
+                    <p>01/22/24 at 2:30pm</p>
+                </div>
+                
+                <p>Thanks for all of the feedback everyone!</p>
+            </div>
+            
+            <div class="questionContainer">
+                <div>
+                    <p>userHere</p>
+                    <p>01/21/24 at 1:23pm</p>
+                </div>
+                
+                <p>Great course.</p>
+            </div>
+
+            <div class="questionContainer">
+                <div>
+                    <p>anotherUser</p>
+                    <p>01/21/24 at 1:20pm</p>
+                </div>
+                
+                <p>I learned a lot of usefull stuff.</p>
             </div>
             
         </div>
