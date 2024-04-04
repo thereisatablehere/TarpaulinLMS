@@ -83,6 +83,7 @@ INSERT INTO tarp_joined_by (community_id, username) VALUES ('MN', 'davis12');
 
 
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'grove5', 90);
+INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 2', 'MATH101', 'grove5', 80);
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'maahs35', 88);
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'davis12', 65);
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 1', 'MATH101', 'bartness2', 95);
