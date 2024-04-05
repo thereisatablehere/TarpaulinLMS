@@ -9,3 +9,4 @@ BEGIN
     SET password = p_new_password
     WHERE username = p_username;
 END;
+
