@@ -5,6 +5,7 @@ CREATE TABLE tarp_student (
   f_name    varchar(20),
   l_name    varchar(20), 
   password  varchar(20),
+  num_changed_password decimal(5, 0) DEFAULT 0,
   primary key (username)
 );
 
@@ -15,6 +16,7 @@ CREATE TABLE tarp_instructor (
   f_name    varchar(20),
   l_name    varchar(20), 
   password  varchar(20),
+  num_changed_password decimal(5, 0) DEFAULT 0,
   primary key (username)
 );
 
