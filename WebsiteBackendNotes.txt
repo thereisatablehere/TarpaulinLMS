@@ -1,0 +1,2 @@
+-To add jars (like SQL driver for JDBC to work), place in WEB-INF/lib directory of webapp
+-
