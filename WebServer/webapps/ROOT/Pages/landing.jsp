@@ -8,9 +8,7 @@
     <title>Tarpaulin</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
-  <body class="landingBody">  
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-
+  <body class="landingBody">
     <script>
       let check = localStorage.getItem("userType");
       
