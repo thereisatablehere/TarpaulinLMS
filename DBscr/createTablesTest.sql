@@ -6,6 +6,7 @@ CREATE TABLE tarp_student (
   l_name    varchar(20), 
   password  varchar(20),
   num_changed_password decimal(5, 0) DEFAULT 0,
+  num_courses int,
   primary key (username)
 );
 

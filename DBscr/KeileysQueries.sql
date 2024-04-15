@@ -28,3 +28,5 @@ SELECT count_student_completed_lectures('bartness2')  from DUal;
 Select SUM(T.score) from TARP_TAKEN_BY T where 'grove5' = T.username;
 
 SELECT sum_student_tests('grove5')  from DUal;
+
+
