@@ -20,11 +20,11 @@ ALTER TABLE tarp_rates DISABLE CONSTRAINT FK_TARP_RATES2;
 
 --data
 
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests) VALUES ('erickson25', 'Rodney', 'Erickson', 'password1', 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests) VALUES ('maahs35', 'Keiley', 'Maahs', 'password2', 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests) VALUES ('davis12', 'Carson', 'Davis', 'password3', 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests) VALUES ('grove5', 'Carter', 'Grove', 'password4', 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests) VALUES ('bartness2', 'Dylan', 'Bartness', 'password5', 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('erickson25', 'Rodney', 'Erickson', 'password1', 0, 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('maahs35', 'Keiley', 'Maahs', 'password2', 0, 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('davis12', 'Carson', 'Davis', 'password3', 0, 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('grove5', 'Carter', 'Grove', 'password4', 0, 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('bartness2', 'Dylan', 'Bartness', 'password5', 0, 0, 0);
 
 
 INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('imad2000', 'Imad', 'Rahal', 'password6');

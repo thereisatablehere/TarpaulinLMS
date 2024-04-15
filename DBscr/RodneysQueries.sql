@@ -134,3 +134,35 @@ SELECT * FROM tarp_watches WHERE username = 'maahs35' and lecture_id = 'Lecture 
 --FROM tarp_taken_by
 --WHERE username = 'username_here';
 
+
+
+
+
+
+--New Tests:
+
+--Test for list_lectures (View)
+SELECT * FROM view_all_lectures;
+
+--Output
+
+--LECTURE_ID               LENGTH URL                                                                                                 
+---------------------- ---------- ----------------------------------------------------------------------------------------------------
+--Lecture 1                    20 https://example.com/lecture1/CSCI101                                                                
+--Lecture 2                    30 https://example.com/lecture2/CSCI101                                                                
+--Lecture 1                    25 https://example.com/lecture1/MATH101                                                                
+--Lecture 2                    15 https://example.com/lecture2/MATH101                                                                
+--Lecture 1                    20 https://example.com/lecture1/THEO111  
+
+--Test for View_All_Grades(View)
+SELECT * FROM student_grades_view;
+
+--Output
+
+--     SCORE
+------------
+--        90
+--        80
+--        88
+--        65
+--        95

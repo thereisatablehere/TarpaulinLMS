@@ -324,7 +324,6 @@ SELECT * FROM tarp_rates WHERE I_username = 'bill34';
 --maahs35              bill34                             10
 
 
-
 --*******************************************************************************************************************************************************************
 
 -- TEST QUESTION_INSERT_DELETE (?)
@@ -343,3 +342,14 @@ SELECT * FROM TARP_TEST;
 SELECT * FROM TARP_STUDENT WHERE USERNAME='maahs35';
 INSERT INTO tarp_taken_by (test_id, course_id, username, score) VALUES ('test 2', 'MATH101', 'maahs35', 100);
 SELECT * FROM TARP_STUDENT WHERE USERNAME='maahs35';
+
+--******************************************************************************************************************************************************************
+
+--TEST courses_taken_trigger (23)
+
+SELECT NUM_COURSES FROM TARP_STUDENT WHERE USERNAME = 'grove5';
+
+INSERT INTO tarp_enrolls (course_id, username) VALUES ('CSCI331', 'grove5');
+
+SELECT NUM_COURSES FROM TARP_STUDENT WHERE USERNAME = 'grove5';
+
