@@ -1,6 +1,3 @@
-SET SERVEROUTPUT ON;
-
-
 --TEST 1 VIEW_COURSES_TAKING
 
 --SELECT * FROM student_courses_view;
