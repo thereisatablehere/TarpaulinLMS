@@ -1,1 +1,2 @@
-WebServer/logs/*
+./WebServer/logs/*
+./WebServer/work/*

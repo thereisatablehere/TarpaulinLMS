@@ -1,0 +1,1517 @@
+15-Apr-2024 00:10:19.215 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ""'"", delete this token
+53:                     String queryString = 
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [61] in the jsp file: [/Pages/profile.jsp]
+ResultSet cannot be resolved to a type
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+61:                     ResultSet result = preparedStmt.executeQuery();
+62: 
+63:                     while (result.next()) {
+64:                         out.println(result.getString(2));
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ""'"", delete this token
+53:                     String queryString = 
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username"'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [61] in the jsp file: [/Pages/profile.jsp]
+ResultSet cannot be resolved to a type
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+61:                     ResultSet result = preparedStmt.executeQuery();
+62: 
+63:                     while (result.next()) {
+64:                         out.println(result.getString(2));
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:10:39.275 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username + "'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username + "'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [61] in the jsp file: [/Pages/profile.jsp]
+ResultSet cannot be resolved to a type
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+61:                     ResultSet result = preparedStmt.executeQuery();
+62: 
+63:                     while (result.next()) {
+64:                         out.println(result.getString(2));
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username + "'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+54:                         "SELECT F_NAME" + "\n" + 
+55:                         "FROM TARP_STUDENT" + "\n" + 
+56:                         "WHERE USERNAME='" + username + "'";
+57:                     PreparedStatement preparedStmt = con.prepareStatement(queryString);
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+
+
+An error occurred at line: [61] in the jsp file: [/Pages/profile.jsp]
+ResultSet cannot be resolved to a type
+58:                     
+59:                     preparedStmt.clearParameters();
+60: 
+61:                     ResultSet result = preparedStmt.executeQuery();
+62: 
+63:                     while (result.next()) {
+64:                         out.println(result.getString(2));
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:12:24.787 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [79] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from Exception to String
+76:                     preparedStmt.close();
+77:                 }
+78:                 catch(Exception E) {
+79:                     firstName = E;
+80:                 }
+81:                 %>
+82:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [79] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from Exception to String
+76:                     preparedStmt.close();
+77:                 }
+78:                 catch(Exception E) {
+79:                     firstName = E;
+80:                 }
+81:                 %>
+82:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:12:29.828 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [79] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from Exception to String
+76:                     preparedStmt.close();
+77:                 }
+78:                 catch(Exception E) {
+79:                     firstName = E;
+80:                 }
+81:                 %>
+82:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [79] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from Exception to String
+76:                     preparedStmt.close();
+77:                 }
+78:                 catch(Exception E) {
+79:                     firstName = E;
+80:                 }
+81:                 %>
+82:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:21:11.633 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+59:                 try {
+60:                     String from = "";
+61: 
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+99:                 try {
+100:                     String from = "";
+101: 
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+151:                 try {
+152:                     String from = "";
+153: 
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+59:                 try {
+60:                     String from = "";
+61: 
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+99:                 try {
+100:                     String from = "";
+101: 
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+151:                 try {
+152:                     String from = "";
+153: 
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:21:20.754 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+59:                 try {
+60:                     String from = "";
+61: 
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+99:                 try {
+100:                     String from = "";
+101: 
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+151:                 try {
+152:                     String from = "";
+153: 
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+59:                 try {
+60:                     String from = "";
+61: 
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if(session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if(session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+99:                 try {
+100:                     String from = "";
+101: 
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if(session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if(session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types Object and int
+151:                 try {
+152:                     String from = "";
+153: 
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if(session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if(session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:21:42.818 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:21:56.605 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+62:                     if((int) session.getAttribute("userType") == 1) {
+63:                         from = "instructor";
+64:                     }
+65:                     else if((int) session.getAttribute("userType" == 2)) {
+66:                         from = "student";
+67:                     }
+68: 
+
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [105] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+102:                     if((int) session.getAttribute("userType") == 1) {
+103:                         from = "instructor";
+104:                     }
+105:                     else if((int) session.getAttribute("userType" == 2)) {
+106:                         from = "student";
+107:                     }
+108: 
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Type mismatch: cannot convert from int to boolean
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [157] in the jsp file: [/Pages/profile.jsp]
+Incompatible operand types String and int
+154:                     if((int) session.getAttribute("userType") == 1) {
+155:                         from = "instructor";
+156:                     }
+157:                     else if((int) session.getAttribute("userType" == 2)) {
+158:                         from = "student";
+159:                     }
+160: 
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+15-Apr-2024 00:23:09.990 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [97] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+94:                 <p>Last Name</p>
+95: 
+96:                 <%
+97:                 String firstName = "firstName";
+98: 
+99:                 try {
+100:                     String from = "";
+
+
+An error occurred at line: [130] in the jsp file: [/Pages/profile.jsp]
+lastName cannot be resolved to a variable
+127:                     firstName = "exception";
+128:                 }
+129:                 %>
+130:                 <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+131:             </div>
+132: 
+133:             <div>
+
+
+An error occurred at line: [149] in the jsp file: [/Pages/profile.jsp]
+Duplicate local variable firstName
+146:                 ">
+147: 
+148:                 <%
+149:                 String firstName = "firstName";
+150: 
+151:                 try {
+152:                     String from = "";
+
+
+An error occurred at line: [182] in the jsp file: [/Pages/profile.jsp]
+password cannot be resolved to a variable
+179:                     firstName = "exception";
+180:                 }
+181:                 %>
+182:                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
+183:             </div>
+184: 	<button type="submit">
+185: 		Update Profile
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
