@@ -12,7 +12,7 @@
   <body class="studentHomeBody">
     <script src="../Scripts/userTypeLocalStorage.js"></script>
     <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <img class="openNavbar" src="../Images/menu.svg">
     
