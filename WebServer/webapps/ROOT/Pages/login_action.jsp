@@ -75,3 +75,4 @@ if(userTypeCheck.length() == 0) {
         window.open("login.jsp", "_self");
     }
 </script>
+

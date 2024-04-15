@@ -1,0 +1,34 @@
+14-Apr-2024 19:42:33.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.4.1
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           20.0.2+9-78
+14-Apr-2024 19:42:33.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+14-Apr-2024 19:42:33.351 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/carsondavis/Library/CloudStorage/OneDrive-CollegeofSaintBenedict-SaintJohn'sUniversity/CS331/TarpProject/TarpaulinLMS/WebServer
+14-Apr-2024 19:42:33.351 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/carsondavis/Library/CloudStorage/OneDrive-CollegeofSaintBenedict-SaintJohn'sUniversity/CS331/TarpProject/TarpaulinLMS/WebServer
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/carsondavis/OneDrive - College of Saint Benedict - Saint John's University/CS331/TarpProject/TarpaulinLMS/WebServer/conf/logging.properties
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+14-Apr-2024 19:42:33.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+14-Apr-2024 19:42:33.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+14-Apr-2024 19:42:33.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/carsondavis/OneDrive - College of Saint Benedict - Saint John's University/CS331/TarpProject/TarpaulinLMS/WebServer
+14-Apr-2024 19:42:33.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/carsondavis/OneDrive - College of Saint Benedict - Saint John's University/CS331/TarpProject/TarpaulinLMS/WebServer
+14-Apr-2024 19:42:33.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/carsondavis/OneDrive - College of Saint Benedict - Saint John's University/CS331/TarpProject/TarpaulinLMS/WebServer/temp
+14-Apr-2024 19:42:33.411 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/carsondavis/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+14-Apr-2024 19:42:33.686 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Apr-2024 19:42:33.728 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [540] milliseconds
+14-Apr-2024 19:42:33.766 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+14-Apr-2024 19:42:33.766 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+14-Apr-2024 19:42:33.773 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/carsondavis/Library/CloudStorage/OneDrive-CollegeofSaintBenedict-SaintJohn'sUniversity/CS331/TarpProject/TarpaulinLMS/WebServer/webapps/ROOT]
+14-Apr-2024 19:42:34.265 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14-Apr-2024 19:42:34.300 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/carsondavis/Library/CloudStorage/OneDrive-CollegeofSaintBenedict-SaintJohn'sUniversity/CS331/TarpProject/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [526] ms
+14-Apr-2024 19:42:34.304 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+14-Apr-2024 19:42:34.314 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [585] milliseconds
