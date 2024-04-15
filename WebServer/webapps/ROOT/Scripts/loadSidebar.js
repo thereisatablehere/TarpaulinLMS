@@ -27,6 +27,4 @@ const sidebar = `
       </a>
     </nav>`;
 
-if(localStorage.getItem("userType") == "student") {
-  document.write(sidebar);
-}
+document.write(sidebar);

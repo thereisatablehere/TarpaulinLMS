@@ -1,3 +1,5 @@
+<%@include file="../userAuth.jsp"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,13 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../Styles/styles.css">
-    <title>Tarpaulin - Find a Community</title>
+    <title>Tarpaulin - Search For a Course</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <img class="openNavbar" src="../Images/menu.svg">
 

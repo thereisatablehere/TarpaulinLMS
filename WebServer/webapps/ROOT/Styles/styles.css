@@ -114,7 +114,7 @@ header {
     width: 100%;
     margin: -10px;
     background-color: var(--bgColor);
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
     padding-left: 1em;
     /* box-shadow: 0 0 2px var(--accentDarkerColor); */
 }
@@ -228,7 +228,7 @@ header .profile:hover {
 }
 .bigDescription {
     font-size: 1.3em;
-}
+}.sideba
 
 /* landing page */
 
@@ -419,7 +419,7 @@ header .profile:hover {
     width: 13em;
     height: 100%;
     margin: 0;
-    margin-top: 2em;
+    margin-top: 2.5em;
     margin-left: -0.7em;
     padding: 2em;
     padding-top: 3em;
@@ -506,7 +506,7 @@ header .profile:hover {
     font-weight: 500;
 }
 .studentWelcome #username {
-    margin-left: 0.5em;
+    margin-left: 0.25em;
 }
 .studentHomeMainContainer {
     display: flex;
@@ -590,8 +590,8 @@ header .profile:hover {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.301);
-    border-radius: calc(var(--buttonBorderRadius) * 0.25);
+    /* border: 1px solid rgba(0, 0, 0, 0.301); */
+    border-radius: var(--buttonBorderRadius);
     padding: 3em;
     margin-top: 1em;
 }
@@ -689,10 +689,10 @@ header .profile:hover {
     flex-direction: column;
     align-self: center;
     margin-top: 1em;
-    background-color: #e3fffb;
+    background-color: var(--bgColor);
     padding: 40px;
     border-radius: var(--buttonBorderRadius);
-    box-shadow: 0 0 3px darkcyan;
+    border: 1px solid #00000050;
     width: 25em;
 }
 
@@ -700,13 +700,15 @@ header .profile:hover {
     display: flex;
     flex-direction: column;
     align-self: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #00000040;
 }
 .communitiesListContainer .community:not(:last-of-type) {
     margin-bottom: 2em;
 }
 .communitiesListContainer .community .title {
     font-size: 1.4em;
-    color: #4ba382;
+    color: var(--accentColor);
     font-weight: bold;
     text-align: center  ;
 }
@@ -726,19 +728,11 @@ header .profile:hover {
 }
 .communitiesListContainer .community .controls a {
     font-size: 0.92em;
-    border-radius: var(--buttonBorderRadius);
-    border: 2px solid rgba(0, 0, 0, 0.7);
-    color: rgba(0, 0, 0, 0.7);
-    background-color: transparent;
     text-decoration: none;
     font-weight: bold;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-}
-.communitiesListContainer .community .controls a:hover {
-    color: black;
-    border-color: black;
 }
 
 /* search for a course */
@@ -752,8 +746,7 @@ header .profile:hover {
 .courseSearch .search {
     display: flex;
     flex-direction: column;
-    width: 40em;
-    margin-right: 8em;
+    width: 35em;
 }
 .courseSearch .search .title {
     font-weight: bold;
@@ -770,17 +763,21 @@ header .profile:hover {
     margin-bottom: 1.5em;
 }
 .courseSearch .search div p {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 500;
 }
 .courseSearch .search div input {
+    font-size: var(--fontMain);
     width: 30%;
-    border-radius: calc(var(--buttonBorderRadius) * 0.35);
+    border-radius: 10px;
+    border: none;
     border: 1px solid black;
     outline: none;
-    padding: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px;
+}
+.courseSearch .search div input:focus {
+    color: var(--accentColor);
+    border-color: var(--accentColor);
 }
 .courseSearch .search button {
     width: 10em;
@@ -852,6 +849,16 @@ header .profile:hover {
 }
 .createCommunity input {
     outline: none;
+    border-radius: 3px;
+    border: 1px solid #00000050;
+    padding: 5px;
+}
+.createCommunity input:nth-child(3) {
+    margin-top: 0.75em;
+}
+.createCommunity input:focus {
+    color: var(--accentColor);
+    border-color: var(--accentLighterColor);
 }
 .createCommunity button {
     align-self: center;
@@ -861,17 +868,17 @@ header .profile:hover {
 /* community view */
 
 .communityViewTitle {
-    color:#4ba382;
+    color: var(--accentColor);
     margin-bottom: 0.5em;
 }
 .communityView {
-    background-color: #e3fffb;
+    background-color: var(--bgColor);
     display: flex;
     flex-direction: column;
     width: 50em;
     padding: 40px;
     border-radius: var(--buttonBorderRadius);
-    border: 1px solid rgba(0, 0, 0, 0.459);
+    border: 1px solid rgba(0, 0, 0, 0.31);
 }
 .communityView div {
     display: flex;
@@ -880,21 +887,12 @@ header .profile:hover {
 .communityView div *:first-child {
     margin-right: 0.5em;
 }
+.communityView button {
+    font-size: 0.8em;
+}
 .communityView .controls {
     margin-top: 0.5em;
     margin-bottom: 1em;
-}
-.communityView .invite {
-    color: black;
-    border-color: black;
-}
-.communityView .leave {
-    background-color: black;
-    border-color: black;
-}
-.communityView .invite:hover, .communityView .leave:hover {
-    background-color: #4ba382;
-    color: white;
 }
 .communityView .title {
     margin-left: 1em;
@@ -913,6 +911,7 @@ header .profile:hover {
 }
 .communityView .leaderboard div .you {
     font-weight: bold;
+    color: var(--accentColor);
 }
 
 /* take test */

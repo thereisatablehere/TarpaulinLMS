@@ -12,8 +12,6 @@
 </head>
   <body class="studentHomeBody">
     <script src="../Scripts/headerLoggedIn.js"></script>
-
-    <img class="openNavbar" src="../Images/menu.svg">
     
     <script src="../Scripts/loadSidebar.js"></script>
 

@@ -1,3 +1,5 @@
+<%@include file="../userAuth.jsp"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,9 +11,7 @@
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="instructorHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <script src="../Scripts/loadSidebar.js"></script>
 

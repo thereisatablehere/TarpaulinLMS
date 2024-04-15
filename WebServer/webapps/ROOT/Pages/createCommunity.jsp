@@ -1,3 +1,5 @@
+<%@include file="../userAuth.jsp"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,9 +11,7 @@
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <img class="openNavbar" src="../Images/menu.svg">
     
@@ -19,7 +19,7 @@
 
     <section class="mainContainer">
 
-        <p class="bigTitle">Create a Community</p>
+        <p class="bigTitle" style="text-align: center;">Create a Community</p>
 
         <section class="allGradeReportContainer createCommunity">
             <div>

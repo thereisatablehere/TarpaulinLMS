@@ -1,3 +1,5 @@
+<%@include file="../userAuth.jsp"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,9 +11,7 @@
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <img class="openNavbar" src="../Images/menu.svg">
 
@@ -25,19 +25,19 @@
             
             <p class="bigDescription">This is a great community where any student is invited to compete with one another to see who is the best student.</p>
 
-            <div>
+            <div style="margin-top: 0.5em;">
                 <p>123</p>
                 <p>Members</p>
             </div>
 
-            <div>
+            <div style="margin-bottom: 0.2em;">
                 <p>Your Rank:</p>
                 <p>2nd</p>
             </div>
 
             <div class="controls">
-                <button class="buttonNormal invite">Invite Another Student</button>
-                <button class="buttonAccent leave">Leave Community</button>
+                <button class="buttonNormal">Invite Another Student</button>
+                <button class="buttonAccent">Leave Community</button>
             </div>
 
             <p class="title">Leaderboard</p>
