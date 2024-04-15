@@ -1,25 +1,37 @@
-<!DOCTYPE html>
-<head>
-    <title>Tarpaulin</title>
-</head>
-<body>
-    <script src="./Scripts/userTypeLocalStorage.js"></script>
+<%
+String load = "./Pages/";
 
-    <script>
-        let load = "./Pages/";
 
-        switch(localStorage.getItem("userType")) {
-            case "student":
-                load += "studentHome.jsp";
-                break;
-            case "instructor":
-                load += "instructorHome.jsp";
-                break;
-            default:
-                load += "landing.jsp";
-        }
+try {
+    int userCheck = (int) session.getAttribute("userType");
+    
+    switch(userCheck) {
+        case 1:
+            load += "instructorHome.jsp";
+            break;
+        case 2:
+            load += "studentHome.jsp";
+            break;
+        default:
+            load += "landing.jsp";
+            break;
+    }
+}
+catch(Exception E) {
+    load += "landing.jsp";
+}
 
-        window.open(load, "_self");
-    </script>
-</body>
-</html>
+/*
+switch(session.getAttribute("userType")) {
+    case 1:
+        load += "instructorHome.jsp";
+        break;
+    case 2:
+        load += "studentHome.jsp";
+        break;
+    default:
+        load += "landing.jsp";
+}*/
+
+response.sendRedirect(load);
+%>

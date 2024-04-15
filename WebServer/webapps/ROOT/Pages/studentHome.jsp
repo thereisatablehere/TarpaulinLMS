@@ -1,3 +1,5 @@
+<%@include file="../userAuth.jsp"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +22,19 @@
       
       <div class="studentWelcome title">
         <p>Welcome back, </p>
-        <p id="username">username</p>
+
+        <%
+        String username = "username";
+
+        try{
+          username = (String) session.getAttribute("username");
+        }
+        catch(Exception E) {
+          username = "username";
+        }
+        %>
+        <p id="username"><%=username%></p>
+        
         <p>!</p>
       </div>
       
@@ -123,9 +137,5 @@
       </section>
 
     </section>
-
-    <script src="../Scripts/navbarToggle.js"></script>
-
-    <script src="../Scripts/loadStudentHome.js"></script>
   </body>
 </html>
