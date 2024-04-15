@@ -45,27 +45,7 @@
 
             <div>
                 <p>First Name</p>
-                
-                <%
-                PreparedStatement preparedStmt = con.prepareStatement (
-                    "SELECT F_NAME" + "\n" + 
-                    "FROM TARP_STUDENT" + "\n" + 
-                    "WHERE USERNAME='" + username + "'"
-                );
-
-                result = preparedStmt.executeQuery();
-                
-                while (result.next()) {
-                System.out.println(
-                    firstName = result.getString(1);
-                    break;
-                );
-                }
-
-                result.close();
-                stmt.close();
-                %>
-                <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+                <input name="fname" type="text" placeholder="First" value="First">
             </div>
 
             <div>
