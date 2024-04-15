@@ -1,3 +1,4 @@
+<%@include file="../userAuth.jsp"%>
 <%@include file="../DBconnection.jsp"%>
 
 <%@page import="
@@ -11,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/styles.css">
     <title>Tarpaulin - Profile</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
@@ -22,7 +23,7 @@
 
     <script src="../Scripts/loadSidebar.js"></script>
 
-    <form action="profile_action.jsp" method="post" class="mainContainer profile">
+    <form class="mainContainer profile" action="profile_action.jsp" method="post">
         <div class="top">
             <img draggable="false" class="profileIcon" src="../Images/user-solid-circle.svg">
             <div>

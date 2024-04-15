@@ -28,6 +28,8 @@ else {
 
     response.sendRedirect("../index.jsp");
 }
+
+callStmt.close();
 %>
 
 <p id="output" style="display: none;"><%=result%></p>

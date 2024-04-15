@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/styles.css">
     <title>Tarpaulin - Login</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="loginBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerGuest.js"></script>
     
     <form class="mainContainer login" action="login_action.jsp" method="post">
         <p class="bigTitle">Welcome Back!</p>

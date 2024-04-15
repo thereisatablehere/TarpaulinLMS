@@ -1,6 +1,6 @@
 127.0.0.1 - - [14/Apr/2024:20:47:04 -0500] "GET / HTTP/1.1" 200 556
 127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Pages/landing.jsp HTTP/1.1" 200 1716
-127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Styles/style.css HTTP/1.1" 200 122486
+127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Styles/styles.css HTTP/1.1" 200 122486
 127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Images/chat.png HTTP/1.1" 200 8192
 127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Images/online-learning.png HTTP/1.1" 200 8192
 127.0.0.1 - - [14/Apr/2024:20:47:07 -0500] "GET /Images/communities.png HTTP/1.1" 200 8192
@@ -43,7 +43,7 @@
 127.0.0.1 - - [14/Apr/2024:21:06:39 -0500] "GET /Pages/landing.jsp HTTP/1.1" 200 1716
 127.0.0.1 - - [14/Apr/2024:22:03:58 -0500] "GET / HTTP/1.1" 302 -
 127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Pages/landing.jsp HTTP/1.1" 200 1716
-127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Styles/style.css HTTP/1.1" 200 122486
+127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Styles/styles.css HTTP/1.1" 200 122486
 127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Scripts/userTypeLocalStorage.js HTTP/1.1" 200 491
 127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Images/webinar.png HTTP/1.1" 200 18308
 127.0.0.1 - - [14/Apr/2024:22:03:59 -0500] "GET /Images/online-learning.png HTTP/1.1" 200 16799
@@ -111,7 +111,7 @@
 127.0.0.1 - - [14/Apr/2024:22:24:06 -0500] "GET /Pages/profile.jsp HTTP/1.1" 500 6257
 127.0.0.1 - - [14/Apr/2024:23:13:57 -0500] "GET / HTTP/1.1" 302 -
 127.0.0.1 - - [14/Apr/2024:23:13:58 -0500] "GET /Pages/landing.jsp HTTP/1.1" 200 1716
-127.0.0.1 - - [14/Apr/2024:23:13:59 -0500] "GET /Styles/style.css HTTP/1.1" 200 122486
+127.0.0.1 - - [14/Apr/2024:23:13:59 -0500] "GET /Styles/styles.css HTTP/1.1" 200 122486
 127.0.0.1 - - [14/Apr/2024:23:13:59 -0500] "GET /Scripts/header.js HTTP/1.1" 200 2074
 127.0.0.1 - - [14/Apr/2024:23:13:59 -0500] "GET /Images/online-learning.png HTTP/1.1" 200 16799
 127.0.0.1 - - [14/Apr/2024:23:13:59 -0500] "GET /Images/webinar.png HTTP/1.1" 200 18308

@@ -368,11 +368,11 @@ header .profile:hover {
     position: absolute;
     width: 25px;
     height: 25px;
-    margin-top: 8em;
+    margin-top: 8.2em;
     margin-left: 14.5em;
 }
 .login .signupEye {
-    margin-top: 19.5em;
+    margin-top: 25.75em;
     margin-left: 17.25em;
 }
 .login img:hover {
@@ -389,6 +389,22 @@ header .profile:hover {
 .login button:active {
     margin-top: 0.25em;
     margin-bottom: -0.25em;
+}
+#userTypeContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+#userTypeContainer div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.25em;
+}
+#userTypeContainer div * {
+    margin: 0;
+}
+#userTypeContainer div label {
+    margin-left: 0.2em;
 }
 
 /* student home */

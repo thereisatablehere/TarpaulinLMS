@@ -1,3 +1,4 @@
+<%@include file="../userAuth.jsp"%>
 <%@include file="../DBconnection.jsp"%>
 
 <%@page import="
@@ -44,3 +45,22 @@ try {
     }
 }
 %>
+
+
+try {
+    CallableStatement cs = con.prepareCall("{call CREATE_NEW_USER(?, ?, ?, ?, ?)}");
+	
+    cs.setString(1, username);
+    cs.setString(2, first);
+    cs.setString(3, last);
+    cs.setString(4, password);
+    cs.setString(5, );
+    
+    cs.executeUpdate();
+    
+    cs.close();
+
+	response.sendRedirect("../index.jsp");
+} catch (SQLException E) {
+    out.println(E);
+}

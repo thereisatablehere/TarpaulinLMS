@@ -70,3 +70,179 @@
 15-Apr-2024 01:04:19.956 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [1,101] ms
 15-Apr-2024 01:04:19.960 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 15-Apr-2024 01:04:19.973 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1184] milliseconds
+15-Apr-2024 01:30:01.133 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+15-Apr-2024 01:30:01.157 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:01.282 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Apr-2024 01:30:01.352 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Apr-2024 01:30:01.362 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.21/java.lang.Object.wait(Native Method)
+ oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:327)
+15-Apr-2024 01:30:01.419 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:01.430 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:12.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+15-Apr-2024 01:30:12.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+15-Apr-2024 01:30:12.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+15-Apr-2024 01:30:12.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+15-Apr-2024 01:30:12.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+15-Apr-2024 01:30:12.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-Apr-2024 01:30:12.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+15-Apr-2024 01:30:12.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+15-Apr-2024 01:30:12.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+15-Apr-2024 01:30:12.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:12.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+15-Apr-2024 01:30:12.894 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:12.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+15-Apr-2024 01:30:12.927 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+15-Apr-2024 01:30:12.927 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+15-Apr-2024 01:30:12.929 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+15-Apr-2024 01:30:13.376 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:13.405 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [813] milliseconds
+15-Apr-2024 01:30:13.473 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Apr-2024 01:30:13.473 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+15-Apr-2024 01:30:13.484 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+15-Apr-2024 01:30:14.567 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Apr-2024 01:30:14.781 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [1,296] ms
+15-Apr-2024 01:30:14.802 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:14.886 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1480] milliseconds
+15-Apr-2024 01:30:44.546 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+15-Apr-2024 01:30:44.546 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:44.551 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Apr-2024 01:30:44.563 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Apr-2024 01:30:44.566 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.21/java.lang.Object.wait(Native Method)
+ oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:327)
+15-Apr-2024 01:30:44.570 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:44.575 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:47.942 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-Apr-2024 01:30:47.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+15-Apr-2024 01:30:47.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+15-Apr-2024 01:30:47.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+15-Apr-2024 01:30:47.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:47.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:47.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+15-Apr-2024 01:30:47.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Apr-2024 01:30:47.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-Apr-2024 01:30:47.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Apr-2024 01:30:47.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:30:47.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+15-Apr-2024 01:30:48.002 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+15-Apr-2024 01:30:48.003 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+15-Apr-2024 01:30:48.005 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+15-Apr-2024 01:30:48.585 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:48.609 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [912] milliseconds
+15-Apr-2024 01:30:48.650 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Apr-2024 01:30:48.650 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+15-Apr-2024 01:30:48.662 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+15-Apr-2024 01:30:49.452 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Apr-2024 01:30:49.505 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [842] ms
+15-Apr-2024 01:30:49.508 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:30:49.518 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [908] milliseconds
+15-Apr-2024 01:31:36.078 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+15-Apr-2024 01:31:36.079 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:31:36.096 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Apr-2024 01:31:36.194 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:31:36.224 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:31:46.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-Apr-2024 01:31:46.621 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+15-Apr-2024 01:31:46.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+15-Apr-2024 01:31:46.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+15-Apr-2024 01:31:46.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:31:46.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:31:46.730 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+15-Apr-2024 01:31:46.730 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Apr-2024 01:31:46.730 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-Apr-2024 01:31:46.730 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:31:46.731 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+15-Apr-2024 01:31:46.797 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+15-Apr-2024 01:31:46.797 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+15-Apr-2024 01:31:46.800 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+15-Apr-2024 01:31:48.084 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:31:48.297 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2889] milliseconds
+15-Apr-2024 01:31:48.528 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Apr-2024 01:31:48.528 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+15-Apr-2024 01:31:48.642 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+15-Apr-2024 01:31:50.961 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Apr-2024 01:31:51.449 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [2,807] ms
+15-Apr-2024 01:31:51.500 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:31:52.075 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3777] milliseconds
+15-Apr-2024 01:35:32.146 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context []
+15-Apr-2024 01:35:32.148 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+15-Apr-2024 01:35:32.561 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Apr-2024 01:35:32.567 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+15-Apr-2024 01:35:39.342 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+15-Apr-2024 01:35:39.343 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:35:39.346 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Apr-2024 01:35:39.358 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:35:39.374 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:35:42.086 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+15-Apr-2024 01:35:42.141 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:35:42.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Apr-2024 01:35:42.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Apr-2024 01:35:42.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Apr-2024 01:35:42.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Apr-2024 01:35:42.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:35:42.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+15-Apr-2024 01:35:42.190 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+15-Apr-2024 01:35:42.224 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+15-Apr-2024 01:35:42.224 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+15-Apr-2024 01:35:42.243 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+15-Apr-2024 01:35:42.776 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:35:42.812 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1134] milliseconds
+15-Apr-2024 01:35:42.996 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Apr-2024 01:35:42.996 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+15-Apr-2024 01:35:43.034 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+15-Apr-2024 01:35:44.375 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Apr-2024 01:35:44.448 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [1,414] ms
+15-Apr-2024 01:35:44.453 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-Apr-2024 01:35:44.478 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1665] milliseconds
