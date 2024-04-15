@@ -5,9 +5,6 @@ CREATE TABLE tarp_student (
   f_name    varchar(20),
   l_name    varchar(20), 
   password  varchar(20),
-  num_lectures int,
-  num_tests int,
-  num_changed_password decimal(5, 0) DEFAULT 0,
   primary key (username)
 );
 
@@ -18,7 +15,6 @@ CREATE TABLE tarp_instructor (
   f_name    varchar(20),
   l_name    varchar(20), 
   password  varchar(20),
-  num_changed_password decimal(5, 0) DEFAULT 0,
   primary key (username)
 );
 
@@ -83,7 +79,6 @@ DROP TABLE tarp_test CASCADE CONSTRAINTS;
 CREATE TABLE tarp_test (
   test_id varchar(20),
   course_id  varchar(20),
-  num_q int,
   primary key (test_id, course_id),
   Constraint FK_TARP_TEST foreign key (course_id) references tarp_course(course_id)
 );

@@ -5,8 +5,8 @@ CREATE OR REPLACE PROCEDURE create_new_user(uname VARCHAR, f VARCHAR, l VARCHAR,
 AS
 BEGIN
     IF typeUser = 'S' THEN
-        INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests)
-        VALUES (uname, f, l, pass, 0, 0);
+        INSERT INTO tarp_student (username, f_name, l_name, password)
+        VALUES (uname, f, l, pass);
     ELSE
         INSERT INTO tarp_instructor (username, f_name, l_name, password)
         VALUES (uname, f, l, pass);
