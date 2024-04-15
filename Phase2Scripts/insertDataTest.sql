@@ -20,11 +20,11 @@ ALTER TABLE tarp_rates DISABLE CONSTRAINT FK_TARP_RATES2;
 
 --data
 
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('erickson25', 'Rodney', 'Erickson', 'password1', 0, 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('maahs35', 'Keiley', 'Maahs', 'password2', 0, 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('davis12', 'Carson', 'Davis', 'password3', 0, 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('grove5', 'Carter', 'Grove', 'password4', 0, 0, 0);
-INSERT INTO tarp_student (username, f_name, l_name, password, num_lectures, num_tests, num_courses) VALUES ('bartness2', 'Dylan', 'Bartness', 'password5', 0, 0, 0);
+INSERT INTO tarp_student (username, f_name, l_name, password) VALUES ('erickson25', 'Rodney', 'Erickson', 'password1');
+INSERT INTO tarp_student (username, f_name, l_name, password) VALUES ('maahs35', 'Keiley', 'Maahs', 'password2');
+INSERT INTO tarp_student (username, f_name, l_name, password) VALUES ('davis12', 'Carson', 'Davis', 'password3');
+INSERT INTO tarp_student (username, f_name, l_name, password) VALUES ('grove5', 'Carter', 'Grove', 'password4');
+INSERT INTO tarp_student (username, f_name, l_name, password) VALUES ('bartness2', 'Dylan', 'Bartness', 'password5');
 
 
 INSERT INTO tarp_instructor (username, f_name, l_name, password) VALUES('imad2000', 'Imad', 'Rahal', 'password6');
@@ -59,13 +59,13 @@ INSERT INTO tarp_lecture (lecture_id, course_id, length, url) VALUES ('Lecture 2
 INSERT INTO tarp_lecture (lecture_id, course_id, length, url) VALUES ('Lecture 1', 'THEO111', 20.0, 'https://example.com/lecture1/THEO111');
 
 
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 1', 'CSCI101', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 2', 'CSCI101', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 3', 'CSCI101', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 1', 'THEO111', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 2', 'THEO111', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 1', 'MATH101', 0);
-INSERT INTO tarp_test (test_id, course_id, num_q) VALUES ('test 2', 'MATH101', 0);
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 1', 'CSCI101');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 2', 'CSCI101');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 3', 'CSCI101');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 1', 'THEO111');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 2', 'THEO111');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 1', 'MATH101');
+INSERT INTO tarp_test (test_id, course_id) VALUES ('test 2', 'MATH101');
 
 
 INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 3 + 1?', '3', '4', '5', '6', 'B', 'test 1', 'MATH101');
