@@ -1,3 +1,10 @@
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,12 +52,82 @@
 
             <div>
                 <p>First Name</p>
-                <input name="fname" type="text" placeholder="First" value="First">
+                
+                <%
+                String firstName = "firstName";
+
+                try {
+                    String from = "";
+
+                    if(((int) session.getAttribute("userType")) == 1) {
+                        from = "instructor";
+                    }
+                    else if(((int) session.getAttribute("userType")) == 2) {
+                        from = "student";
+                    }
+
+                    String queryString = 
+                        "SELECT F_NAME" + "\n" + 
+                        "FROM TARP_" + from + "\n" + 
+                        "WHERE USERNAME='" + username + "'";
+                    
+                    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                    ResultSet result = preparedStmt.executeQuery();
+
+                    while(result.next()) {
+                        firstName = result.getString(1);
+                        break;
+                    }
+
+                    result.close();
+                    preparedStmt.close();
+                }
+                catch(Exception E) {
+                    firstName = "exception";
+                }
+                %>
+                <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
             </div>
 
             <div>
                 <p>Last Name</p>
-                <input name="lname" type="text" placeholder="Last" value="Last">
+
+                <%
+                String lastName = "lastName";
+
+                try {
+                    String from = "";
+
+                    if(((int) session.getAttribute("userType")) == 1) {
+                        from = "instructor";
+                    }
+                    else if(((int) session.getAttribute("userType")) == 2) {
+                        from = "student";
+                    }
+
+                    String queryString = 
+                        "SELECT L_NAME" + "\n" + 
+                        "FROM TARP_" + from + "\n" + 
+                        "WHERE USERNAME='" + username + "'";
+                    
+                    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                    ResultSet result = preparedStmt.executeQuery();
+
+                    while(result.next()) {
+                        lastName = result.getString(1);
+                        break;
+                    }
+
+                    result.close();
+                    preparedStmt.close();
+                }
+                catch(Exception E) {
+                    lastName = "exception";
+                }
+                %>
+                <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
             </div>
 
             <div>
@@ -67,7 +144,42 @@
                         input.type = 'password';
                     }
                 ">
-                <input name="password" type="password" id="password" placeholder="password" value="password12345">
+
+                <%
+                String password = "password";
+
+                try {
+                    String from = "";
+
+                    if(((int) session.getAttribute("userType")) == 1) {
+                        from = "instructor";
+                    }
+                    else if(((int) session.getAttribute("userType")) == 2) {
+                        from = "student";
+                    }
+
+                    String queryString = 
+                        "SELECT PASSWORD" + "\n" + 
+                        "FROM TARP_" + from + "\n" + 
+                        "WHERE USERNAME='" + username + "'";
+                    
+                    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                    ResultSet result = preparedStmt.executeQuery();
+
+                    while(result.next()) {
+                        password = result.getString(1);
+                        break;
+                    }
+
+                    result.close();
+                    preparedStmt.close();
+                }
+                catch(Exception E) {
+                    password = "exception";
+                }
+                %>
+                <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
             </div>
 	<button type="submit">
 		Update Profile
