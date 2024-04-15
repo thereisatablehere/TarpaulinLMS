@@ -18,7 +18,7 @@
       }
     </script>
 
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerGuest.js"></script>
 
     <section class="mainContainer mainContainerHorizontal">
       <div class="landingIntro">

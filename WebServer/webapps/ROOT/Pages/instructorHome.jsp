@@ -10,7 +10,7 @@
   <body class="instructorHomeBody">
     <script src="../Scripts/userTypeLocalStorage.js"></script>
     <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <section class="mainContainer">
         
