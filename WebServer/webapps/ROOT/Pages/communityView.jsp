@@ -43,25 +43,49 @@
             <p class="title">Leaderboard</p>
 
             <div class="leaderboard">
-                <div>
-                    <p>1.</p>
-                    <p>userHere</p>
+                <div class="person">
+                    <div>
+                        <p>1.</p>
+                        <p>userHere</p>
+                    </div>
+                    
+                    <p>123 pts</p>
                 </div>
-                <div>
-                    <p>2.</p>
-                    <p class="you">You</p>
+                
+                <div class="person">
+                    <div>
+                        <p>2.</p>
+                        <p class="you">You</p>
+                    </div>
+
+                    <p>100 pts</p>
                 </div>
-                <div>
-                    <p>3.</p>
-                    <p>anotheruser</p>
+                
+                <div class="person">
+                    <div>
+                        <p>3.</p>
+                        <p>anotheruser</p>
+                    </div>
+
+                    <p>50 pts</p>
                 </div>
-                <div>
-                    <p>4.</p>
-                    <p>sopmeoneElse</p>
+                
+                <div class="person">
+                    <div>
+                        <p>4.</p>
+                        <p>sopmeoneElse</p>
+                    </div>
+
+                    <p>20 pts</p>
                 </div>
-                <div>
-                    <p>5.</p>
-                    <p>person</p>
+                
+                <div class="person">
+                    <div>
+                        <p>5.</p>
+                        <p>person</p>
+                    </div>
+
+                    <p>5 pts</p>
                 </div>
             </div>
 
