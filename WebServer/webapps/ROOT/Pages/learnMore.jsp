@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../Styles/style.css">
     <title>Tarpaulin - Learn More</title>
+<link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
 <body>
     <script src="../Scripts/userTypeLocalStorage.js"></script>

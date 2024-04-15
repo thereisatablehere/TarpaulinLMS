@@ -6,7 +6,8 @@
     
     <link rel="stylesheet" href="../Styles/style.css">
     <title>Tarpaulin</title>
-  </head>
+  <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
+</head>
   <body class="landingBody">  
     <script src="../Scripts/userTypeLocalStorage.js"></script>
 

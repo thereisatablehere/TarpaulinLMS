@@ -6,7 +6,8 @@
     
     <link rel="stylesheet" href="../Styles/style.css">
     <title>Tarpaulin - Course Grades</title>
-  </head>
+  <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
+</head>
   <body class="studentHomeBody">
     <script src="../Scripts/userTypeLocalStorage.js"></script>
     <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>

@@ -6,7 +6,8 @@
     
     <link rel="stylesheet" href="../Styles/style.css">
     <title>Tarpaulin - View a Course</title>
-  </head>
+  <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
+</head>
   <body class="instructorHomeBody">
     <script src="../Scripts/userTypeLocalStorage.js"></script>
     <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>

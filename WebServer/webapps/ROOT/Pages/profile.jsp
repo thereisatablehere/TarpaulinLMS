@@ -12,11 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../Styles/style.css">
-    <title>Tarpaulin - Your Joined Communities</title>
-  </head>
+    <title>Tarpaulin - Profile</title>
+  <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
+</head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
     <script src="../Scripts/headerLoggedIn.js"></script>
 
     <img class="openNavbar" src="../Images/menu.svg">
@@ -181,9 +180,19 @@
                 %>
                 <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
             </div>
-	<button type="submit">
-		Update Profile
-	</button>
+	        
+            <div style="
+                border-top: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: 0;
+            ">
+                <button class="buttonNormal" type="submit" style="
+                    margin: 0;
+                    margin-left: 0;
+                "> Update Profile</button>
+            </div>
         </section>
     </form>
 
