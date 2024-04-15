@@ -29,22 +29,48 @@
 
             <div>
                 <p>Username</p>
-                <input name="username" type="text" placeholder="Username" value="aUser">
+
+                <%
+                String username = "username";
+
+                try{
+                username = (String) session.getAttribute("username");
+                }
+                catch(Exception E) {
+                username = "username";
+                }
+                %>
+                <input name="username" type="text" placeholder="Username" value=<%=username%>>
             </div>
 
             <div>
                 <p>First Name</p>
-                <input name="fname" type="text" placeholder="First" value="First">
+                
+                <%
+                PreparedStatement preparedStmt = con.prepareStatement (
+                    "SELECT F_NAME" + "\n" + 
+                    "FROM TARP_STUDENT" + "\n" + 
+                    "WHERE USERNAME='" + username + "'"
+                );
+
+                result = preparedStmt.executeQuery();
+                
+                while (result.next()) {
+                System.out.println(
+                    firstName = result.getString(1);
+                    break;
+                );
+                }
+
+                result.close();
+                stmt.close();
+                %>
+                <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
             </div>
 
             <div>
                 <p>Last Name</p>
                 <input name="lname" type="text" placeholder="Last" value="Last">
-            </div>
-
-            <div>
-                <p>Email</p>
-                <input name="email" type="text" placeholder="Email" value="your.email.csbsju.edu">
             </div>
 
             <div>
