@@ -33,7 +33,7 @@
           username = "username";
         }
         %>
-        <p id="username"><%=username%></p>
+        <p id=<%=username%>><%=username%></p>
         
         <p>!</p>
       </div>
