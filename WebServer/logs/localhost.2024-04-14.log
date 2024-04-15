@@ -1,0 +1,536 @@
+14-Apr-2024 22:22:07.003 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/Pages/profile_action.jsp]
+Syntax error, insert "}" to complete Statement
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+An error occurred at line: [205] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [206] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/Pages/profile_action.jsp]
+Syntax error, insert "}" to complete Statement
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+An error occurred at line: [205] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [206] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:22:33.463 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     }else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     }else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:23:43.084 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Cannot instantiate the type CallableStatement
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = new CallableStatement();
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Cannot instantiate the type CallableStatement
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = new CallableStatement();
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:24:04.779 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [18]
+
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs;
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+21:         cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:163)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:24:23.058 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [18]
+
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = null;
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+21:         cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:163)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:25:01.307 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Invalid character constant
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = '';
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Invalid character constant
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = '';
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:25:53.510 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [17]
+
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19: 	cs.setString(1, username);
+20:     	cs.setString(2, password);
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:162)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
