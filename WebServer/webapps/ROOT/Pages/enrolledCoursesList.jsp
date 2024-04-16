@@ -32,7 +32,7 @@
                 // Prepare SQL query
                 String query = "SELECT S.course_id, T.username " +
                                "FROM tarp_enrolls S, tarp_course T " +
-                               "WHERE S.username = 'davis12' AND T.course_id = S.course_id";
+                               "WHERE T.course_id = S.course_id AND S.username = 'davis12'";
                 PreparedStatement pstmt = con.prepareStatement(query);
                 
                 // Execute query
@@ -43,12 +43,14 @@
                     String courseId = rs.getString("course_id");
                     String username = rs.getString("username");
         %>
-                    <div class="course">
-                        <p class="bigDescription"><%= courseId %></p>
-                        
-                        <div>
-                            <p>Enrolled by</p>
-                            <p class="username"><%= username %></p>
+                    <div class="courseContainer">
+                        <div class="course">
+                            <p class="bigDescription"><a href="courseView.jsp?courseId=<%= courseId %>"><%= courseId %></a></p>
+                            
+                            <div>
+                                <p>Instructor:</p>
+                                <p class="username"><%= username %></p>
+                            </div>
                         </div>
                     </div>
         <%
