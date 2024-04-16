@@ -1,11 +1,11 @@
 --TEST 1 VIEW_COURSES_TAKING
 
---SELECT * FROM student_courses_view;
---
---INSERT INTO tarp_enrolls (course_id, username) VALUES ('CSCI101', 'davis12');
---INSERT INTO tarp_enrolls (course_id, username) VALUES ('THEO111', 'davis12');
---
---SELECT * FROM student_courses_view;
+SELECT * FROM view_courses_taking;
+
+INSERT INTO tarp_enrolls (course_id, username) VALUES ('CSCI101', 'davis12');
+INSERT INTO tarp_enrolls (course_id, username) VALUES ('THEO111', 'davis12');
+
+SELECT * FROM view_courses_taking;
 
 --COURSE_ID           
 ----------------------
@@ -29,18 +29,18 @@
 
 --STUDENT
 
-SELECT num_changed_password
-FROM tarp_student
-WHERE username = 'davis12';
-
-
-UPDATE tarp_student
-SET password = 'new_password121'
-WHERE username = 'davis12';
-
-SELECT num_changed_password
-FROM tarp_student
-WHERE username = 'davis12';
+--SELECT num_changed_password
+--FROM tarp_student
+--WHERE username = 'davis12';
+--
+--
+--UPDATE tarp_student
+--SET password = 'new_password121'
+--WHERE username = 'davis12';
+--
+--SELECT num_changed_password
+--FROM tarp_student
+--WHERE username = 'davis12';
 
 --NUM_CHANGED_PASSWORD
 ----------------------
@@ -56,18 +56,18 @@ WHERE username = 'davis12';
 
 --INSTRUCTOR
 
-SELECT num_changed_password
-FROM tarp_instructor
-WHERE username = 'imad2000';
-
-
-UPDATE tarp_instructor
-SET password = 'new_password232'
-WHERE username = 'imad2000';
-
-SELECT num_changed_password
-FROM tarp_instructor
-WHERE username = 'imad2000';
+--SELECT num_changed_password
+--FROM tarp_instructor
+--WHERE username = 'imad2000';
+--
+--
+--UPDATE tarp_instructor
+--SET password = 'new_password232'
+--WHERE username = 'imad2000';
+--
+--SELECT num_changed_password
+--FROM tarp_instructor
+--WHERE username = 'imad2000';
 
 --NUM_CHANGED_PASSWORD
 ----------------------

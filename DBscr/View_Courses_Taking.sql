@@ -4,9 +4,10 @@
 
 -- CODE
 CREATE OR REPLACE VIEW view_courses_taking AS
-SELECT course_id 
-FROM tarp_enrolls 
-WHERE username = 'davis12';
+SELECT S.course_id, T.username
+FROM tarp_enrolls S, tarp_course T
+WHERE S.username = 'davis12' AND T.course_id = S.course_id;
+
 
 --OUTPUT
 
