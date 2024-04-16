@@ -1,88 +1,72 @@
-<%@include file="../userAuth.jsp"%>
+<%@include file="../DBconnection.jsp"%>
 
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../Styles/styles.css">
     <title>Tarpaulin - Your Enrolled Courses</title>
-  <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
+    <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
-  <body class="studentHomeBody">
-    <script src="../Scripts/headerLoggedIn.js"></script>
+<body class="studentHomeBody">
+<script src="../Scripts/headerLoggedIn.js"></script>
 
-    <img class="openNavbar" src="../Images/menu.svg">
+<img class="openNavbar" src="../Images/menu.svg">
 
-    <script src="../Scripts/loadSidebar.js"></script>
+<script src="../Scripts/loadSidebar.js"></script>
 
-    <section class="mainContainer">
-      
-      <p class="bigTitle">Your Enrolled Courses</p>
+<section class="mainContainer">
+  
+  <p class="bigTitle">Your Enrolled Courses</p>
 
-        <section class="coursesList" style="border: 1px solid #00000040;">
-            <div class="course">
-                <p class="bigDescription">CSCI 321</p>
+    <section class="coursesList" style="border: 1px solid #00000040;">
+
+        <%  
+            try {
+                // Prepare SQL query
+                String query = "SELECT S.course_id, T.username " +
+                               "FROM tarp_enrolls S, tarp_course T " +
+                               "WHERE S.username = 'davis12' AND T.course_id = S.course_id";
+                PreparedStatement pstmt = con.prepareStatement(query);
                 
-                <div>
-                    <p>by</p>
-                    <p class="instructorName">Bruce the Prof</p>
-                </div>
-
-                <div>
-                    <p>Progress:</p>
-                    <p class="progress">50%</p>
-                </div>
-
-                <div class="controls">
-                    <a href="courseView.jsp">View</a>
-                    <a href="courseView.jsp">QBoard</a>
-                </div>
-            </div>
-
-            <div class="course">
-                <p class="bigDescription">HIST 111</p>
+                // Execute query
+                ResultSet rs = pstmt.executeQuery();
                 
-                <div>
-                    <p>by</p>
-                    <p class="instructorName">Doe Johnson</p>
-                </div>
-
-                <div>
-                    <p>Progress:</p>
-                    <p class="progress">30%</p>
-                </div>
-
-                <div class="controls">
-                    <a href="courseView.jsp">View</a>
-                    <a href="courseView.jsp">QBoard</a>
-                </div>
-            </div>
-
-            <div class="course">
-                <p class="bigDescription">CSCI 355</p>
+                // Iterate over the result set
+                while(rs.next()) {
+                    String courseId = rs.getString("course_id");
+                    String username = rs.getString("username");
+        %>
+                    <div class="course">
+                        <p class="bigDescription"><%= courseId %></p>
+                        
+                        <div>
+                            <p>Enrolled by</p>
+                            <p class="username"><%= username %></p>
+                        </div>
+                    </div>
+        <%
+                }
                 
-                <div>
-                    <p>by</p>
-                    <p class="instructorName">John Doeson</p>
-                </div>
-
-                <div>
-                    <p>Progress:</p>
-                    <p class="progress">80%</p>
-                </div>
-
-                <div class="controls">
-                    <a href="courseView.jsp">View</a>
-                    <a href="courseView.jsp">QBoard</a>
-                </div>
-            </div>
-
-        </section>
+                // Close resources
+                rs.close();
+                pstmt.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        %>
 
     </section>
 
-    <script src="../Scripts/navbarToggle.js"></script>
-  </body>
+</section>
+
+<script src="../Scripts/navbarToggle.js"></script>
+</body>
 </html>
+
