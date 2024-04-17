@@ -29,11 +29,25 @@
 
         <%  
             try {
-                // Prepare SQL query
-                String query = "SELECT S.course_id, T.username " +
-                               "FROM tarp_enrolls S, tarp_course T " +
-                               "WHERE T.course_id = S.course_id AND S.username = 'davis12'";
-                PreparedStatement pstmt = con.prepareStatement(query);
+                // Set the username here
+                String username = (String) session.getAttribute("username");
+                
+                // Create the view dynamically
+                String dynamicSQL = "DECLARE " +
+                                    "v_username VARCHAR2(100) := '" + username + "'; " +
+                                    "BEGIN " +
+                                    "EXECUTE IMMEDIATE ' " +
+                                    "CREATE OR REPLACE VIEW view_courses_taking AS " +
+                                    "SELECT S.course_id, T.username " +
+                                    "FROM tarp_enrolls S, tarp_course T " +
+                                    "WHERE S.username = ''' || v_username || ''' AND T.course_id = S.course_id'; " +
+                                    "END;";
+                PreparedStatement pstmt = con.prepareStatement(dynamicSQL);
+                pstmt.execute();
+                
+                // Prepare SQL query to select from the created view
+                String query = "SELECT course_id, username FROM view_courses_taking";
+                pstmt = con.prepareStatement(query);
                 
                 // Execute query
                 ResultSet rs = pstmt.executeQuery();
@@ -41,7 +55,7 @@
                 // Iterate over the result set
                 while(rs.next()) {
                     String courseId = rs.getString("course_id");
-                    String username = rs.getString("username");
+                    String instructor = rs.getString("username");
         %>
                     <div class="courseContainer">
                         <div class="course">
@@ -49,7 +63,7 @@
                             
                             <div>
                                 <p>Instructor:</p>
-                                <p class="username"><%= username %></p>
+                                <p class="username"><%= instructor %></p>
                             </div>
                         </div>
                     </div>
