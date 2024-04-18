@@ -1,5 +1,25 @@
 <%@include file="../userAuth.jsp"%>
 
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*, 
+    java.util.ArrayList, 
+    java.util.Collections
+"%>
+
+<%
+String username = "username";
+
+try{
+    username = (String) session.getAttribute("username");
+}
+catch(Exception E) {
+    username = "username";
+}
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,49 +42,131 @@
       <p class="bigTitle">Your Joined Communities</p>
 
         <section class="communitiesListContainer">
+
+            <%
+            try {
+                String query = 
+                "SELECT community_id " + "\n" + 
+                "FROM TARP_JOINED_BY" + "\n" + 
+                "WHERE username='" + username + "'"; 
+                PreparedStatement preparedStmt = con.prepareStatement(query);
+                
+                ResultSet result = preparedStmt.executeQuery();
+                
+                while(result.next()) {
+                    String communityId = result.getString(1);
+
+                    // get description
+                    String queryInner = 
+                    "SELECT c_description " + "\n" + 
+                    "FROM TARP_COMMUNITY" + "\n" + 
+                    "WHERE comm_id='" + communityId + "'"; 
+                    PreparedStatement preparedStmtInner = con.prepareStatement(queryInner);
+                    
+                    ResultSet resultInner = preparedStmtInner.executeQuery();
+
+                    String description = "";
+                    while(resultInner.next()) {
+                        description = resultInner.getString(1);
+                        break;
+                    }
+
+                    resultInner.close();
+                    preparedStmtInner.close();
+
+                    // get scores of each student to calculate rank
+
+                    // start by getting each studnet in the community
+                    queryInner = 
+                    "SELECT username " + "\n" + 
+                    "FROM TARP_JOINED_BY" + "\n" + 
+                    "WHERE community_id='" + communityId + "'"; 
+                    preparedStmtInner = con.prepareStatement(queryInner);
+                    
+                    resultInner = preparedStmtInner.executeQuery();
+
+                    String currentUser = "";
+                    ArrayList<Integer> scores = new ArrayList<Integer>();
+                    int myIndex = 0;
+                    int myScore = 0;
+
+                    while(resultInner.next()) {
+                        currentUser = resultInner.getString(1);
+
+                        // then get the score of each student
+                        String queryInnerInner = 
+                        "SELECT" + 
+                        "    e.username, " + 
+                        "    (count_student_completed_lectures(e.username) * 10)  " + 
+                        "    + sum_student_tests(e.username) AS total_score " + 
+                        "FROM" + 
+                        "    tarp_enrolls e " + 
+                        "INNER JOIN" + 
+                        "    tarp_course c ON e.course_id = c.course_id " + 
+                        "WHERE" + 
+                        "    e.username='" + currentUser + "'";
+                        PreparedStatement preparedStmtInnerInner = con.prepareStatement(queryInnerInner);
+                        
+                        ResultSet resultInnerInner = preparedStmtInnerInner.executeQuery();
+
+                        int score = 0;
+                        while(resultInnerInner.next()) {
+                            // add the score of student to arrayList
+                            score = Integer.parseInt(resultInnerInner.getString(2));
+                            scores.add(score);
+
+                            // if the current user looking at is the actual user, keep track of their score
+                            String nameCheck = resultInnerInner.getString(1);
+                            if(nameCheck.equals(username)) {
+                                myScore = score;
+                            }
+                            
+                            break;
+                        }
+
+                        resultInnerInner.close();
+                        preparedStmtInnerInner.close();
+                    }
+
+                    resultInner.close();
+                    preparedStmtInner.close();
+
+                    // sort arrayList of scores to easily calculate rank
+                    Collections.sort(scores);
+
+                    // find rank my getting the index of sorted scores arrayList, based off of actual user score
+                    myIndex = scores.indexOf(myScore);
+
+                    session.setAttribute("communityIdToLoad", communityId);
+            %>
             
-            <div class="community">
-                <p class="title">Some Community</p>
+                    <form class="community">
+                        <p class="title"><%=communityId%></p>
 
-                <p>The description would go here.</p>
-                
-                <div>
-                    <p>Your Rank:</p>
-                    <p>1st</p>
-                </div>
+                        <p><%=description%></p>
+                        
+                        <div>
+                            <p>Your Rank:</p>
+                            <p><%=myIndex + 1%></p>
+                        </div>
+                        
+                        <input type="text" name="rank" value=<%=myIndex + 1%> style="display: none;">
 
-                <div class="controls">
-                    <a class="buttonNormal" href="communityView.jsp">View</a>
-                </div>
-            </div>
+                        <div class="controls">
+                            <a class="buttonNormal" href="communityView.jsp">View</a>
+                        </div>
+                    </form>
+            <%
+                }
 
-            <div class="community">
-                <p class="title">Another Community</p>
-
-                <p>Some random description is placed here instead of what the actual description of this community would actually be.</p>
-                
-                <div>
-                    <p>Your Rank:</p>
-                    <p>3rd</p>
-                </div>
-
-                <div class="controls">
-                    <a class="buttonNormal" href="communityView.jsp">View</a>
-                </div>
-            </div>
-
-            <div class="community">
-                <p class="title">A Community</p>
-                
-                <div>
-                    <p>Your Rank:</p>
-                    <p>10th</p>
-                </div>
-
-                <div class="controls">
-                    <a class="buttonNormal" href="communityView.jsp">View</a>
-                </div>
-            </div>
+                result.close();
+                preparedStmt.close();
+            }
+            catch(Exception E) {
+                out.println(E);
+            }
+                    
+            %>
 
         </section>
 
