@@ -10,13 +10,13 @@
 "%>
 
 <%
-String username = "username";
+    String username = "username";
 
-try{
-    username = (String) session.getAttribute("username");
-}
-catch(Exception E) {
-    username = "username";
+    try{
+        username = (String) session.getAttribute("username");
+    }
+    catch(Exception E) {
+        username = "username";
 }
 %>
 
@@ -136,11 +136,9 @@ catch(Exception E) {
 
                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
                     myIndex = scores.indexOf(myScore);
-
-                    session.setAttribute("communityIdToLoad", communityId);
             %>
             
-                    <form class="community">
+                    <form class="community" action="setCommunityIdSessionAttribute_action.jsp" method="post">
                         <p class="title"><%=communityId%></p>
 
                         <p><%=description%></p>
@@ -150,10 +148,10 @@ catch(Exception E) {
                             <p><%=myIndex + 1%></p>
                         </div>
                         
-                        <input type="text" name="rank" value=<%=myIndex + 1%> style="display: none;">
+                        <input type="text" name="communityId" value=<%=communityId%> style="display: none;">
 
                         <div class="controls">
-                            <a class="buttonNormal" href="communityView.jsp">View</a>
+                            <button class="buttonNormal" type="submit">View</button>
                         </div>
                     </form>
             <%

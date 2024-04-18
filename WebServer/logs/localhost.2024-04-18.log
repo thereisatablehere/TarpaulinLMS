@@ -2294,3 +2294,1561 @@ Stacktrace:
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:05:40.511 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [56] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+53:                 
+54:                 ResultSet result = preparedStmt.executeQuery();
+55:                 
+56:                 while(result.next()) {
+57:                     String communityId = result.getString(1);
+58: 
+59:                     // get description
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ")" to complete Expression
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, Expression expected instead
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [153] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, ( expected instead
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "/", delete this token
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+
+
+An error occurred at line: [155] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "<", invalid Expression
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+158:                 }
+
+
+An error occurred at line: [156] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "<", invalid Expression
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+158:                 }
+159: 
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, delete these tokens
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [160] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token ")", delete this token
+157:             <%
+158:                 }
+159: 
+160:                 result.close();
+161:                 preparedStmt.close();
+162:             }
+163:             catch(Exception E) {
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [56] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+53:                 
+54:                 ResultSet result = preparedStmt.executeQuery();
+55:                 
+56:                 while(result.next()) {
+57:                     String communityId = result.getString(1);
+58: 
+59:                     // get description
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ")" to complete Expression
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, Expression expected instead
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [153] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token(s), misplaced construct(s)
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, ( expected instead
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+
+
+An error occurred at line: [154] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "/", delete this token
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+
+
+An error occurred at line: [155] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "<", invalid Expression
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+158:                 }
+
+
+An error occurred at line: [156] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token "<", invalid Expression
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+155:                         </div>
+156:                     </form>
+157:             <%
+158:                 }
+159: 
+
+
+An error occurred at line: [151] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on tokens, delete these tokens
+148:                             <p><%=myIndex + 1%></p>
+149:                         </div>
+150:                         
+151:                         <input type="text" name="communityId" value=<%=communityId> style="display: none;">
+152: 
+153:                         <div class="controls">
+154:                             <button class="buttonNormal" type="submit">View</button>
+
+
+An error occurred at line: [160] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error on token ")", delete this token
+157:             <%
+158:                 }
+159: 
+160:                 result.close();
+161:                 preparedStmt.close();
+162:             }
+163:             catch(Exception E) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:06:03.703 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+The method setAttribute(String, Object) in the type HttpSession is not applicable for the arguments (String)
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ";" to complete Statement
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+The method setAttribute(String, Object) in the type HttpSession is not applicable for the arguments (String)
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ";" to complete Statement
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:06:08.012 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+The method setAttribute(String, Object) in the type HttpSession is not applicable for the arguments (String)
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ";" to complete Statement
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+The method setAttribute(String, Object) in the type HttpSession is not applicable for the arguments (String)
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+An error occurred at line: [140] in the jsp file: [/Pages/joinedCommunitiesList.jsp]
+Syntax error, insert ";" to complete Statement
+137:                     // find rank my getting the index of sorted scores arrayList, based off of actual user score
+138:                     myIndex = scores.indexOf(myScore);
+139: 
+140:                     session.setAttribute("communityIdToLoad")
+141:             %>
+142:             
+143:                     <form class="community">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:07:11.759 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/login_action.jsp] at line [30]
+
+27:     session.setAttribute("username", username);
+28: }
+29: 
+30: response.sendRedirect("../index.jsp");
+31: 
+32: callStmt.close();
+33: %>
+
+
+Stacktrace:] with root cause
+	java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+		at org.apache.catalina.connector.ResponseFacade.checkCommitted(ResponseFacade.java:485)
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:345)
+		at org.apache.jsp.Pages.login_005faction_jsp._jspService(login_005faction_jsp.java:175)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:10:19.687 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:10:45.381 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:10:50.496 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmtInner.close();
+64:             }
+65:             catch(Exception E) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:10:59.213 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmt.close();
+64:             }
+65:             catch(Exception E) {
+
+
+An error occurred at line: [63] in the jsp file: [/Pages/communityView.jsp]
+preparedStmt cannot be resolved
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmt.close();
+64:             }
+65:             catch(Exception E) {
+66:                 out.println(E);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [62] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+59:                     break;
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmt.close();
+64:             }
+65:             catch(Exception E) {
+
+
+An error occurred at line: [63] in the jsp file: [/Pages/communityView.jsp]
+preparedStmt cannot be resolved
+60:                 }
+61: 
+62:                 resultInner.close();
+63:                 preparedStmt.close();
+64:             }
+65:             catch(Exception E) {
+66:                 out.println(E);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:22:41.119 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [69] in the jsp file: [/Pages/communityView.jsp]
+ArrayList cannot be resolved to a type
+66:         result = preparedStmt.executeQuery();
+67: 
+68:         String currentUser = "";
+69:         ArrayList<Integer> scores = new ArrayList<Integer>();
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+
+
+An error occurred at line: [69] in the jsp file: [/Pages/communityView.jsp]
+ArrayList cannot be resolved to a type
+66:         result = preparedStmt.executeQuery();
+67: 
+68:         String currentUser = "";
+69:         ArrayList<Integer> scores = new ArrayList<Integer>();
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+
+
+An error occurred at line: [73] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+73:         while(resultInner.next()) {
+74:             currentUser = resultInner.getString(1);
+75: 
+76:             // then get the score of each student
+
+
+An error occurred at line: [74] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+71:         int myScore = 0;
+72: 
+73:         while(resultInner.next()) {
+74:             currentUser = resultInner.getString(1);
+75: 
+76:             // then get the score of each student
+77:             String queryInnerInner = 
+
+
+An error occurred at line: [100] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+97: 
+98:                 // if the current user looking at is the actual user, keep track of their score
+99:                 String nameCheck = resultInnerInner.getString(1);
+100:                 if(nameCheck.equals(username)) {
+101:                     myScore = score;
+102:                 }
+103:                 
+
+
+An error occurred at line: [111] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+108:             preparedStmtInnerInner.close();
+109:         }
+110: 
+111:         resultInner.close();
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [112] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+109:         }
+110: 
+111:         resultInner.close();
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+115:         Collections.sort(scores);
+
+
+An error occurred at line: [115] in the jsp file: [/Pages/communityView.jsp]
+Collections cannot be resolved
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+115:         Collections.sort(scores);
+116: 
+117:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+118:         myIndex = scores.indexOf(myScore);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [69] in the jsp file: [/Pages/communityView.jsp]
+ArrayList cannot be resolved to a type
+66:         result = preparedStmt.executeQuery();
+67: 
+68:         String currentUser = "";
+69:         ArrayList<Integer> scores = new ArrayList<Integer>();
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+
+
+An error occurred at line: [69] in the jsp file: [/Pages/communityView.jsp]
+ArrayList cannot be resolved to a type
+66:         result = preparedStmt.executeQuery();
+67: 
+68:         String currentUser = "";
+69:         ArrayList<Integer> scores = new ArrayList<Integer>();
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+
+
+An error occurred at line: [73] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+70:         int myIndex = 0;
+71:         int myScore = 0;
+72: 
+73:         while(resultInner.next()) {
+74:             currentUser = resultInner.getString(1);
+75: 
+76:             // then get the score of each student
+
+
+An error occurred at line: [74] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+71:         int myScore = 0;
+72: 
+73:         while(resultInner.next()) {
+74:             currentUser = resultInner.getString(1);
+75: 
+76:             // then get the score of each student
+77:             String queryInnerInner = 
+
+
+An error occurred at line: [100] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+97: 
+98:                 // if the current user looking at is the actual user, keep track of their score
+99:                 String nameCheck = resultInnerInner.getString(1);
+100:                 if(nameCheck.equals(username)) {
+101:                     myScore = score;
+102:                 }
+103:                 
+
+
+An error occurred at line: [111] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+108:             preparedStmtInnerInner.close();
+109:         }
+110: 
+111:         resultInner.close();
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [112] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+109:         }
+110: 
+111:         resultInner.close();
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+115:         Collections.sort(scores);
+
+
+An error occurred at line: [115] in the jsp file: [/Pages/communityView.jsp]
+Collections cannot be resolved
+112:         preparedStmtInner.close();
+113: 
+114:         // sort arrayList of scores to easily calculate rank
+115:         Collections.sort(scores);
+116: 
+117:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+118:         myIndex = scores.indexOf(myScore);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:22:59.877 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [75] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+72:         int myIndex = 0;
+73:         int myScore = 0;
+74: 
+75:         while(resultInner.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+
+
+An error occurred at line: [76] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+73:         int myScore = 0;
+74: 
+75:         while(resultInner.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+79:             String queryInnerInner = 
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [75] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+72:         int myIndex = 0;
+73:         int myScore = 0;
+74: 
+75:         while(resultInner.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+
+
+An error occurred at line: [76] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+73:         int myScore = 0;
+74: 
+75:         while(resultInner.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+79:             String queryInnerInner = 
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:23:16.194 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [76] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+73:         int myScore = 0;
+74: 
+75:         while(result.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+79:             String queryInnerInner = 
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [76] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+73:         int myScore = 0;
+74: 
+75:         while(result.next()) {
+76:             currentUser = resultInner.getString(1);
+77: 
+78:             // then get the score of each student
+79:             String queryInnerInner = 
+
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:23:26.769 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [102] in the jsp file: [/Pages/communityView.jsp]
+username cannot be resolved to a variable
+99: 
+100:                 // if the current user looking at is the actual user, keep track of their score
+101:                 String nameCheck = resultInnerInner.getString(1);
+102:                 if(nameCheck.equals(username)) {
+103:                     myScore = score;
+104:                 }
+105:                 
+
+
+An error occurred at line: [113] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+110:             preparedStmtInnerInner.close();
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [114] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+111:         }
+112: 
+113:         resultInner.close();
+114:         preparedStmtInner.close();
+115: 
+116:         // sort arrayList of scores to easily calculate rank
+117:         Collections.sort(scores);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:24:30.223 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [123] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+120:             preparedStmtInnerInner.close();
+121:         }
+122: 
+123:         resultInner.close();
+124:         preparedStmtInner.close();
+125: 
+126:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [124] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+121:         }
+122: 
+123:         resultInner.close();
+124:         preparedStmtInner.close();
+125: 
+126:         // sort arrayList of scores to easily calculate rank
+127:         Collections.sort(scores);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [123] in the jsp file: [/Pages/communityView.jsp]
+resultInner cannot be resolved
+120:             preparedStmtInnerInner.close();
+121:         }
+122: 
+123:         resultInner.close();
+124:         preparedStmtInner.close();
+125: 
+126:         // sort arrayList of scores to easily calculate rank
+
+
+An error occurred at line: [124] in the jsp file: [/Pages/communityView.jsp]
+preparedStmtInner cannot be resolved
+121:         }
+122: 
+123:         resultInner.close();
+124:         preparedStmtInner.close();
+125: 
+126:         // sort arrayList of scores to easily calculate rank
+127:         Collections.sort(scores);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:25:23.539 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [131] in the jsp file: [/Pages/communityView.jsp]
+Type mismatch: cannot convert from int to String
+128: 
+129:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+130:         myIndex = scores.indexOf(myScore);
+131:         rank = myIndex + 1;
+132:     }
+133:     catch(Exception E) {
+134:         out.println(E);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [131] in the jsp file: [/Pages/communityView.jsp]
+Type mismatch: cannot convert from int to String
+128: 
+129:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+130:         myIndex = scores.indexOf(myScore);
+131:         rank = myIndex + 1;
+132:     }
+133:     catch(Exception E) {
+134:         out.println(E);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 05:25:55.363 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [131] in the jsp file: [/Pages/communityView.jsp]
+Cannot cast from int to String
+128: 
+129:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+130:         myIndex = scores.indexOf(myScore);
+131:         rank = (String) (myIndex + 1);
+132:     }
+133:     catch(Exception E) {
+134:         out.println(E);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [131] in the jsp file: [/Pages/communityView.jsp]
+Cannot cast from int to String
+128: 
+129:         // find rank my getting the index of sorted scores arrayList, based off of actual user score
+130:         myIndex = scores.indexOf(myScore);
+131:         rank = (String) (myIndex + 1);
+132:     }
+133:     catch(Exception E) {
+134:         out.println(E);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)

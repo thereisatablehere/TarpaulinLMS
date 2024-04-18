@@ -158,15 +158,17 @@
                   preparedStmtInner.close();
             %>
 
-                <div class="preview">
+                <form class="preview" action="setCommunityIdSessionAttribute_action.jsp" method="post">
 
                   <!-- TODO redirect -->
-                  <a href="communityView.jsp" class="name"><%=communityId%></a>
+                  <button class="name" type="submit"><%=communityId%></button>
+                    <input type="text" name="communityId" value=<%=communityId%> style="display: none;">
+                    
                     <div>
                       <p><%=size%></p>
                       <p>students</p>
                     </div>
-                </div>
+                </form>
 
             <%
               }

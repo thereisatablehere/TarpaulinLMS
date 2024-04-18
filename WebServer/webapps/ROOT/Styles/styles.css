@@ -548,13 +548,20 @@ header .profile:hover {
     flex-direction: row;
     align-items: center;
 }
-.studentHomeMainContainer .list .preview a {
+.studentHomeMainContainer .list .preview a, .studentHomeMainContainer .list .preview button {
     color: var(--accentColor);
     font-weight: bold;
     text-decoration: none;
     margin-right: 0.5em;
+    font-size: 1em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    transform: translateX(-50%);
 }
-.studentHomeMainContainer .list .preview a:hover {
+.studentHomeMainContainer .list .preview button:hover {
+    cursor: pointer;
     color: var(--accentDarkerColor)
 }
 .studentHomeMainContainer .coursesList .preview div:not(:first-of-type) {
