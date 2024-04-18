@@ -1,0 +1,249 @@
+18-Apr-2024 10:00:43.081 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [24] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error on token "Invalid Character", @ expected
+21:         String coursename = request.getParameter("coursename");
+22:         String instructor = request.getParameter("instructor");%>
+23:         <!-- Results Section -->
+24:         <p><%\n%></p>
+25:         <form action="courseSearch.jsp" method="post">
+26:             <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
+27:         </form>
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, type annotations are illegal here
+21:         String coursename = request.getParameter("coursename");
+22:         String instructor = request.getParameter("instructor");%>
+23:         <!-- Results Section -->
+24:         <p><%\n%></p>
+25:         <form action="courseSearch.jsp" method="post">
+26:             <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
+27:         </form>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [24] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error on token "Invalid Character", @ expected
+21:         String coursename = request.getParameter("coursename");
+22:         String instructor = request.getParameter("instructor");%>
+23:         <!-- Results Section -->
+24:         <p><%\n%></p>
+25:         <form action="courseSearch.jsp" method="post">
+26:             <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
+27:         </form>
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, type annotations are illegal here
+21:         String coursename = request.getParameter("coursename");
+22:         String instructor = request.getParameter("instructor");%>
+23:         <!-- Results Section -->
+24:         <p><%\n%></p>
+25:         <form action="courseSearch.jsp" method="post">
+26:             <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
+27:         </form>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 10:26:17.001 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [46] in the jsp file: [/Pages/courseSearchResults.jsp]
+Duplicate local variable instructor
+43:          <div class="course">
+44:             <%while (result.next()){
+45:                 String cname = result.getString(1);
+46:                 String instructor = result.getString(2);
+47:                 %>
+48:             <p class="name"><%=cname%></p>
+49:     
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [46] in the jsp file: [/Pages/courseSearchResults.jsp]
+Duplicate local variable instructor
+43:          <div class="course">
+44:             <%while (result.next()){
+45:                 String cname = result.getString(1);
+46:                 String instructor = result.getString(2);
+47:                 %>
+48:             <p class="name"><%=cname%></p>
+49:     
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+18-Apr-2024 10:53:33.639 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, insert ";" to complete Statement
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+The left-hand side of an assignment must be a variable
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+Syntax error, insert ";" to complete Statement
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+An error occurred at line: [53] in the jsp file: [/Pages/courseSearchResults.jsp]
+The left-hand side of an assignment must be a variable
+50:                 <option>Rating</option>
+51:                 <option>Date Created</option>
+52:          </select>
+53:          <p><%"\n\n"%></p>
+54:          <div class="course">
+55:             <%while (result.next()){
+56:                 String cname = result.getString(1);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
