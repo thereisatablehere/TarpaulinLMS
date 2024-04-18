@@ -64,6 +64,7 @@
                 <div class="list coursesList">
 
                     <%
+                    try{
                     String query = 
                     "SELECT * " + "\n" + 
                     "FROM TARP_COURSE " + "\n" + 
@@ -137,6 +138,10 @@
 
                     result.close();
                     preparedStmt.close();
+                    }
+                    catch(Exception E) {
+                        out.println(E);
+                    }
                     %>
                 
                 </div>

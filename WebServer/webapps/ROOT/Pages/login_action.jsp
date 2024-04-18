@@ -25,9 +25,10 @@ if(result == 0) {
 }
 else {
     session.setAttribute("username", username);
+    
+    response.sendRedirect("../index.jsp");
 }
 
-response.sendRedirect("../index.jsp");
 
 callStmt.close();
 %>
