@@ -27,6 +27,8 @@ else {
     session.setAttribute("username", username);
 }
 
+response.sendRedirect("../index.jsp");
+
 callStmt.close();
 %>
 
