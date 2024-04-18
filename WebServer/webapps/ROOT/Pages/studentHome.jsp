@@ -1,5 +1,12 @@
 <%@include file="../userAuth.jsp"%>
 
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,59 +49,74 @@
           <p class="bigTitle">My Courses</p>
 
           <div class="list coursesList">
-            <div class="preview">
-              <div>
-                <a href="courseView.jsp" class="name">Sample Course</a>
-                <p>by</p>
-                <p class="instructorName">Instructor name</p>
-              </div>
 
-              <div>
-                <p>Current lecture:</p>
-                <a href="courseView.jsp">Some Learning Thing</a>
-              </div>
+            <%
+            try {
+                String query = 
+                "SELECT course_id " + "\n" + 
+                "FROM TARP_ENROLLS" + "\n" + 
+                "WHERE username='" + username + "'"; 
+                PreparedStatement preparedStmt = con.prepareStatement(query);
+                
+                ResultSet result = preparedStmt.executeQuery();
+                
+                while(result.next()) {
+                    String courseId = result.getString(1);
 
-              <div>
-                <p>Last test:</p>
-                <a href="courseView.jsp">Test 1</a>
-              </div>
-            </div>
+                    String queryInner = 
+                    "SELECT username " + "\n" + 
+                    "FROM TARP_COURSE" + "\n" + 
+                    "WHERE course_id='" + courseId + "'"; 
+                    PreparedStatement preparedStmtInner = con.prepareStatement(queryInner);
+                    
+                    ResultSet resultInner = preparedStmtInner.executeQuery();
 
-            <div class="preview">
-              <div>
-                <a href="studentHome.jsp" class="name">Another Course</a>
-                <p>by</p>
-                <p class="instructorName">Instructor name</p>
-              </div>
+                    String instructorName = "";
+                    while(resultInner.next()) {
+                      instructorName = resultInner.getString(1);
+                      break;
+                    }
 
-              <div>
-                <p>Current lecture:</p>
-                <p>You have not started a lecture yet.</p>
-              </div>
+                    resultInner.close();
+                    preparedStmtInner.close();
+            %>
 
-              <div>
-                <p>Last test:</p>
-                <p>You have not taken a test yet.</p>
-              </div>
-            </div>
+                    <div class="preview">
 
-            <div class="preview">
-              <div>
-                <a href="studentHome.jsp" class="name">A Course</a>
-                <p>by</p>
-                <p class="instructorName">Instructor name</p>
-              </div>
+                      <div>
+                        
+                        <!-- TODO redirect -->
+                        <a href="courseView.jsp" class="name"><%=courseId%></a>
+                        <p>by</p>
+                        <p class="instructorName"><%=instructorName%></p>
+                      </div>
 
-              <div>
-                <p>Current lecture:</p>
-                <a href="studentHome.jsp">Some Lecture Here</a>
-              </div>
+                      <!-- extra course info - maybe implement later, but for now dont include -->
+                      <!--
+                      <div>
+                        <p>Current lecture:</p>
+                        <p>You have not started a lecture yet.</p>
+                      </div>
 
-              <div>
-                <p>Last test:</p>
-                <a href="studentHome.jsp">A Random Test Part 3</a>
-              </div>
-            </div>
+                      <div>
+                        <p>Last test:</p>
+                        <p>You have not taken a test yet.</p>
+                      </div>
+                    </div>
+                    -->
+
+                    </div>
+
+            <%
+                }
+                result.close();
+                preparedStmt.close();
+              }
+              catch(Exception e) {
+                out.println(e);
+              }
+            %>
+
           </div>
 
         </div>
@@ -104,29 +126,58 @@
           <p class="bigTitle communityNameTitle">My Communitites</p>
   
           <div class="list communitiesList">
-            <div class="preview">
-              <a href="communityView.jsp" class="name">Some Community</a>
-                <div>
-                  <p>2</p>
-                  <p>students</p>
-                </div>
-            </div>
+          
+            <%
+            try {
+              String query = 
+              "SELECT community_id " + "\n" + 
+              "FROM TARP_JOINED_BY" + "\n" + 
+              "WHERE username='" + username + "'"; 
+              PreparedStatement preparedStmt = con.prepareStatement(query);
+              
+              ResultSet result = preparedStmt.executeQuery();
+              
+              while(result.next()) {
+                String communityId = result.getString(1);
 
-            <div class="preview">
-              <a href="communityView.jsp" class="name">Random Community</a>
-                <div>
-                  <p>34</p>
-                  <p>students</p>
-                </div>
-            </div>
+                String queryInner = 
+                  "SELECT num_students " + "\n" + 
+                  "FROM TARP_COMMUNITY" + "\n" + 
+                  "WHERE comm_id='" + communityId + "'"; 
+                  PreparedStatement preparedStmtInner = con.prepareStatement(queryInner);
+                  
+                  ResultSet resultInner = preparedStmtInner.executeQuery();
 
-            <div class="preview">
-              <a href="communityView.jsp" class="name">Another Community</a>
-                <div>
-                  <p>21</p>
-                  <p>students</p>
+                  String size = "";
+                  while(resultInner.next()) {
+                    size = resultInner.getString(1);
+                    break;
+                  }
+
+                  resultInner.close();
+                  preparedStmtInner.close();
+            %>
+
+                <div class="preview">
+
+                  <!-- TODO redirect -->
+                  <a href="communityView.jsp" class="name"><%=communityId%></a>
+                    <div>
+                      <p><%=size%></p>
+                      <p>students</p>
+                    </div>
                 </div>
-            </div>
+
+            <%
+              }
+              result.close();
+              preparedStmt.close();
+            }
+            catch(Exception e) {
+              out.println(e);
+            }
+            %>
+
           </div>
   
         </div>
@@ -134,5 +185,25 @@
       </section>
 
     </section>
+
+    <!-- display message if courses or communites is empty -->
+    <script>
+        // courses
+        let checkLength = document.getElementsByClassName("coursesList")[0].children.length;
+        let parent = document.getElementsByClassName("coursesList")[0];
+        
+        if(checkLength == 0) {
+            parent.innerHTML = "<p class='bigDescription'>You have not enrolled in a course yet.</p>";
+        }
+
+        checkLength = document.getElementsByClassName("communitiesList")[0].children.length;
+        parent = document.getElementsByClassName("communitiesList")[0];
+        
+        // communities
+        if(checkLength == 0) {
+            parent.innerHTML = "<p class='bigDescription'>You have not joined a community yet.</p>";
+        }
+    </script>
+
   </body>
 </html>
