@@ -21,7 +21,7 @@
 
     <img class="openNavbar" src="../Images/menu.svg">
     
-    <script src="../Scripts/divloadSidebar.js"></script>
+    <script src="../Scripts/loadSidebar.js"></script>
 
     <section class="mainContainer">
 
