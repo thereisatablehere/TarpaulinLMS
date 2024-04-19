@@ -48,7 +48,7 @@
 
           <p class="bigTitle">My Courses</p>
 
-          <div class="list coursesList">
+          <div id="leftList" class="list coursesList">
 
             <%
             try {
