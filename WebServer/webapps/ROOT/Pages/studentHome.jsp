@@ -83,13 +83,14 @@
 
                     <div class="preview">
 
-                      <div>
+                      <form action="setCourseIdSessionAttribute_action.jsp" method="post">
                         
-                        <!-- TODO redirect -->
-                        <a href="courseView.jsp" class="name"><%=courseId%></a>
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                        
+                        <button type="submit" href="courseView.jsp" class="name"><%=courseId%></button>
                         <p>by</p>
                         <p class="instructorName"><%=instructorName%></p>
-                      </div>
+                      </form>
 
                       <!-- extra course info - maybe implement later, but for now dont include -->
                       <!--

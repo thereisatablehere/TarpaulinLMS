@@ -544,12 +544,12 @@ header .profile:hover {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
-.studentHomeMainContainer .list .preview div {
+.studentHomeMainContainer .list .preview div, .studentHomeMainContainer .list .preview form {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.studentHomeMainContainer #leftList .preview div{
+.studentHomeMainContainer #leftList .preview div, .studentHomeMainContainer #leftList .preview form{
     justify-content: center;
 }
 .studentHomeMainContainer .list .preview a, .studentHomeMainContainer .list .preview button {
@@ -565,21 +565,24 @@ header .profile:hover {
     display: flex;
     transform: translateX(-50%);
 }
-.studentHomeMainContainer .list:first-of-type .preview a {
+.studentHomeMainContainer .list:first-of-type .preview button {
     margin-right: -2.5em;
 }
 .studentHomeMainContainer .list .preview a:hover, .studentHomeMainContainer .list .preview button:hover {
     cursor: pointer;
     color: var(--accentDarkerColor)
 }
-.studentHomeMainContainer .coursesList .preview div:not(:first-of-type) {
+.studentHomeMainContainer .coursesList .preview div:not(:first-of-type), 
+.studentHomeMainContainer .coursesList .preview form:not(:first-of-type) {
     margin-left: 0.5em;
 }
-.studentHomeMainContainer .coursesList .preview div:not(:first-of-type) a {
+.studentHomeMainContainer .coursesList .preview div:not(:first-of-type) a, 
+.studentHomeMainContainer .coursesList .preview form:not(:first-of-type) a {
     color: var(--accentLighterColor);
     scale: 1;
 }
-.studentHomeMainContainer .coursesList .preview div:not(:first-of-type) a:hover {
+.studentHomeMainContainer .coursesList .preview div:not(:first-of-type) a:hover, 
+.studentHomeMainContainer .coursesList .preview form:not(:first-of-type) a:hover {
     color: var(--accentDarkerColor)
 }
 .studentHomeMainContainer .list .preview .name {
@@ -932,6 +935,37 @@ header .profile:hover {
 .communityView .leaderboard div .you {
     font-weight: bold;
     color: var(--accentColor);
+}
+
+/* instructor page */
+#instructorTaught {
+    margin-top: 0.5em;
+    border: 1px solid #00000040;
+}
+#instructorTaught .taught {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #00000040;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+}
+#instructorTaught .taught .name {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 0;
+    margin-bottom: -0.35em;
+    font-size: 1.3em;
+    color: var(--accentColor);
+    text-decoration: none;
+    font-weight: bold;
+    transform: translateX(-30%);
+}
+#instructorTaught .taught .name:hover {
+    cursor: pointer;
+    color: var(--accentDarkerColor);
+    font-weight: bold;
 }
 
 /* take test */

@@ -57,6 +57,7 @@
                     String courseId = rs.getString("course_id");
                     String instructor = rs.getString("username");
         %>
+                    <!-- TODO: make redirect work like studentHome.jsp so course page can actually load context -->
                     <div class="courseContainer">
                         <div class="course">
                             <p class="bigDescription"><a href="courseView.jsp?courseId=<%= courseId %>"><%= courseId %></a></p>

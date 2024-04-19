@@ -1,3 +1,13 @@
+<%@include file="../userAuth.jsp"%>
+
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*, 
+    java.util.ArrayList
+"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,14 +19,24 @@
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <script src="../Scripts/loadSidebar.js"></script>
     
     <section class="mainContainer">
 
-        <p style="font-size: 2em; font-weight: bold;">John Doeson</p>
+        <%
+        String instructor = "instructor";
+        
+        try {
+            instructor = (String) session.getAttribute("instructor");
+        }
+        catch(Exception E) {
+            out.println(E);
+        }
+        %>
+
+        <p style="font-size: 2em; font-weight: bold;"><%=instructor%></p>
 
         <div style="
             display: flex;
@@ -24,12 +44,44 @@
             align-items: center;
         ">
             <div>
+                <%
+                String rating = "";
+
+                String queryString = 
+                "SELECT instructor_score" + "\n" + 
+                "FROM TARP_RATES" + "\n" + 
+                "WHERE i_username='" + instructor + "'";
+                
+                PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                ResultSet result = preparedStmt.executeQuery();
+
+                ArrayList<Integer> ratings = new ArrayList<Integer>();
+                int ratingsSum = 0;
+
+                while(result.next()) {
+                    int currentRating = Integer.parseInt(result.getString(1));
+                    ratingsSum += currentRating;
+
+                    ratings.add(currentRating);
+                }
+
+                result.close();
+                preparedStmt.close();
+
+                // calculate average rating
+                double avgRating = ratingsSum / ((double) ratings.size());
+                avgRating /= 2;
+                // round to 2 decimal ppoints
+                avgRating = Math.round(avgRating * 100.0) / 100.0;
+                %>
+
                 <img draggable="false" class="star" src="../Images/star-full.svg">
                 <img draggable="false" class="star" src="../Images/star-full.svg">
                 <img draggable="false" class="star" src="../Images/star-full.svg">
                 <img draggable="false" class="star" src="../Images/star-full.svg">
             </div>
-            <p style="margin-left: 0.5em;">(4.5)</p>
+            <p style="margin-left: 0.5em;">(<%=avgRating%>)</p>
         </div>
 
         <button class="buttonNormal" 
@@ -42,7 +94,7 @@
             align-items: center;
             justify-content: space-between;
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid #00000040;
             border-radius: 20px;
             margin-top: 0.5em;
             padding: 7px;
@@ -54,9 +106,13 @@
             <label><input type="radio" name="rating">4</label>
             <label><input type="radio" name="rating">5</label>
 
+            <!-- TODO: implement rate instructor -->
             <button class="buttonAccent" style="font-size: 0.8em;"
                 onclick='document.getElementById("ratingControls").style.display = "none"'
             >Submit</button>
+            
+            <button class="buttonNormal" style="font-size: 0.8em;"
+                onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
         </div>
 
             <p style="
@@ -66,102 +122,56 @@
                 margin-bottom: 0;
             ">Courses</p>
   
-            <section class="listContainer coursesList" style="margin-top: 0.5em;">
-              
-                <div style="
-                    display: flex;
-                    flex-direction: column;
-                    border-bottom: 1px solid #00000040;
-                    padding-left: 2em;
-                    padding-right: 2em;
-                    padding-bottom: 1em;
-                ">
-                    <a href="courseView.jsp" class="name" style="
-                        font-size: 1.3em;
-                        color: var(--accentColor);
-                        text-decoration: none;
-                        font-weight: bold;
-                    ">CSCI 123</a>
-                    
-                    <div style="
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    ">
-                        <div>
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                        </div>
-                        <p style="margin-left: 0.5em;">(4.5)</p>
-                    </div>
-
-                    <p>This is a really cool and good course.</p>
-                </div>
-
-                <div style="
-                display: flex;
-                flex-direction: column;
-                border-bottom: 1px solid #00000040;
-                padding-left: 2em;
-                padding-right: 2em;
-                padding-bottom: 1em;
-                padding-top: 2em;
-            ">
-                <a href="courseView.jsp" class="name" style="
-                    font-size: 1.3em;
-                    color: var(--accentColor);
-                    text-decoration: none;
-                    font-weight: bold;
-                ">CSCI 101</a>
+            <section id="instructorTaught" class="listContainer coursesList">
                 
-                <div style="
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                ">
-                    <div>
-                        <img draggable="false" class="star" src="../Images/star-full.svg">
-                        <img draggable="false" class="star" src="../Images/star-full.svg">
-                    </div>
-                    <p style="margin-left: 0.5em;">(2.3)</p>
-                </div>
+                <%
+                queryString = 
+                "SELECT course_id" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE username='" + instructor + "'";
+                
+                preparedStmt = con.prepareStatement(queryString);
 
-                <p>Learn about cool computer stuff.</p>
-            </div>
+                result = preparedStmt.executeQuery();
 
-            <div style="
-                    display: flex;
-                    flex-direction: column;
-                    padding-left: 2em;
-                    padding-right: 2em;
-                    padding-top: 2em;
-                ">
-                    <a href="courseView.jsp" class="name" style="
-                        font-size: 1.3em;
-                        color: var(--accentColor);
-                        text-decoration: none;
-                        font-weight: bold;
-                    ">CSCI 321</a>
-                    
-                    <div style="
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    ">
-                        <div>
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
-                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                while(result.next()) {
+                    String courseId = result.getString(1);
+                %>
+
+                    <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+
+                        <button class="name"><%=courseId%></button>
+                        
+                        <!-- rating - maybe implement later if have time and want to -->
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        ">
+                            <div>
+                                <img draggable="false" class="star" src="../Images/star-full.svg">
+                                <img draggable="false" class="star" src="../Images/star-full.svg">
+                                <img draggable="false" class="star" src="../Images/star-full.svg">
+                                <img draggable="false" class="star" src="../Images/star-full.svg">
+                            </div>
+                            <p style="margin-left: 0.5em;">(4.5)</p>
                         </div>
-                        <p style="margin-left: 0.5em;">(5.0)</p>
-                    </div>
 
-                    <p>Data stuff.</p>
-                </div>
+                        <%
+
+                        %>
+
+                        <!-- TODO -->
+                        <p>The description of this course would go here - not yet implemented.</p>
+                    </form>
+
+                <%
+                }
+
+                result.close();
+                preparedStmt.close();
+                %>
 
             </section>
   

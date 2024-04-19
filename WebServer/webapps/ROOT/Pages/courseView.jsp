@@ -1,5 +1,12 @@
 <%@include file="../userAuth.jsp"%>
 
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,8 +23,19 @@
     <script src="../Scripts/loadSidebar.js"></script>
 
     <section class="mainContainer courseView">
+
+        <%
+        String courseId = "";
         
-        <p class="title">CSCI 101</p>
+        try {
+            courseId = (String) session.getAttribute("courseId");
+        }
+        catch(Exception E) {
+            out.println(E);
+        }
+        %>
+        
+        <p class="title"><%=courseId%></p>
 
         <nav id="nav">
             <p onclick="changeTab(this)" style="font-weight: bold;">Overview</p>
@@ -30,12 +48,43 @@
         <div id="overview" class="tab">
 
             <div class="topInfo">
+                <!-- not yet implemented, but maybe do so later if enought time and want to -->
                 <button id="join" class="buttonNormal">Unenroll</button>
+                
                 <button id="join" class="buttonAccent" onclick='window.open("courseGrades.jsp", "_self")'>View Grades</button>
             </div>
 
             <div class="topInfo">
-                <p class="instructor" onclick='window.open("instructorPage.jsp", "_self")'>Professor Prof</p>
+
+                <%
+                String instructor = "instructor";
+
+                String queryString = 
+                "SELECT username" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                ResultSet result = preparedStmt.executeQuery();
+
+                while(result.next()) {
+                    instructor = result.getString(1);
+                    break;
+                }
+
+                result.close();
+                preparedStmt.close();
+
+                session.setAttribute("instructor", instructor);
+                %>
+
+                <div style="margin-left: -0.5em;">
+                    <p>Taught by</p>
+                    <p class="instructor" onclick='window.open("instructorPage.jsp", "_self")'><%=instructor%></p>
+                </div>
+                
+                <!-- Course rating - not yet implemented, but maybe do later if enough time and want to -->
                 <div>
                     <img draggable="false" class="star" src="../Images/star-full.svg">
                     <img draggable="false" class="star" src="../Images/star-full.svg">
@@ -47,7 +96,9 @@
 
             <div class="description">
                 <p>Description</p>
-                <p>This is a very good coures. You should enroll.</p>
+
+                <!-- TODO -->
+                <p>The description of this course would go here - not yet implemented.</p>
             </div>
 
         </div>
