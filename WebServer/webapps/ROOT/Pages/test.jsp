@@ -1,3 +1,23 @@
+<%@include file="../userAuth.jsp"%>
+
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
+
+<%
+String courseId = "";
+
+try {
+  courseId = (String) session.getAttribute("courseId");
+}
+catch(Exception E) {
+  out.println(E);
+}
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,51 +28,89 @@
     <title>Tarpaulin - Test</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
-  <body>
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    
-    <section class="mainContainer entireTestContainer">
+  <body class="testBody">
+    <form class="mainContainer entireTestContainer" 
+    action="testSubmit_action.jsp" method="post">
+
+        <%
+        String testId = "";
         
-        <p class="title">Exam 2</p>
+        try {
+          testId = (String) session.getAttribute("testId");
+        }
+        catch(Exception E) {
+          out.println(E);
+        }
+        %>
+        
+        <p class="title"><%=testId%></p>
 
-        <div class="questionContainer">
-            <p class="">What is 1 + 1.</p>
+        <%
+        int count = 0;
 
-            <label><input type="radio" name="question1">1</label>
+        try{
+            String query = 
+            "SELECT t_prompt, a, b, c, d " + "\n" + 
+            "FROM TARP_QUESTION " + "\n" + 
+            "WHERE test_id='" + testId + "'" + " AND " + 
+              "course_id='" + courseId + "'";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            
+            ResultSet result = preparedStmt.executeQuery();
 
-            <label><input type="radio" name="question1">11</label>
+            String question = "question";
+            
+            while(result.next()) {
+              ++count;
+              String questionPromptNameValue = question + count + "prompt";
+              String questionAnswerNameValue = question + count + "answer";
+              
+              String prompt = result.getString(1);
+              String a = result.getString(2);
+              String b = result.getString(3);
+              String c = result.getString(4);
+              String d = result.getString(5);
+        %>
 
-            <label><input type="radio" name="question1">2</label>
+              <div class="questionContainer">
+                  <input type="text" name="testId" value=<%="\"" + testId + "\""%> style="display: none;">
+                  <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                  <input type="text" name=<%=questionPromptNameValue%> value=<%="\"" + prompt + "\""%> style="display: none;">
+                  
+                  <p><%=prompt%></p>
 
-            <label><input type="radio" name="question1">1+1</label>
-        </div>
+                  <label><input type="radio" name=<%=questionAnswerNameValue%> value="A">
+                      <%=a%>
+                  </label>
 
-        <div class="questionContainer">
-            <p class="">How many days in a week are there?</p>
+                  <label><input type="radio" name=<%=questionAnswerNameValue%> value="B">
+                      <%=b%>
+                  </label>
 
-            <label><input type="radio" name="question2">1</label>
+                  <label><input type="radio" name=<%=questionAnswerNameValue%> value="C">
+                      <%=c%>
+                  </label>
 
-            <label><input type="radio" name="question2">7</label>
+                  <label><input type="radio" name=<%=questionAnswerNameValue%> value="D">
+                      <%=d%>
+                  </label>
+              </div>
 
-            <label><input type="radio" name="question2">8</label>
+        <%
+            }
 
-            <label><input type="radio" name="question2">Weeks do not exist</label>
-        </div>
+            result.close();
+            preparedStmt.close();
+        }
+        catch(Exception E) {
+            out.println(E);
+        }
+        %>
 
-        <div class="questionContainer">
-            <p class="">How many grains of sand are on Earth?</p>
-
-            <label><input type="radio" name="question3">1 grain</label>
-
-            <label><input type="radio" name="question3">1,000,000 grains</label>
-
-            <label><input type="radio" name="question3">1E525 grains</label>
-
-            <label><input type="radio" name="question3">Sand doens't exist</label>
-        </div>
+        <input type="text" name="questionCount" value=<%=count%> style="display: none;">
 
         <button class="buttonAccent" onclick='window.open("courseView.jsp", "_self")'>Submit</button>
 
-    </section>
+    </form>
   </body>
 </html>

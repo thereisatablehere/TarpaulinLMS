@@ -118,6 +118,18 @@
                                 <div class="students">
                                     <p><%=count%></p>
                                     <p>students</p>
+
+                                    <%
+                                    if(count == 0) {
+                                    %>
+                                        <img src="../Images/mood-sad-outline.svg" style="
+                                            width: 18px;
+                                            height: 18px;
+                                            margin-left: 0.35em;
+                                        ">
+                                    <%
+                                    }
+                                    %>
                                 </div>
 
                                 <div class="controls">

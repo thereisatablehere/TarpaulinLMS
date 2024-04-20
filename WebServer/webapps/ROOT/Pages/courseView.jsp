@@ -7,6 +7,17 @@
     oracle.jdbc.*
 "%>
 
+<%
+String username = "username";
+
+try{
+    username = (String) session.getAttribute("username");
+}
+catch(Exception E) {
+    username = "username";
+}
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -148,12 +159,79 @@
 
         <div id="tests" class="tab">
 
-            <div class="testContainer">
-                <p>Test Title</p>
-                <p>This test is about something, and that is described right here.</p>
-                <button class="buttonNormal" onclick='window.open("test.jsp", "_self")'>Start</button>
-            </div>
+            <%
+            queryString = 
+            "SELECT test_id" + "\n" + 
+            "FROM TARP_TEST" + "\n" + 
+            "WHERE course_id='" + courseId + "'";
+            
+            preparedStmt = con.prepareStatement(queryString);
 
+            result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                String testId = result.getString(1);
+
+                // check to see if test has alrady been taken
+                String queryStringInner = 
+                "SELECT test_id, score" + "\n" + 
+                "FROM TARP_TAKEN_BY" + "\n" + 
+                "WHERE test_id='" + testId + "'" + " AND " + 
+                    "course_id='" + courseId + "'" + " AND " + 
+                    "username='" + username + "'";
+                
+                PreparedStatement preparedStmtInner = con.prepareStatement(queryStringInner);
+
+                ResultSet resultInner = preparedStmtInner.executeQuery();
+
+                boolean took = false;
+                String score = "-1";
+
+                while(resultInner.next()) {
+                    took = true;
+                    score = resultInner.getString(2);
+
+                    break;
+                }
+
+                resultInner.close();
+                preparedStmtInner.close();
+            %>
+
+                <form class="testContainer" action="takeTest_action.jsp" method="post">
+                    <input type="text" name="testId" value=<%="\"" + testId + "\""%> style="display: none;">
+                    
+                    <p><%=testId%></p>
+                    <p>The description of the test would go here - not yet implemented.</p>
+
+                    <input type="text" name="took" value=<%=took%> style="display: none;">
+
+                    <%
+                    if(took) {
+                    %>
+                        <div>
+                            <p class="takenText">Completed!</p>
+                            <p class="score">Score: <%=score%></p>
+                        </div>
+                    <%
+                    }
+                    else {
+                    %>
+                        <button tye="submit" class="buttonNormal">Start</button>
+                    <%
+                    }
+                    %>
+
+                </form>
+
+            <%
+            }
+
+            result.close();
+            preparedStmt.close();
+            %>
+
+            <!--
             <div class="testContainer">
                 <p>Test Title</p>
                 <p>This test is about something, and that is described right here.</p>
@@ -163,12 +241,7 @@
                 </div>
                 <button class="buttonAccent" onclick='window.open("testResults.jsp", "_self")'>View Results</button>
             </div>
-
-            <div class="testContainer">
-                <p>Test Title</p>
-                <p>This test is about something, and that is described right here.</p>
-                <button class="buttonNormal" onclick='window.open("test.jsp", "_self")'>Start</button>
-            </div>
+            -->
             
         </div>
 
