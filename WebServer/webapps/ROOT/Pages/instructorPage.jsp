@@ -74,12 +74,13 @@
                 avgRating /= 2;
                 // round to 2 decimal ppoints
                 avgRating = Math.round(avgRating * 100.0) / 100.0;
-                %>
 
-                <img draggable="false" class="star" src="../Images/star-full.svg">
-                <img draggable="false" class="star" src="../Images/star-full.svg">
-                <img draggable="false" class="star" src="../Images/star-full.svg">
-                <img draggable="false" class="star" src="../Images/star-full.svg">
+                for(int i = 0; i < Math.floor(avgRating); i++) {
+                %>
+                    <img draggable="false" class="star" src="../Images/star-full.svg">
+                <%
+                }
+                %>
             </div>
             <p style="margin-left: 0.5em;">(<%=avgRating%>)</p>
         </div>
