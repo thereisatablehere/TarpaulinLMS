@@ -536,12 +536,12 @@ header .profile:hover {
     margin-right: max(13vw, 1em);
 }
 .studentHomeMainContainer .list .preview:first-child {
-    border-top: 1px solid #00000056;
+    border-top: 1px solid #00000050;
 }
 .studentHomeMainContainer .list .preview {
     padding-bottom: 1.2em;
     padding-top: 1.2em;
-    border-bottom: 1px solid #00000056;
+    border-bottom: 1px solid #00000050;
     padding-left: 0.5em;
     padding-right: 0.5em;
     display: flex;
@@ -625,12 +625,12 @@ header .profile:hover {
     align-items: flex-start;
     padding-bottom: 1.2em;
     padding-top: 1.2em;
-    border-bottom: 1px solid #00000056;
+    border-bottom: 1px solid #00000050;
     width: 40%;
     padding-left: 10%;
 }
 .coursesList .course:first-child {
-    border-top: 1px solid #00000056;
+    border-top: 1px solid #00000050;
 }
 
 .coursesList .course .bigDescription {
@@ -851,7 +851,7 @@ header .profile:hover {
 }
 .courseSearch .results .course:not(:first-of-type) {
     padding-top: 0.5em;
-    border-top: 1px solid #00000056;
+    border-top: 1px solid #00000050;
 }
 .courseSearch .results .course div {
     display: flex;
@@ -1035,16 +1035,20 @@ header .profile:hover {
     margin-top: 1.5em;
 }
 
+.instructorMainContainer .listContainer .coursesList {
+    border: 1px solid #00000050;
+}
+
 .instructorCoursePreview {
     display: flex;
     flex-direction: column;
     padding-bottom: 1.2em;
     padding-top: 1.2em;
-    border-top: 1px solid #00000056;
+    border-top: 1px solid #00000050;
     width: 20em;
 }
 .instructorCoursePreview:last-of-type {
-    border-bottom: 1px solid #00000056;
+    border-bottom: 1px solid #00000050;
 }
 
 .instructorCoursePreview .bigDescription {
@@ -1078,10 +1082,13 @@ header .profile:hover {
 }
 
 .instructorCoursePreview .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     margin-top: 0.5em;
-    width: 14em;
+    width: 100%;
 }
-.instructorCoursePreview .controls a {
+.instructorCoursePreview .controls form button {
     font-size: 0.92em;
     border-radius: var(--buttonBorderRadius);
     border: 2px solid var(--accentColor);
@@ -1092,20 +1099,24 @@ header .profile:hover {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    line-height: 1.5em;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
-.instructorCoursePreview .controls a:not(:last-of-type) {
+.instructorCoursePreview .controls form:not(:last-child) {
     margin-right: 0.5em;
 }
-.instructorCoursePreview .controls a:hover {
+.instructorCoursePreview .controls form button:hover{
     cursor: pointer;
     color: var(--accentDarkerColor);
     border-color: var(--accentDarkerColor);
 }
-.instructorCoursePreview .controls .delete {
+.instructorCoursePreview .controls form .delete {
     color: #ff0095;
     border-color: #ff0095;
 }
-.instructorCoursePreview .controls .delete:hover {
+.instructorCoursePreview .controls form .delete:hover {
     color: #c20071;
     border-color: #c20071;
 }

@@ -65,79 +65,88 @@
 
                     <%
                     try{
-                    String query = 
-                    "SELECT * " + "\n" + 
-                    "FROM TARP_COURSE " + "\n" + 
-                    "WHERE username='" + username + "'";
-                    PreparedStatement preparedStmt = con.prepareStatement(query);
-                    
-                    ResultSet result = preparedStmt.executeQuery();
-                    
-                    while(result.next()) {
-                        String courseId = result.getString(1);
+                        String query = 
+                        "SELECT * " + "\n" + 
+                        "FROM TARP_COURSE " + "\n" + 
+                        "WHERE username='" + username + "'";
+                        PreparedStatement preparedStmt = con.prepareStatement(query);
+                        
+                        ResultSet result = preparedStmt.executeQuery();
+                        
+                        while(result.next()) {
+                            String courseId = result.getString(1);
                     %>
             
-                        <!-- extra indent because part of SJP while loop above  -->
-                        <div class="instructorCoursePreview">
-                            <p class="bigDescription"><%=courseId%></p>
+                            <!-- extra indent because part of SJP while loop above  -->
+                            <div class="instructorCoursePreview">
+                                <p class="bigDescription"><%=courseId%></p>
 
-                            <!-- course rating - maybe implement later, but for now don't include -->
-                            <!--
-                            <div class="rating">
-                                <div>
-                                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                                    <img class="emptyStar" src="../Images/star-full.svg">
+                                <!-- course rating - maybe implement later, but for now don't include -->
+                                <!--
+                                <div class="rating">
+                                    <div>
+                                        <img draggable="false" class="star" src="../Images/star-full.svg">
+                                        <img draggable="false" class="star" src="../Images/star-full.svg">
+                                        <img draggable="false" class="star" src="../Images/star-full.svg">
+                                        <img draggable="false" class="star" src="../Images/star-full.svg">
+                                        <img class="emptyStar" src="../Images/star-full.svg">
+                                    </div>
+                                    <p>(4.5)</p>
                                 </div>
-                                <p>(4.5)</p>
-                            </div>
-                            -->
+                                -->
 
-                            <!-- get the number of students taking the course -->
-                            <%
-                            String queryInner = 
-                            "SELECT username " + "\n" + 
-                            // WHY IS ENROLLS SPELLED WITH 2 L'S??? SPELLING FEELS HARD SOMETIMES
-                            "FROM TARP_ENROLLS " + "\n" + 
-                            "WHERE course_id='" + courseId + "'";
-                            PreparedStatement preparedStmtInner = con.prepareStatement(queryInner);
-                            
-                            ResultSet resultInner = preparedStmtInner.executeQuery();
-                            
-                            int count = 0;
-                            while(resultInner.next()) {
-                                ++count;
-                            }
-
-                            resultInner.close();
-                            preparedStmtInner.close();
-                            %>
-
-                            <div class="students">
-                                <p><%=count%></p>
-                                <p>students</p>
-                            </div>
-
-                            <div class="controls">
-                                <a href="courseView.jsp">View</a>
+                                <!-- get the number of students taking the course -->
+                                <%
+                                String queryInner = 
+                                "SELECT username " + "\n" + 
+                                // WHY IS ENROLLS SPELLED WITH 2 L'S??? SPELLING FEELS HARD SOMETIMES
+                                "FROM TARP_ENROLLS " + "\n" + 
+                                "WHERE course_id='" + courseId + "'";
+                                PreparedStatement preparedStmtInner = con.prepareStatement(queryInner);
                                 
-                                <!-- TODO later -->
-                                <a href="editCourse.jsp">Edit</a>
+                                ResultSet resultInner = preparedStmtInner.executeQuery();
                                 
-                                <!-- TODO later -->
-                                <a href="instructorHome.jsp">QBoard</a>
-                                
-                                <a class="delete" onclick=openDeleteCourseConfirm(this)>Delete</a>
+                                int count = 0;
+                                while(resultInner.next()) {
+                                    ++count;
+                                }
+
+                                resultInner.close();
+                                preparedStmtInner.close();
+                                %>
+
+                                <div class="students">
+                                    <p><%=count%></p>
+                                    <p>students</p>
+                                </div>
+
+                                <div class="controls">
+                                    <form action="setCourseIdSessionAttributeAsInstructor_action.jsp" method="post">
+                                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                                        <button type="submit" href="courseView.jsp">View</button>
+                                    </form>
+                                    
+                                    <!-- TODO later -->
+                                    <form>
+                                        <button type="submit" href="editCourse.jsp">Edit</button>
+                                    </form>
+                                    
+                                    <!-- TODO later -->
+                                    <form>
+                                        <button type="submit" href="instructorHome.jsp">QBoard</button>
+                                    </form>
+                                    
+                                    <form>
+                                        <button type="submit" class="delete" onclick=openDeleteCourseConfirm(this)>Delete</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                     
                     <%
-                    }
+                        }
 
-                    result.close();
-                    preparedStmt.close();
+                        result.close();
+                        preparedStmt.close();
                     }
                     catch(Exception E) {
                         out.println(E);
