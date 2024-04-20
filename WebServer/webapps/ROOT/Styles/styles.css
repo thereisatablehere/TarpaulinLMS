@@ -1,3 +1,5 @@
+/* so, this has become quite unmaintainable and a big mess */
+
 /* main */
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
@@ -524,6 +526,7 @@ header .profile:hover {
     padding-top: 50px;
     padding-bottom: 50px;
     border-radius: 20px;
+    width: fit-content;
     min-width: 13em;
 }
 .studentHomeMainContainer .coursesList {
@@ -539,15 +542,18 @@ header .profile:hover {
     padding-bottom: 1.2em;
     padding-top: 1.2em;
     border-bottom: 1px solid #00000056;
-    display: flex;
-    flex-direction: column;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 .studentHomeMainContainer .list .preview div, .studentHomeMainContainer .list .preview form {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
 }
 .studentHomeMainContainer #leftList .preview div, .studentHomeMainContainer #leftList .preview form{
     justify-content: center;
@@ -556,18 +562,18 @@ header .profile:hover {
     color: var(--accentColor);
     font-weight: bold;
     text-decoration: none;
-    padding: 0.5em;
+    padding: 0;
+    margin: 0;
     margin-right: 0.5em;
     font-size: 1em;
     background-color: transparent;
     border: none;
     outline: none;
     display: flex;
-    transform: translateX(-50%);
 }
-.studentHomeMainContainer .list:first-of-type .preview button {
+/* .studentHomeMainContainer .list:first-of-type .preview button {
     margin-right: -2.5em;
-}
+} */
 .studentHomeMainContainer .list .preview a:hover, .studentHomeMainContainer .list .preview button:hover {
     cursor: pointer;
     color: var(--accentDarkerColor)
@@ -616,9 +622,12 @@ header .profile:hover {
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: flex-start;
     padding-bottom: 1.2em;
     padding-top: 1.2em;
     border-bottom: 1px solid #00000056;
+    width: 40%;
+    padding-left: 10%;
 }
 .coursesList .course:first-child {
     border-top: 1px solid #00000056;
@@ -628,6 +637,18 @@ header .profile:hover {
     font-weight: bold;
     margin-bottom: 0.1em;
     text-align: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: var(--accentColor);
+}
+.coursesList .course .bigDescription:hover {
+    color: var(--accentDarkerColor);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .coursesList .course div {
@@ -1418,4 +1439,8 @@ header .profile:hover {
 }
 .courseView .questionContainer div p:first-of-type {
     font-weight: bold;
+}
+
+.coursesList, .communitiesList {
+    justify-content: flex-start;
 }

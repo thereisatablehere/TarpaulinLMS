@@ -57,17 +57,25 @@
                     String courseId = rs.getString("course_id");
                     String instructor = rs.getString("username");
         %>
-                    <!-- TODO: make redirect work like studentHome.jsp so course page can actually load context -->
-                    <div class="courseContainer">
-                        <div class="course">
-                            <p class="bigDescription"><a href="courseView.jsp?courseId=<%= courseId %>"><%= courseId %></a></p>
-                            
-                            <div>
-                                <p>Instructor:</p>
-                                <p class="username"><%= instructor %></p>
-                            </div>
+
+                    <form class="course" action="setCourseIdSessionAttribute_action.jsp" method="post">
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                        
+                        <button type="submit" class="bigDescription"><%= courseId %></button>
+
+                        <div>
+                            <p>by</p>
+                            <p class="instructorName"><%= instructor %></p>
                         </div>
-                    </div>
+
+                        <!-- maybe implement later if have time and want to -->
+                        <!--
+                        <div>
+                            <p>Progress:</p>
+                            <p class="progress">50%</p>
+                        </div>
+                        -->
+                    </form>
         <%
                 }
                 

@@ -1,3 +1,6 @@
+<!-- lots of inline CSS, but since JSP and HTML are already up and everything works, 
+maybe just leave it -->
+
 <%@include file="../userAuth.jsp"%>
 
 <%@include file="../DBconnection.jsp"%>

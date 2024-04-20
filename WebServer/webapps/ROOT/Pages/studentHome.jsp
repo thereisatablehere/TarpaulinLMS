@@ -155,6 +155,11 @@
                     break;
                   }
 
+                  String studentsText = "student";
+                  if(!(size.equals("1"))) {
+                    studentsText += "s";
+                  }
+
                   resultInner.close();
                   preparedStmtInner.close();
             %>
@@ -167,7 +172,7 @@
                     
                     <div>
                       <p><%=size%></p>
-                      <p>students</p>
+                      <p><%=studentsText%></p>
                     </div>
                 </form>
 
