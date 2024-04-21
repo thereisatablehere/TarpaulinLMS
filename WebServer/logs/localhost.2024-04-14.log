@@ -1,0 +1,2525 @@
+<<<<<<< HEAD
+14-Apr-2024 22:22:07.003 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/Pages/profile_action.jsp]
+Syntax error, insert "}" to complete Statement
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+An error occurred at line: [205] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [206] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/Pages/profile_action.jsp]
+Syntax error, insert "}" to complete Statement
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+
+
+An error occurred at line: [205] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [206] in the generated java file: [/net/home/cdavis002/CS331/TarpGithub/TarpaulinLMS/WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/profile_005faction_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:22:33.463 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     }else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+=======
+14-Apr-2024 22:18:52.615 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+
+
+An error occurred at line: [59] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+61:                 %>
+62:                 <input name="fname" type="text" placeholder="First" value="First">
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+61:                 %>
+62:                 <input name="fname" type="text" placeholder="First" value="First">
+63:             </div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+<<<<<<< HEAD
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+19:     }else{
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+
+
+An error occurred at line: [23] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+20:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+
+
+An error occurred at line: [24] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+21:     }
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+
+
+An error occurred at line: [25] in the jsp file: [/Pages/profile_action.jsp]
+cs cannot be resolved
+22:     cs.setString(1, username);
+23:     cs.setString(2, password);
+24:     cs.executeUpdate();
+25:     cs.close();
+26:     out.println("Username/Password updated.");
+27: } catch (SQLException e) {
+28:     // Handle any SQL exceptions
+=======
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+
+
+An error occurred at line: [57] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+
+
+An error occurred at line: [59] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+56:                 result = stmt.executeQuery(queryString);
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+61:                 %>
+62:                 <input name="fname" type="text" placeholder="First" value="First">
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+57:                 result.getString(1);
+58: 
+59:                 result.close();
+60:                 stmt.close();
+61:                 %>
+62:                 <input name="fname" type="text" placeholder="First" value="First">
+63:             </div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+<<<<<<< HEAD
+14-Apr-2024 22:23:43.084 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Cannot instantiate the type CallableStatement
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = new CallableStatement();
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+=======
+14-Apr-2024 22:23:11.078 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+<<<<<<< HEAD
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Cannot instantiate the type CallableStatement
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = new CallableStatement();
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+=======
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+<<<<<<< HEAD
+14-Apr-2024 22:24:04.779 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [18]
+
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs;
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+21:         cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:163)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:24:23.058 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [18]
+
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = null;
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+21:         cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:163)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:25:01.307 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Invalid character constant
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = '';
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+=======
+14-Apr-2024 22:23:15.443 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+<<<<<<< HEAD
+An error occurred at line: [17] in the jsp file: [/Pages/profile_action.jsp]
+Invalid character constant
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     CallableStatement cs = '';
+18:     if((int) session.getAttribute("userType") == 2){
+19:         cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+20:     }else{
+=======
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+preparedStmt cannot be resolved to a variable
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+myConnection cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 preparedStmt = myConnection.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+queryString cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = stmt.executeQuery(queryString);
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+<<<<<<< HEAD
+14-Apr-2024 22:25:53.510 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/Pages/profile_action.jsp] at line [17]
+
+14: 
+15: // Call the stored procedure to modify the student's profile
+16: try {
+17:     if((int) session.getAttribute("userType") == 2){
+18:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+19: 	cs.setString(1, username);
+20:     	cs.setString(2, password);
+
+
+Stacktrace:] with root cause
+	java.lang.NullPointerException
+		at org.apache.jsp.Pages.profile_005faction_jsp._jspService(profile_005faction_jsp.java:162)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+=======
+14-Apr-2024 22:23:44.536 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatment cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatment cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:23:48.668 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatment cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatment cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatment preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:24:00.614 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 22:24:06.509 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+PreparedStatement cannot be resolved to a type
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [50] in the jsp file: [/Pages/profile.jsp]
+con cannot be resolved
+47:                 <p>First Name</p>
+48:                 
+49:                 <%
+50:                 PreparedStatement preparedStmt = con.prepareStatement(
+51:                     "SELECT F_NAME" + "\n" + 
+52:                     "FROM TARP_STUDENT" + "\n" + 
+53:                     "WHERE USERNAME='" + username + "'"
+
+
+An error occurred at line: [56] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved to a variable
+53:                     "WHERE USERNAME='" + username + "'"
+54:                 );
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+
+
+An error occurred at line: [58] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+55: 
+56:                 result = preparedStmt.executeQuery();
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [60] in the jsp file: [/Pages/profile.jsp]
+Syntax error, insert ")" to complete Expression
+57:                 
+58:                 while (result.next()) {
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+
+
+An error occurred at line: [62] in the jsp file: [/Pages/profile.jsp]
+Syntax error on token ")", delete this token
+59:                 System.out.println(
+60:                     firstName = result.getString(1);
+61:                     break;
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+
+
+An error occurred at line: [65] in the jsp file: [/Pages/profile.jsp]
+result cannot be resolved
+62:                 );
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+
+
+An error occurred at line: [66] in the jsp file: [/Pages/profile.jsp]
+stmt cannot be resolved
+63:                 }
+64: 
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+
+
+An error occurred at line: [68] in the jsp file: [/Pages/profile.jsp]
+firstName cannot be resolved to a variable
+65:                 result.close();
+66:                 stmt.close();
+67:                 %>
+68:                 <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+69:             </div>
+70: 
+71:             <div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+>>>>>>> ef00683 (login_actio.jsp fix attempt + start of profile edit load user data)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-Apr-2024 23:16:50.042 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [15] in the jsp file: [/Pages/profile_action.jsp]
+The operator && is undefined for the argument type(s) boolean, String
+12: String last = request.getParameter("lname");
+13: 
+14: try {
+15:     if((int) session.getAttribute("userType") == 2 && (String) session.getAttribute("username").equals(username)){
+16:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+17: 	cs.setString(1, username);
+18:     	cs.setString(2, password);
+
+
+An error occurred at line: [15] in the jsp file: [/Pages/profile_action.jsp]
+Cannot cast from boolean to String
+12: String last = request.getParameter("lname");
+13: 
+14: try {
+15:     if((int) session.getAttribute("userType") == 2 && (String) session.getAttribute("username").equals(username)){
+16:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+17: 	cs.setString(1, username);
+18:     	cs.setString(2, password);
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+The operator && is undefined for the argument type(s) boolean, String
+19:     	cs.executeUpdate();
+20:     	cs.close();
+21:     	out.println("Password updated.");
+22:     }else if((int) session.getAttribute("userType") == 1 && (String) session.getAttribute("username").equals(username)){
+23:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+24: 	cs.setString(1, username);
+25:         cs.setString(2, password);
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+Cannot cast from boolean to String
+19:     	cs.executeUpdate();
+20:     	cs.close();
+21:     	out.println("Password updated.");
+22:     }else if((int) session.getAttribute("userType") == 1 && (String) session.getAttribute("username").equals(username)){
+23:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+24: 	cs.setString(1, username);
+25:         cs.setString(2, password);
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [15] in the jsp file: [/Pages/profile_action.jsp]
+The operator && is undefined for the argument type(s) boolean, String
+12: String last = request.getParameter("lname");
+13: 
+14: try {
+15:     if((int) session.getAttribute("userType") == 2 && (String) session.getAttribute("username").equals(username)){
+16:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+17: 	cs.setString(1, username);
+18:     	cs.setString(2, password);
+
+
+An error occurred at line: [15] in the jsp file: [/Pages/profile_action.jsp]
+Cannot cast from boolean to String
+12: String last = request.getParameter("lname");
+13: 
+14: try {
+15:     if((int) session.getAttribute("userType") == 2 && (String) session.getAttribute("username").equals(username)){
+16:         CallableStatement cs = con.prepareCall("{call modify_student_profile(?, ?)}");
+17: 	cs.setString(1, username);
+18:     	cs.setString(2, password);
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+The operator && is undefined for the argument type(s) boolean, String
+19:     	cs.executeUpdate();
+20:     	cs.close();
+21:     	out.println("Password updated.");
+22:     }else if((int) session.getAttribute("userType") == 1 && (String) session.getAttribute("username").equals(username)){
+23:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+24: 	cs.setString(1, username);
+25:         cs.setString(2, password);
+
+
+An error occurred at line: [22] in the jsp file: [/Pages/profile_action.jsp]
+Cannot cast from boolean to String
+19:     	cs.executeUpdate();
+20:     	cs.close();
+21:     	out.println("Password updated.");
+22:     }else if((int) session.getAttribute("userType") == 1 && (String) session.getAttribute("username").equals(username)){
+23:         CallableStatement cs = con.prepareCall("{call modify_instructor_profile(?, ?)}");
+24: 	cs.setString(1, username);
+25:         cs.setString(2, password);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
