@@ -4,18 +4,11 @@
 
 -- CODE
 
-DECLARE
-    v_username VARCHAR2(100) := ?; -- Set the username here
-BEGIN
-    EXECUTE IMMEDIATE '
         CREATE OR REPLACE VIEW view_courses_taking AS
-        SELECT S.course_id, T.username
+        SELECT S.course_id, S.username AS studentUser, T.username
         FROM tarp_enrolls S, tarp_course T
-        WHERE S.username = ''' || v_username || ''' AND T.course_id = S.course_id';
-END;
-/
-
-
+        WHERE T.course_id = S.course_id;
+        
 --OUTPUT
 
 --COURSE_ID           
