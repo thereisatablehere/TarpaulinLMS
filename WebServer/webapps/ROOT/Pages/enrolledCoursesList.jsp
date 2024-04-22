@@ -32,22 +32,12 @@
                 // Set the username here
                 String username = (String) session.getAttribute("username");
                 
-                // Create the view dynamically
-                String dynamicSQL = "DECLARE " +
-                                    "v_username VARCHAR2(100) := '" + username + "'; " +
-                                    "BEGIN " +
-                                    "EXECUTE IMMEDIATE ' " +
-                                    "CREATE OR REPLACE VIEW view_courses_taking AS " +
-                                    "SELECT S.course_id, T.username " +
-                                    "FROM tarp_enrolls S, tarp_course T " +
-                                    "WHERE S.username = ''' || v_username || ''' AND T.course_id = S.course_id'; " +
-                                    "END;";
-                PreparedStatement pstmt = con.prepareStatement(dynamicSQL);
-                pstmt.execute();
-                
                 // Prepare SQL query to select from the created view
-                String query = "SELECT course_id, username FROM view_courses_taking";
-                pstmt = con.prepareStatement(query);
+                String query = "SELECT course_id, username FROM view_courses_taking WHERE studentUser = ?";
+                PreparedStatement pstmt = con.prepareStatement(query);
+                
+                // Set parameter
+                pstmt.setString(1, username);
                 
                 // Execute query
                 ResultSet rs = pstmt.executeQuery();

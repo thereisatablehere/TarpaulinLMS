@@ -1,5 +1,3 @@
 Did.txt
-WebServer/work/Catalina/localhost/ROOT/org/apache/*.java
-WebServer/work/Catalina/localhost/ROOT/org/apache/*.class
 WebServer/work/Catalina/localhost/ROOT/org/apache/jsp/Pages/**
 WebServer/logs/**
