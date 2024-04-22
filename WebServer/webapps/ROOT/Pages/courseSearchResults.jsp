@@ -54,11 +54,17 @@
          </select>
          <p>&nbsp</p>
          <div class="course">
-            <%while (result.next()){
+            <%
+            while (result.next()){
                 String cname = result.getString(1);
                 String instr = result.getString(2);
-                %>
-            <p class="bigDescription"><a href="courseView.jsp?courseId=<%= cname %>"><%= cname %></a></p>
+            %>
+
+            <form action="setCourseIdSessionAttribute_action.jsp" method="post">
+                <input type="text" name="courseId" value=<%=cname%> style="display: none;">        
+                
+                <button type="submit" href="courseView.jsp" class="name"><%=cname%></button>
+            </form>
     
             <div>
                 <p class="instructor"><%=instr%></p>
@@ -77,9 +83,12 @@
             <p>A description of this course would go right here.</p>
             <p>-------------------------------------------------</p>
         </div>
-        <%}%>
+        <%
+        }
+        %>
     </section>
-    <%result.close();
+    <%
+    result.close();
     prepStmt.close();
     %>
     </section>
