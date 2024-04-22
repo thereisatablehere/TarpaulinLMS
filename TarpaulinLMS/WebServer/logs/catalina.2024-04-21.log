@@ -1,0 +1,10 @@
+21-Apr-2024 19:20:09.513 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.531 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.533 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.534 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.534 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.535 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.535 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.536 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.536 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
+21-Apr-2024 19:20:09.537 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [GET /SecondWebProject/index.jsp HTTP/1.1] received
