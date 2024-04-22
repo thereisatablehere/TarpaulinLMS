@@ -29,6 +29,27 @@ maybe just leave it -->
     <section class="mainContainer">
 
         <%
+        // get username (needed for calculating rank)
+        String username = "username";
+    
+        try{
+            username = (String) session.getAttribute("username");
+        }
+        catch(Exception E) {
+            out.println(E);
+        }
+
+
+        String courseId = "";
+        
+        try {
+            courseId = (String) session.getAttribute("courseId");
+        }
+        catch(Exception E) {
+            out.println(E);
+        }    
+        
+
         String instructor = "instructor";
         
         try {
@@ -36,6 +57,44 @@ maybe just leave it -->
         }
         catch(Exception E) {
             out.println(E);
+        }
+
+        String action = request.getParameter("action");
+        if ("rating".equals(action)) {
+            out.println("ee");
+            String formRating = request.getParameter("rating");
+            out.println("eeeee");
+            out.println(formRating);
+            out.println(courseId);
+            out.println("Course ID: " + courseId);
+            out.println("Username: " + username);
+            
+            if (formRating != null && courseId != null) {
+                out.println("eqe");
+
+                try {
+                    int rating = Integer.parseInt(formRating);
+                    String callSQL = "{ call rate_instructor(?, ?, ?) }";
+                    CallableStatement cstmt = con.prepareCall(callSQL);
+                    cstmt.setString(1, courseId);
+                    cstmt.setString(2, username);
+                    cstmt.setInt(3, rating);
+                    
+                    out.println("Executing stored procedure for rating...");
+                    cstmt.execute();
+                    out.println("Stored procedure executed successfully.");
+                    cstmt.close();
+                    
+                    response.sendRedirect("instructorPage.jsp"); // Redirect to a confirmation or status page
+
+                } catch (SQLException e) {
+                    out.println("SQL Error: " + e.getMessage());
+                    request.setAttribute("errorMessage", "Database error occurred. Please try again.");
+                } catch (NumberFormatException e) {
+                    out.println("Error converting rating to integer: " + e.getMessage());
+                    request.setAttribute("errorMessage", "Invalid rating format.");
+                } 
+            }
         }
         %>
 
@@ -92,32 +151,31 @@ maybe just leave it -->
             style="margin: 0; font-size: 0.8em;"
             onclick='document.getElementById("ratingControls").style.display = "flex"'
         >Rate</button>
-        <div id="ratingControls" style="
-            display: none;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            background-color: white;
-            border: 1px solid #00000040;
-            border-radius: 20px;
-            margin-top: 0.5em;
-            padding: 7px;
-            ">
-            <label><input type="radio" name="rating">0</label>
-            <label><input type="radio" name="rating">1</label>
-            <label><input type="radio" name="rating">2</label>
-            <label><input type="radio" name="rating">3</label>
-            <label><input type="radio" name="rating">4</label>
-            <label><input type="radio" name="rating">5</label>
-
-            <!-- TODO: implement rate instructor -->
-            <button class="buttonAccent" style="font-size: 0.8em;"
-                onclick='document.getElementById("ratingControls").style.display = "none"'
-            >Submit</button>
-            
-            <button class="buttonNormal" style="font-size: 0.8em;"
-                onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
-        </div>
+        <form id="ratingForm" method="post" action="">
+            <input type="hidden" name="action" value="rating">
+            <div id="ratingControls" style="
+                display: none;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+                border: 1px solid #00000040;
+                border-radius: 20px;
+                margin-top: 0.5em;
+                padding: 7px;
+                ">
+                <label><input type="radio" name="rating" value="0">0</label>
+                <label><input type="radio" name="rating" value="1">1</label>
+                <label><input type="radio" name="rating" value="2">2</label>
+                <label><input type="radio" name="rating" value="3">3</label>
+                <label><input type="radio" name="rating" value="4">4</label>
+                <label><input type="radio" name="rating" value="5">5</label>
+        
+                <button type="submit" class="buttonAccent" style="font-size: 0.8em;">Submit</button>
+                <button type="button" class="buttonNormal" style="font-size: 0.8em;"
+                    onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
+            </div>
+        </form>
 
             <p style="
                 font-size: 1.75em;
@@ -139,13 +197,13 @@ maybe just leave it -->
                 result = preparedStmt.executeQuery();
 
                 while(result.next()) {
-                    String courseId = result.getString(1);
+                    String courseId2 = result.getString(1);
                 %>
 
                     <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
-                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                        <input type="text" name="courseId2" value=<%=courseId2%> style="display: none;">
 
-                        <button class="name"><%=courseId%></button>
+                        <button class="name"><%=courseId2%></button>
                         
                         <!-- rating - maybe implement later if have time and want to -->
                         <div style="
