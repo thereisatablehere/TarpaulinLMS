@@ -29,6 +29,31 @@
         out.println(E);
     }
 
+
+    // Trigger insert delete community
+    String action = request.getParameter("action");
+    if ("leave".equals(action)) {
+        try {
+            String leaveQuery = "DELETE FROM TARP_JOINED_BY WHERE community_id = ? AND username = ?";
+            PreparedStatement leaveStmt = con.prepareStatement(leaveQuery);
+            leaveStmt.setString(1, communityId);
+            leaveStmt.setString(2, username);
+            int rowsAffected = leaveStmt.executeUpdate();
+            leaveStmt.close();
+            
+            if (rowsAffected > 0) {
+                // Redirect to a confirmation page or display a success message
+                out.println("<script>alert('You have successfully left the community.'); window.location.href='studentHome.jsp';</script>");
+            } else {
+                out.println("<script>alert('Failed to leave the community.'); window.location.href='viewCommunity.jsp';</script>");
+            }
+            return; // Stop further execution to redirect
+        } catch (SQLException e) {
+            out.println("Error when leaving community: " + e.getMessage());
+        }
+    }
+
+
     String description = "description";
     String size = "-1";
     String rank = "-1";
@@ -172,7 +197,11 @@
             <!-- TODO -->
             <div class="controls">
                 <button class="buttonNormal">Invite Another Student</button>
-                <button class="buttonAccent">Leave Community</button>
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="leave">
+                    <input type="hidden" name="communityId" value="<%=communityId%>">
+                    <button type="submit" class="buttonAccent">Leave Community</button>
+                </form>
             </div>
 
             <!-- TODO -->
