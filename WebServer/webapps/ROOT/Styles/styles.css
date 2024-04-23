@@ -868,6 +868,21 @@ header .profile:hover {
     margin-right: 0.5em;
 }
 
+/* course search results */
+.courseSearchFilter {
+    width: 10em;
+    display: flex;
+    align-self: center;
+}
+
+.searchResultsContainer {
+    display: flex;
+    flex-direction: row;
+}
+.searchResultsContainer .right {
+    margin-left: 10em;
+}
+
 /* create community */
 
 .createCommunity {

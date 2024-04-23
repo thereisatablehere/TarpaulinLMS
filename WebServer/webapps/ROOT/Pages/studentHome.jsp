@@ -28,6 +28,8 @@
         <p>Welcome back, </p>
 
         <%
+        session.setAttribute("loadBackToSearch", "false");
+        
         String username = "username";
 
         try{

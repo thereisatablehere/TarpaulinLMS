@@ -28,6 +28,8 @@
     <section class="coursesList" style="border: 1px solid #00000040;">
 
         <%  
+            session.setAttribute("loadBackToSearch", "false");
+            
             try {
                 // Set the username here
                 String username = (String) session.getAttribute("username");

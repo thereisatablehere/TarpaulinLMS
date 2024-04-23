@@ -45,6 +45,27 @@ catch(Exception E) {
             out.println(E);
         }
         %>
+
+        <%
+        boolean loadBackToSearch = false;
+
+        try {
+            loadBackToSearch = Boolean.parseBoolean((String) session.getAttribute("loadBackToSearch"));
+        }
+        catch(Exception E) {
+            out.println(E);
+        }
+
+        if(loadBackToSearch) {
+        %>
+            <button class="buttonAccent" 
+            style="display: flex; align-self: center;" 
+            onclick="window.open('courseSearchResults.jsp', '_self')">
+                Back to search
+            </button>
+        <%
+        }
+        %>
         
         <p class="title"><%=courseId%></p>
 
