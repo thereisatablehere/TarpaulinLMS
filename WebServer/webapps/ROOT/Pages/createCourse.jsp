@@ -25,12 +25,12 @@ session.setAttribute("failedToCreateCourse", "false");
     <script src="../Scripts/headerLoggedIn.js"></script>
 
     <section class="mainContainer">
-        
-        <p class="title">Create a Course</p>
 
         <div id="errorPopup" class="createCourseErrorPopup">
             <p>Error: make sure input fields are not blank.</p>
         </div>
+        
+        <p class="title">Create a Course</p>
 
         <section class="createCourse">
 
