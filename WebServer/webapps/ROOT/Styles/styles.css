@@ -1171,6 +1171,44 @@ header .profile:hover {
     align-items: center;
     line-height: 1.25em;
 }
+#createCourseFailedMessage {
+    width: 35em;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ff297f70;
+    border: 1px solid #ff297f;
+    box-shadow: 0 0 5px grey;
+    padding-right: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateX(-20%);
+}
+#createCourseFailedMessage p {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+#createCourseFailedMessage .errorIcon {
+    width: 25px;
+    height: 25px;
+    margin-right: 1em;
+}
+#createCourseFailedMessage .closeIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 2em;
+    padding: 5px;
+}
+#createCourseFailedMessage .closeIcon:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #00000040;
+}
 
 /* create course */
 
@@ -1199,15 +1237,32 @@ header .profile:hover {
 .createCourse .nameContainer {
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
 }
 .createCourse .descriptionContainer {
-    margin-top: 2em;
+    margin-top: 0.5em;
     flex-direction: column;
 }
 .createCourse button {
     width: 100%;
     margin-top: 3em;
     align-self: center;
+}
+.createCourseErrorPopup {
+    display: flex;
+    align-self: center;
+    width: fit-content;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #c20071;
+    transform: translateX(-5%);
+    box-shadow: 0 0 5px #c20071;
+    display: none;
+}
+.createCourseErrorPopup p {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 /* profile */

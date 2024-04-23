@@ -22,6 +22,29 @@
   <body class="instructorHomeBody">
     <script src="../Scripts/headerLoggedIn.js"></script>
 
+    <%
+    Boolean courseCreateFailed = false;
+
+    try{
+        courseCreateFailed = Boolean.parseBoolean((String) session.getAttribute("failedToCreateCourse"));
+    }
+    catch(Exception E) {
+        courseCreateFailed = false;
+    }
+
+    if(courseCreateFailed) {
+        session.setAttribute("failedToCreateCourse", "false");
+    %>
+        <div id="createCourseFailedMessage">
+            <img class="errorIcon" src="../Images/exclamation-outline.svg">
+            <p>Failed to create course, courese name already exists</p>
+            <img class="closeIcon" src="../Images/close.svg" 
+            onclick="this.parentNode.style.display='none'">
+        </div>
+    <%
+    }
+    %>
+
     <section class="mainContainer">
         
         <div class="studentWelcome title">
