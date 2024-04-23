@@ -1265,6 +1265,176 @@ header .profile:hover {
     font-size: 1.2em;
 }
 
+/* edit course */
+
+.courseEditContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.courseEditContainer .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3em;
+    align-self: flex-start;
+}
+.courseEditContainer .top .profileIcon {
+    width: 50px;
+    height: 50px;
+}
+.courseEditContainer .top div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+.courseEditContainer .top div p:first-of-type {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.courseEditContainer .editCourse {
+    display: flex;
+    flex-direction: column;
+    width: 35em;
+    align-self: flex-start;
+}
+.courseEditContainer .editCourse div:not(:first-of-type) {
+    padding-top: 1em;
+    border-top: 1px solid #00000040;
+}
+.courseEditContainer .editCourse div:not(:last-of-type) {
+    margin-bottom: 2em;
+}
+.courseEditContainer .editCourse div input {
+    outline: none;
+    background-color: white;
+    border: 1px solid #00000070;
+    border-radius: 5px;
+    padding: 5px;
+}
+.courseEditContainer .editCourse div input:focus {
+    color: var(--accentLighterColor)
+}
+.courseEditContainer .editCourse div .passwordToggleIcon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-left: 32.75em;
+    align-self: center;
+}
+.courseEditContainer .editCourse div .passwordToggleIcon:hover {
+    cursor: pointer;
+    filter: invert(0.2);
+}
+.editCourse .nameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.editCourse .nameContainer p:first-child {
+    font-weight: 500;
+}
+.editCourse .nameContainer .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.editCourse .nameContainer .inputContainer input {
+    width: 12em;
+    transform: translateX(-12%);
+}
+.editCourse .nameContainer .inputContainer .controls {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.75em;
+    margin-bottom: -2em;
+    display: none;
+}
+.editCourse .nameContainer .inputContainer .controls button {
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+}
+
+.editCourse .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+}
+.editCourse .descriptionContainer p:first-child {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+.editCourse .descriptionContainer input {
+    margin-top: 0.5em;
+}
+
+.editCourse .leftRightContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    width: 40em;
+}
+
+.editCourse .leftRightContainer .lectures, .editCourse .leftRightContainer .tests {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-content: center;
+    padding-right: 2em;
+}
+.editCourse .leftRightContainer .lectures {
+    border-right: 1px solid #00000050;
+}
+.editCourse .leftRightContainer .tests {
+    padding-left: 2em;
+}
+
+.editCourse .leftRightContainer .createButton {
+    display: flex;
+    align-self: center;
+    font-size: 0.75em;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 2.5em;
+    border: 1px solid transparent;
+}
+.editCourse .leftRightContainer .createButton:hover {
+    box-shadow: 0 0 5px #00000080;
+    border-color: #00000050;
+}
+
+.editCourse .leftRightContainer .header {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--accentDarkerColor);
+    background-color: #00000030;
+    padding: 5px;
+    padding-left: 0.5em;
+    margin-left: -0.5em;
+}
+
+.editCourse .leftRightContainer .contentTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.editCourse .leftRightContainer .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+}
+.editCourse .leftRightContainer .controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    margin: 0;
+    width: 28%;
+}
+
 /* profile */
 
 .profile {
@@ -1303,7 +1473,6 @@ header .profile:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: em;
 }
 .profile .profileSettings div:not(:first-of-type) {
     padding-top: 1em;

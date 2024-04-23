@@ -155,15 +155,16 @@
                                     %>
                                 </div>
 
-                                <div class="controls">
+                                <div id="controls" class="controls">
                                     <form action="setCourseIdSessionAttributeAsInstructor_action.jsp" method="post">
                                         <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
-                                        <button type="submit" href="courseView.jsp">View</button>
+                                        <button type="submit">View</button>
                                     </form>
                                     
                                     <!-- TODO later -->
-                                    <form>
-                                        <button type="submit" href="editCourse.jsp">Edit</button>
+                                    <form action="loadEditCourse_action.jsp" method="post">
+                                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                                        <button type="submit">Edit</button>
                                     </form>
                                     
                                     <!-- TODO later -->

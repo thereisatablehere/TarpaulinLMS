@@ -9,53 +9,57 @@
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
   <body class="studentHomeBody">
-    <script src="../Scripts/userTypeLocalStorage.js"></script>
-    <script src="../Scripts/userTypeLocalStorageAuthPageCheck.js"></script>
-    <script src="../Scripts/header.js"></script>
+    <script src="../Scripts/headerLoggedIn.js"></script>
 
     <script src="../Scripts/loadSidebar.js"></script>
 
-    <section class="mainContainer profile">
+    <section class="mainContainer courseEditContainer">
         <div class="top">
-            <div>
+            <div style="margin-left: 0;">
                 <p>Edit a Course</p>
                 <p>Modify information and add or remove tests and lectures</p>
             </div>
         </div>
 
-        <section class="profileSettings">
+        <section class="editCourse">
+            <%
+            String courseId = "";
+            
+            try {
+                courseId = (String) session.getAttribute("courseId");
+            }
+            catch(Exception E) {
+                out.println(E);
+            }
+            %>
 
-            <div>
-                <p>Course Name</p>
-                <input type="text" placeholder="Name" value="CSCI 123">
+            <div class="nameContainer">
+                <p><%=courseId%></p>
+                
+                <div class="inputContainer">
+                    <input id="nameInput" type="text" placeholder="Name" value=<%="\"" + courseId + "\""%>>
+
+                    <div id="nameControlsContainer" class="controls">
+                        <button id="cancelName" class="buttonAccent">Cancel</button>
+                        <button class="buttonNormal">Confirm</button>
+                    </div>
+                </div>
             </div>
 
-            <div style="flex-direction: column;">
+            <div class="descriptionContainer">
                 <p>Course Description</p>
                 <input type="text" placeholder="Description" value="Learn cool computer stuff.">
             </div>
 
-            <section style="
-                display: flex;
-                flex-direction: row;
-                margin-top: 2em;
-                width: 40em;
-            ">
-                <section class="lectures" style="
-                    display: flex;
-                    flex-direction: column;
-                    width: 50%;
-                    align-content: center;
-                    padding-right: 2em;
-                    border-right: 1px solid #00000050;
-                ">
+            <section class="leftRightContainer">
+                <section class="lectures">
                     
-                    <p style="font-size: 1.5em; font-weight: 500; color: var(--accentColor);">Lectures</p>
+                    <p class="header">Lectures</p>
 
-                    <button id="openAddLectureControls" class="buttonAccent" 
+                    <button id="openAddLectureControls" class="buttonAccent createButton" 
                         onclick='document.getElementById("addLectureControls").style.display="flex"
                         document.getElementById("openAddLectureControls").style.display="none"'
-                        style="margin: 0; margin-bottom: 1em; margin-top: 0.5em; align-self: center; font-size: 0.8em;">Add Lecture</button>
+                        >Add Lecture</button>
 
                     <section id="addLectureControls" style="
                         display: flex;
@@ -93,12 +97,12 @@
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Your First Program</p>
+                        <p class=contentTitle>Your First Program</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Watch</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Change</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">Watch</button>
+                            <button class="buttonNormal">Change</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
@@ -106,12 +110,12 @@
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Intro to Data Types</p>
+                        <p class=contentTitle>Intro to Data Types</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Watch</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Change</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">Watch</button>
+                            <button class="buttonNormal">Change</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
@@ -119,39 +123,33 @@
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Data Types Part 2</p>
+                        <p class=contentTitle>Data Types Part 2</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Watch</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Change</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">Watch</button>
+                            <button class="buttonNormal">Change</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
                 </section>
 
-                <section class="tests" style="
-                    display: flex;
-                    flex-direction: column;
-                    width: 50%;
-                    align-content: center;
-                    padding-left: 2em;
-                ">
+                <section class="tests">
                     
-                    <p style="font-size: 1.5em; font-weight: 500; color: var(--accentColor);">Tests</p>
+                    <p class="header">Tests</p>
 
-                    <button class="buttonAccent" style="margin: 0; margin-bottom: 1em; margin-top: 0.5em; align-self: center; font-size: 0.8em; height: 3em;">Create Test</button>
+                    <button class="buttonAccent createButton">Create Test</button>
 
                     <div style="
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Test 1</p>
+                        <p class=contentTitle>Test 1</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">View</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Edit</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">View</button>
+                            <button class="buttonNormal">Edit</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
@@ -159,12 +157,12 @@
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Test 1</p>
+                        <p class=contentTitle>Test 1</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">View</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Edit</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">View</button>
+                            <button class="buttonNormal">Edit</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
@@ -172,12 +170,12 @@
                         display: flex;
                         flex-direction: column;
                     ">
-                        <p>Test 1</p>
+                        <p class=contentTitle>Test 1</p>
                         
-                        <div class="controls" style="display: flex; flex-direction: row;">
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">View</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Edit</button>
-                            <button class="buttonNormal" style="font-size: 0.7em; margin: 0;">Delete</button>
+                        <div class="controls">
+                            <button class="buttonNormal">View</button>
+                            <button class="buttonNormal">Edit</button>
+                            <button class="buttonNormal">Delete</button>
                         </div>
                     </div>
 
@@ -189,5 +187,115 @@
 
     <script src="../Scripts/navbarToggle.js"></script>
 
+    <script>
+    let nameControls = document.getElementById("nameControlsContainer");
+    let parent = nameControls.parentNode;
+    
+    let nameInput = document.getElementById("nameInput");
+    let startingName = nameInput.value;
+    nameInput.addEventListener("input", inputControlsToggleCheck);
+
+    let resetName = false;
+    document.getElementById("cancelName").addEventListener("click", function() {
+        nameControls.style.marginBottom = "-2em";
+        nameControls.style.marginRight = "0";
+        nameControls.style.visibility = "1";
+
+        op = 1;
+        right = 0;
+        bot = -2;
+        
+        resetName = true;
+
+        interval = window.setInterval(animateControlsBackward, 1000/60);
+    })
+
+    let interval;
+
+    let same = true;
+    
+    function inputControlsToggleCheck() {
+        if(nameInput.value + "" != startingName + "") {
+            if(same) {
+                same = false;
+                nameControls.style.display = "flex";
+                nameControls.style.visibility = "0";
+                nameControls.style.marginBottom = "-3em";
+                nameControls.style.marginRight = "-10em";
+
+                op = 0;
+                right = -10;
+                bot = -3;
+
+                interval = window.setInterval(animateControls, 1000/60);
+            }
+        }
+        else {
+            same = true;
+            nameControls.style.marginBottom = "-2em";
+            nameControls.style.marginRight = "0";
+            nameControls.style.visibility = "1";
+
+            op = 1;
+            right = 0;
+            bot = -2;
+
+            interval = window.setInterval(animateControlsBackward, 1000/60);
+        }
+    }
+
+    let op = 0;
+    let right = -10;
+    let bot = -3;
+
+    function animateControls() {
+        if(op < 1) {
+            op += 0.5;
+        }
+
+        if(right < 0) {
+            right += 5;
+        }
+
+        if(bot < -2) {
+            bot += 0.5;
+        }
+
+        nameControls.style.opacity = op;
+        nameControls.style.marginRight = right + "em";
+        nameControls.style.marginBottom = bot + "em";
+
+        if(op >= 1 && right >= 0 && bot >= -2) {
+            window.clearInterval(interval);
+        }
+    }
+
+    function animateControlsBackward() {
+        if(op > 0) {
+            op -= 0.5;
+        }
+
+        if(right > -10) {
+            right -= 5;
+        }
+
+        if(bot > -3) {
+            bot -= 0.5;
+        }
+
+        nameControls.style.opacity = op;
+        nameControls.style.marginRight = right + "em";
+        nameControls.style.marginBottom = bot + "em";
+
+        if(op <= 0 && right <= -10 && bot <= -3) {
+            window.clearInterval(interval);
+
+            if(resetName) {
+                resetName = false;
+                nameInput.value = startingName;
+            }
+        }
+    }
+    </script>
   </body>
 </html>
