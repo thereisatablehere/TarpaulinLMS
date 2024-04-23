@@ -24,13 +24,15 @@
         <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
     </form>
 
-     <select class="courseSearchFilter">
+    <!--
+    <select class="courseSearchFilter">
         <option>Filter By</option>
         <option>Course Name</option>
         <option>Instructor</option>
         <option>Rating</option>
         <option>Date Created</option>
     </select>
+    -->
 
     <section class="list coursesList" style="border: 1px solid #00000040; width: 40vw; max-width: 30em; min-width: 15em;">
         

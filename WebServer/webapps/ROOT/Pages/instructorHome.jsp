@@ -148,9 +148,7 @@
                                         <button type="submit" href="instructorHome.jsp">QBoard</button>
                                     </form>
                                     
-                                    <form>
-                                        <button type="submit" class="delete" onclick=openDeleteCourseConfirm(this)>Delete</button>
-                                    </form>
+                                    <button class="delete" onclick=openDeleteCourseConfirm(this)>Delete</button>
                                 </div>
                             </div>
                     

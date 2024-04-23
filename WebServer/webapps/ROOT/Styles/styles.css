@@ -1106,7 +1106,7 @@ header .profile:hover {
     margin-top: 0.5em;
     width: 100%;
 }
-.instructorCoursePreview .controls form button {
+.instructorCoursePreview .controls form button, .instructorCoursePreview .controls button {
     font-size: 0.92em;
     border-radius: var(--buttonBorderRadius);
     border: 2px solid var(--accentColor);
@@ -1122,19 +1122,22 @@ header .profile:hover {
     align-items: center;
     margin: 0;
 }
+.instructorCoursePreview .controls button {
+    line-height: 1em;
+}
 .instructorCoursePreview .controls form:not(:last-child) {
     margin-right: 0.5em;
 }
-.instructorCoursePreview .controls form button:hover{
+.instructorCoursePreview .controls form button:hover, .instructorCoursePreview .controls button:hover {
     cursor: pointer;
     color: var(--accentDarkerColor);
     border-color: var(--accentDarkerColor);
 }
-.instructorCoursePreview .controls form .delete {
+.instructorCoursePreview .controls form .delete, .instructorCoursePreview .controls .delete {
     color: #ff0095;
     border-color: #ff0095;
 }
-.instructorCoursePreview .controls form .delete:hover {
+.instructorCoursePreview .controls form .delete:hover, .instructorCoursePreview .controls .delete:hover {
     color: #c20071;
     border-color: #c20071;
 }
