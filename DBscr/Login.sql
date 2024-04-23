@@ -14,8 +14,11 @@ Create or Replace Function Login(p_username varchar, p_password varchar) Return 
         Select Count(*) into s_exists from TARP_STUDENT T 
         where T.username = p_username and T.password = p_password;
         
-        If (i_exists = 1 OR s_exists = 1) Then
+        IF(i_exists = 1) THEN
             toReturn := 1;
-        End If;
+        ELSE
+            toReturn := 2;
+        END IF;
+        
         Return toReturn;
     End ;

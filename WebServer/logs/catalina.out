@@ -2071,3 +2071,167 @@ java.sql.SQLException: Invalid column index
 17-Apr-2024 00:32:29.721 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
 17-Apr-2024 00:32:29.733 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
 17-Apr-2024 00:32:29.734 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:13:21.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+22-Apr-2024 20:13:21.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+22-Apr-2024 20:13:21.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+22-Apr-2024 20:13:21.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+22-Apr-2024 20:13:21.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+22-Apr-2024 20:13:21.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+22-Apr-2024 20:13:21.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+22-Apr-2024 20:13:21.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+22-Apr-2024 20:13:21.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+22-Apr-2024 20:13:21.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:13:21.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:13:21.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+22-Apr-2024 20:13:21.909 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:13:21.910 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+22-Apr-2024 20:13:21.939 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+22-Apr-2024 20:13:21.939 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+22-Apr-2024 20:13:21.944 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+22-Apr-2024 20:13:22.525 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:13:22.561 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector["http-nio-8080"]]
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1016)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:554)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1017)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:708)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:731)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:302)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:472)
+	Caused by: java.net.BindException: Address already in use
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:459)
+		at java.base/sun.nio.ch.Net.bind(Net.java:448)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:239)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:194)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1307)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1320)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:624)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:77)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1014)
+		... 13 more
+22-Apr-2024 20:13:22.562 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1024] milliseconds
+22-Apr-2024 20:13:22.657 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+22-Apr-2024 20:13:22.657 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+22-Apr-2024 20:13:22.677 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+22-Apr-2024 20:13:24.208 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+22-Apr-2024 20:13:24.336 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [1,659] ms
+22-Apr-2024 20:13:24.355 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1792] milliseconds
+22-Apr-2024 20:13:24.358 SEVERE [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+	java.net.BindException: Address already in use (Bind failed)
+		at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+		at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:452)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:395)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:257)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:577)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:847)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:795)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+22-Apr-2024 20:13:24.358 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:13:24.359 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+22-Apr-2024 20:13:24.377 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:13:24.378 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:16:41.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+22-Apr-2024 20:16:41.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+22-Apr-2024 20:16:41.445 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+22-Apr-2024 20:16:41.445 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:16:41.445 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:16:41.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dbartness001/CS331/TarpaulinLMS/WebServer/conf/logging.properties
+22-Apr-2024 20:16:41.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Apr-2024 20:16:41.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+22-Apr-2024 20:16:41.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Apr-2024 20:16:41.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dbartness001/CS331/TarpaulinLMS/WebServer
+22-Apr-2024 20:16:41.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dbartness001/CS331/TarpaulinLMS/WebServer/temp
+22-Apr-2024 20:16:41.479 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+22-Apr-2024 20:16:41.479 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+22-Apr-2024 20:16:41.482 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+22-Apr-2024 20:16:42.044 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:16:42.080 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [981] milliseconds
+22-Apr-2024 20:16:42.183 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+22-Apr-2024 20:16:42.184 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+22-Apr-2024 20:16:42.237 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT]
+22-Apr-2024 20:16:43.430 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+22-Apr-2024 20:16:43.552 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/dbartness001/CS331/TarpaulinLMS/WebServer/webapps/ROOT] has finished in [1,315] ms
+22-Apr-2024 20:16:43.581 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+22-Apr-2024 20:16:43.691 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1610] milliseconds
+java.sql.SQLSyntaxErrorException: ORA-00904: "STUDENTUSER": invalid identifier
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1059)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:587)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:225)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:53)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:774)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:925)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1111)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:4798)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:4845)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1501)
+	at org.apache.jsp.Pages.enrolledCoursesList_jsp._jspService(enrolledCoursesList_jsp.java:189)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:829)
