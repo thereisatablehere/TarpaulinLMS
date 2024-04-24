@@ -2481,3 +2481,75 @@ true
 23-Apr-2024 10:32:18.890 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/kmaahs001/Databases/Project/WebServer/webapps/ROOT] has finished in [1,055] ms
 23-Apr-2024 10:32:18.897 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 23-Apr-2024 10:32:18.925 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1223] milliseconds
+23-Apr-2024 20:28:32.850 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+23-Apr-2024 20:28:32.852 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+23-Apr-2024 20:28:32.852 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+23-Apr-2024 20:28:32.852 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+23-Apr-2024 20:28:32.852 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+23-Apr-2024 20:28:32.852 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-Apr-2024 20:28:32.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+23-Apr-2024 20:28:32.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+23-Apr-2024 20:28:32.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+23-Apr-2024 20:28:32.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 20:28:32.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 20:28:32.889 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/kmaahs001/Databases/Project/WebServer/conf/logging.properties
+23-Apr-2024 20:28:32.889 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Apr-2024 20:28:32.889 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-Apr-2024 20:28:32.889 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 20:28:32.890 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/kmaahs001/Databases/Project/WebServer/temp
+23-Apr-2024 20:28:32.929 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+23-Apr-2024 20:28:32.929 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+23-Apr-2024 20:28:32.931 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+23-Apr-2024 20:28:33.368 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+23-Apr-2024 20:28:33.405 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [860] milliseconds
+23-Apr-2024 20:28:33.477 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+23-Apr-2024 20:28:33.477 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+23-Apr-2024 20:28:33.493 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/kmaahs001/Databases/Project/WebServer/webapps/ROOT]
+23-Apr-2024 20:28:34.324 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Apr-2024 20:28:34.394 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/kmaahs001/Databases/Project/WebServer/webapps/ROOT] has finished in [901] ms
+23-Apr-2024 20:28:34.407 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+23-Apr-2024 20:28:34.440 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1034] milliseconds
+23-Apr-2024 21:26:19.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+23-Apr-2024 21:26:19.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+23-Apr-2024 21:26:19.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+23-Apr-2024 21:26:19.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-513.9.1.el8_9.x86_64
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-2.el8.x86_64
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.21+9-LTS
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Red Hat, Inc.
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /net/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 21:26:19.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /net/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/kmaahs001/Databases/Project/WebServer/conf/logging.properties
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 21:26:19.118 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/kmaahs001/Databases/Project/WebServer
+23-Apr-2024 21:26:19.119 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/kmaahs001/Databases/Project/WebServer/temp
+23-Apr-2024 21:26:19.130 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+23-Apr-2024 21:26:19.130 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.35] using APR version [1.6.3].
+23-Apr-2024 21:26:19.132 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1k  FIPS 25 Mar 2021]
+23-Apr-2024 21:26:19.480 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+23-Apr-2024 21:26:19.510 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [805] milliseconds
+23-Apr-2024 21:26:19.566 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+23-Apr-2024 21:26:19.566 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+23-Apr-2024 21:26:19.595 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/net/home/kmaahs001/Databases/Project/WebServer/webapps/ROOT]
+23-Apr-2024 21:26:20.295 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Apr-2024 21:26:20.380 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/net/home/kmaahs001/Databases/Project/WebServer/webapps/ROOT] has finished in [785] ms
+23-Apr-2024 21:26:20.384 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+23-Apr-2024 21:26:20.407 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [896] milliseconds

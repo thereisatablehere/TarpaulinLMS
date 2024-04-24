@@ -81,7 +81,24 @@ catch(Exception E) {
 
             <div class="topInfo">
                 <!-- not yet implemented, but maybe do so later if enought time and want to -->
-                <button id="join" class="buttonNormal">Enroll</button>
+                <%  
+                String query = "SELECT * FROM TARP_ENROLLS where course_id = ? AND username = ?";
+                PreparedStatement prepStmt1 = con.prepareStatement(query);
+                prepStmt1.clearParameters();
+                prepStmt1.setString(1, courseId);
+                prepStmt1.setString(2, username);
+                
+                ResultSet result1 = prepStmt1.executeQuery();
+                if (!result1.next()){%>
+                    <button id="join" class="buttonNormal" onclick='window.open("enrollAction.jsp", "_self")'>Enroll</button>
+                <%}
+                else{%>
+                    <button id="join" class="buttonNormal">Enrolled</button>
+                <%}
+
+                result1.close();
+                prepStmt1.close();
+                %>
                 
                 <button id="join" class="buttonAccent" onclick='window.open("courseGrades.jsp", "_self")'>View Grades</button>
             </div>
