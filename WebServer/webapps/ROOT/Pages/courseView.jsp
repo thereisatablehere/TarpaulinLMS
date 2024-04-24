@@ -81,7 +81,7 @@ catch(Exception E) {
 
             <div class="topInfo">
                 <!-- not yet implemented, but maybe do so later if enought time and want to -->
-                <button id="join" class="buttonNormal">Unenroll</button>
+                <button id="join" class="buttonNormal">Enroll</button>
                 
                 <button id="join" class="buttonAccent" onclick='window.open("courseGrades.jsp", "_self")'>View Grades</button>
             </div>
