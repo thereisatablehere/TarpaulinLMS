@@ -166,3 +166,9 @@ SELECT * FROM student_grades_view;
 --        88
 --        65
 --        95
+
+--DELETE FROM TARP_S_COMMENT
+--WHERE s_username = 'erickson25' AND s_comment IS NULL;
+
+DELETE FROM TARP_RATES
+WHERE s_username = 'erickson25';

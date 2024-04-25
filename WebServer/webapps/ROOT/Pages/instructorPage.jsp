@@ -59,43 +59,34 @@ maybe just leave it -->
             out.println(E);
         }
 
+        
         String action = request.getParameter("action");
         if ("rating".equals(action)) {
-            out.println("ee");
             String formRating = request.getParameter("rating");
-            out.println("eeeee");
-            out.println(formRating);
-            out.println(courseId);
-            out.println("Course ID: " + courseId);
-            out.println("Username: " + username);
-            
             if (formRating != null && courseId != null) {
-                out.println("eqe");
-
                 try {
                     int rating = Integer.parseInt(formRating);
-                    String callSQL = "{ call rate_instructor(?, ?, ?) }";
+                    if (rating < 1 || rating > 10) {
+                        out.println("<script>alert('Rating must be between 1 and 10.'); window.location.href='instructorPage.jsp';</script>");
+                    } else {
+
+                    String callSQL = "{call rate_instructor(?, ?, ?)}";
                     CallableStatement cstmt = con.prepareCall(callSQL);
                     cstmt.setString(1, courseId);
                     cstmt.setString(2, username);
                     cstmt.setInt(3, rating);
-                    
-                    out.println("Executing stored procedure for rating...");
-                    cstmt.execute();
-                    out.println("Stored procedure executed successfully.");
-                    cstmt.close();
-                    
-                    response.sendRedirect("instructorPage.jsp"); // Redirect to a confirmation or status page
 
-                } catch (SQLException e) {
-                    out.println("SQL Error: " + e.getMessage());
-                    request.setAttribute("errorMessage", "Database error occurred. Please try again.");
-                } catch (NumberFormatException e) {
-                    out.println("Error converting rating to integer: " + e.getMessage());
-                    request.setAttribute("errorMessage", "Invalid rating format.");
-                } 
+                    cstmt.executeUpdate();
+                    cstmt.close();
+
+                    out.println("<script>alert('You have successfully rated the professor.'); window.location.href='instructorPage.jsp';</script>");
+                    }
+                } catch (SQLException | NumberFormatException e) {
+                    out.println("<script>alert('Error rating professor.'); window.location.href='instructorPage.jsp';</script>");
+                }
             }
         }
+
         %>
 
         <p style="font-size: 2em; font-weight: bold;"><%=instructor%></p>
@@ -155,25 +146,21 @@ maybe just leave it -->
             <input type="hidden" name="action" value="rating">
             <div id="ratingControls" style="
                 display: none;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
                 background-color: white;
                 border: 1px solid #00000040;
                 border-radius: 20px;
                 margin-top: 0.5em;
-                padding: 7px;
-                ">
-                <label><input type="radio" name="rating" value="0">0</label>
-                <label><input type="radio" name="rating" value="1">1</label>
-                <label><input type="radio" name="rating" value="2">2</label>
-                <label><input type="radio" name="rating" value="3">3</label>
-                <label><input type="radio" name="rating" value="4">4</label>
-                <label><input type="radio" name="rating" value="5">5</label>
-        
-                <button type="submit" class="buttonAccent" style="font-size: 0.8em;">Submit</button>
+                padding: 10px;
+            ">
+                <label for="rating">Rate (1-10):</label>
+                <input type="number" id="rating" name="rating" min="1" max="10" required>
+                
+                <button type="submit" class="buttonAccent" style="font-size: 0.8em; margin-top: 10px;">Submit</button>
                 <button type="button" class="buttonNormal" style="font-size: 0.8em;"
-                    onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
+                        onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
             </div>
         </form>
 
@@ -239,5 +226,6 @@ maybe just leave it -->
   
         
     </section>
+    
   </body>
 </html>
