@@ -18,6 +18,39 @@
     catch(Exception E) {
         username = "username";
 }
+
+String communityName = request.getParameter("communityName");
+String action = request.getParameter("action");
+    
+    if ("join".equals(action)) {
+        try {
+            //String findCommunityQuery = "SELECT comm_id FROM TARP_COMMUNITY WHERE c_name=?";
+            //PreparedStatement findStmt = con.prepareStatement(findCommunityQuery);
+            //findStmt.setString(1, communityName);
+            //ResultSet rs = findStmt.executeQuery();
+            
+            //if (!rs.next()) {
+            //    out.println("<script>alert('Community not found.'); window.location.href='joinedCommunitiesList.jsp';</script>");
+            //    return;
+            //}
+            //String communityId = rs.getString("comm_id");
+            //rs.close();
+            //findStmt.close();
+
+            // Now, attempt to enroll the user in the community
+            String enrollQuery = "INSERT INTO TARP_JOINED_BY (username, community_id) VALUES (?, ?)";
+            PreparedStatement enrollStmt = con.prepareStatement(enrollQuery);
+            enrollStmt.setString(1, username);
+            enrollStmt.setString(2, communityName);
+            enrollStmt.executeUpdate();
+            enrollStmt.close();
+            
+            out.println("<script>alert('You have successfully joined the community.'); window.location.href='joinedCommunitiesList.jsp';</script>");
+        } catch (SQLException e) {
+            out.println("SQL Error: " + e.getMessage());
+            out.println("<script>alert('Failed to join the community. Perhaps you are already enrolled.'); window.location.href='joinedCommunitiesList.jsp';</script>");
+        }
+    }
 %>
 
 <!DOCTYPE html>
@@ -154,6 +187,7 @@
                             <button class="buttonNormal" type="submit">View</button>
                         </div>
                     </form>
+                    
             <%
                 }
 
@@ -167,8 +201,20 @@
             %>
 
         </section>
+        
+        <section class="submitCommunity">
+            <h2>Join a community:</h2>
+            <form action="" method="post">
+                <input type="text" name="communityName" placeholder="Enter Community Name" required>
+                <input type="hidden" name="action" value="join">
+                <button type="submit" class="buttonNormal">Join Community</button>
+            </form>
+        </section>
+        
 
     </section>
+
+    
 
     <script src="../Scripts/navbarToggle.js"></script>
   </body>
