@@ -60,32 +60,7 @@ maybe just leave it -->
         }
 
         
-        String action = request.getParameter("action");
-        if ("rating".equals(action)) {
-            String formRating = request.getParameter("rating");
-            if (formRating != null && courseId != null) {
-                try {
-                    int rating = Integer.parseInt(formRating);
-                    if (rating < 1 || rating > 10) {
-                        out.println("<script>alert('Rating must be between 1 and 10.'); window.location.href='instructorPage.jsp';</script>");
-                    } else {
-
-                    String callSQL = "{call rate_instructor(?, ?, ?)}";
-                    CallableStatement cstmt = con.prepareCall(callSQL);
-                    cstmt.setString(1, courseId);
-                    cstmt.setString(2, username);
-                    cstmt.setInt(3, rating);
-
-                    cstmt.executeUpdate();
-                    cstmt.close();
-
-                    out.println("<script>alert('You have successfully rated the professor.'); window.location.href='instructorPage.jsp';</script>");
-                    }
-                } catch (SQLException | NumberFormatException e) {
-                    out.println("<script>alert('Error rating professor.'); window.location.href='instructorPage.jsp';</script>");
-                }
-            }
-        }
+        
 
         %>
 
@@ -142,7 +117,7 @@ maybe just leave it -->
             style="margin: 0; font-size: 0.8em;"
             onclick='document.getElementById("ratingControls").style.display = "flex"'
         >Rate</button>
-        <form id="ratingForm" method="post" action="">
+        <form id="ratingForm" method="post" action="rating_action.jsp">
             <input type="hidden" name="action" value="rating">
             <div id="ratingControls" style="
                 display: none;
