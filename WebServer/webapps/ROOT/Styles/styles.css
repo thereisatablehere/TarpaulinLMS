@@ -2,18 +2,18 @@
 
 /* main */
 
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"); */
 
 /* titles */
-@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
 
 /* general stuff */
 
 :root {
-    --fontMain: "Quicksand";
+    --fontMain: "Quicksand", sans-serif;
     /* --fontTitle: "Gothic A1"; */
-    --fontTitle: "Red Hat Display";
+    --fontTitle: "Red Hat Display", serif;
 
     --buttonBorderRadius: 30px;
 
@@ -974,6 +974,67 @@ header .profile:hover {
 }
 
 /* instructor page */
+
+#ratingDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.75em;
+}
+
+#ratingContainer {
+    display: flex;
+    flex-direction: column;
+    height: 3em;
+    margin: 0;
+}
+#openRatingForm {
+    margin: 0;
+    font-size: 0.8em;
+    height: 2em;
+    line-height: 0;
+}
+#ratingForm {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #00000040;
+    border-radius: 20px;
+    margin: 0;
+    padding: 10px;
+    width: 30em;
+}
+#ratingForm div {
+    display: flex;
+    flex-direction: row;
+}
+/* #ratingForm div section label {
+    margin-right: 0.5em;
+} */
+#ratingForm div section {
+    width: 2.5em;
+}
+#ratingForm div section input:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+#ratingForm div section label {
+    line-height: 1em;
+}
+#ratingForm div section label:hover {
+    font-weight: bold;
+    color: var(--accentColor);
+}
+#ratingForm div button {
+    font-size: 0.8em;
+    margin: 0;
+}
+#ratingForm div button:first-of-type {
+    margin-right: 0.5em;
+}
+
 #instructorTaught {
     margin-top: 0.5em;
     border: 1px solid #00000040;
@@ -981,6 +1042,7 @@ header .profile:hover {
 #instructorTaught .taught {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     border-bottom: 1px solid #00000040;
     padding-left: 2em;
     padding-right: 2em;
@@ -990,13 +1052,17 @@ header .profile:hover {
     background-color: transparent;
     border: none;
     outline: none;
+    padding: 0;
+    padding-top: 1.25em;
+    padding-bottom: 0.8em;
     margin: 0;
     margin-bottom: -0.35em;
     font-size: 1.3em;
     color: var(--accentColor);
     text-decoration: none;
     font-weight: bold;
-    transform: translateX(-30%);
+    margin-left: -1.5em;
+    margin-right: 1.5em;
 }
 #instructorTaught .taught .name:hover {
     cursor: pointer;

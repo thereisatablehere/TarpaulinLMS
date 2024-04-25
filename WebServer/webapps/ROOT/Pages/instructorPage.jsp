@@ -58,19 +58,11 @@ maybe just leave it -->
         catch(Exception E) {
             out.println(E);
         }
-
-        
-        
-
         %>
 
         <p style="font-size: 2em; font-weight: bold;"><%=instructor%></p>
 
-        <div style="
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        ">
+        <div id="ratingDisplay">
             <div>
                 <%
                 String rating = "";
@@ -113,94 +105,106 @@ maybe just leave it -->
             <p style="margin-left: 0.5em;">(<%=avgRating%>)</p>
         </div>
 
-        <button class="buttonNormal" 
-            style="margin: 0; font-size: 0.8em;"
-            onclick='document.getElementById("ratingControls").style.display = "flex"'
-        >Rate</button>
-        <form id="ratingForm" method="post" action="rating_action.jsp">
-            <input type="hidden" name="action" value="rating">
-            <div id="ratingControls" style="
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background-color: white;
-                border: 1px solid #00000040;
-                border-radius: 20px;
-                margin-top: 0.5em;
-                padding: 10px;
-            ">
-                <label for="rating">Rate (1-10):</label>
-                <input type="number" id="rating" name="rating" min="1" max="10" required>
-                
-                <button type="submit" class="buttonAccent" style="font-size: 0.8em; margin-top: 10px;">Submit</button>
-                <button type="button" class="buttonNormal" style="font-size: 0.8em;"
-                        onclick='document.getElementById("ratingControls").style.display = "none"'>Close</button>
-            </div>
-        </form>
+        <section id="ratingContainer">
+            <button id="openRatingForm" class="buttonNormal" onclick="toggleRatingForm()">Rate</button>
 
-            <p style="
-                font-size: 1.75em;
-                font-weight: 500;
-                margin-top: 1em;
-                margin-bottom: 0;
-            ">Courses</p>
-  
-            <section id="instructorTaught" class="listContainer coursesList">
-                
-                <%
-                queryString = 
-                "SELECT course_id" + "\n" + 
-                "FROM TARP_COURSE" + "\n" + 
-                "WHERE username='" + instructor + "'";
-                
-                preparedStmt = con.prepareStatement(queryString);
+            <form id="ratingForm" method="post" action="rating_action.jsp">
+                <div>
+                    <section><label><input type="radio" name="rating" value="0">0</label></section>
+                    <section><label><input type="radio" name="rating" value="1">1</label></section>
+                    <section><label><input type="radio" name="rating" value="2">2</label></section>
+                    <section><label><input type="radio" name="rating" value="3">3</label></section>
+                    <section><label><input type="radio" name="rating" value="4">4</label></section>
+                    <section><label><input type="radio" name="rating" value="5">5</label></section>
+                </div>
 
-                result = preparedStmt.executeQuery();
+                <div>
+                    <button type="submit" class="buttonAccent">Submit</button>
+                    
+                    <button type="button" class="buttonNormal" onclick="toggleRatingForm()">Close</button>
+                </div>
+            </form>
+        </section>
 
-                while(result.next()) {
-                    String courseId2 = result.getString(1);
-                %>
+        <p style="
+            font-size: 1.75em;
+            font-weight: 500;
+            margin-top: 1em;
+            margin-bottom: 0;
+        ">Courses</p>
 
-                    <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
-                        <input type="text" name="courseId2" value=<%=courseId2%> style="display: none;">
+        <section id="instructorTaught" class="listContainer coursesList">
+            
+            <%
+            queryString = 
+            "SELECT course_id" + "\n" + 
+            "FROM TARP_COURSE" + "\n" + 
+            "WHERE username='" + instructor + "'";
+            
+            preparedStmt = con.prepareStatement(queryString);
 
-                        <button class="name"><%=courseId2%></button>
-                        
-                        <!-- rating - maybe implement later if have time and want to -->
-                        <div style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                        ">
-                            <div>
-                                <img draggable="false" class="star" src="../Images/star-full.svg">
-                                <img draggable="false" class="star" src="../Images/star-full.svg">
-                                <img draggable="false" class="star" src="../Images/star-full.svg">
-                                <img draggable="false" class="star" src="../Images/star-full.svg">
-                            </div>
-                            <p style="margin-left: 0.5em;">(4.5)</p>
+            result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                String courseId2 = result.getString(1);
+            %>
+
+                <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
+                    <input type="text" name="courseId2" value=<%=courseId2%> style="display: none;">
+
+                    <button class="name"><%=courseId2%></button>
+                    
+                    <!-- rating - maybe implement later if have time and want to -->
+                    <div style="
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                    ">
+                        <div>
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
                         </div>
+                        <p style="margin-left: 0.5em;">(4.5)</p>
+                    </div>
 
-                        <%
+                    <%
 
-                        %>
+                    %>
 
-                        <!-- TODO -->
-                        <p>The description of this course would go here - not yet implemented.</p>
-                    </form>
+                    <!-- TODO -->
+                    <p>The description of this course would go here - not yet implemented.</p>
+                </form>
 
-                <%
-                }
+            <%
+            }
 
-                result.close();
-                preparedStmt.close();
-                %>
+            result.close();
+            preparedStmt.close();
+            %>
 
-            </section>
+        </section>
   
         
     </section>
     
+
+    <script>
+        let open = false;
+
+        function toggleRatingForm() {
+            open = !(open);
+
+            if(open) {
+                document.getElementById("openRatingForm").style.display = "none";
+                document.getElementById("ratingForm").style.display = "flex";
+            }
+            else {
+                document.getElementById("openRatingForm").style.display = "flex";
+                document.getElementById("ratingForm").style.display = "none";
+            }
+        }
+    </script>
   </body>
 </html>
