@@ -4,7 +4,8 @@
 
 <%@page import="
     java.sql.*, 
-    oracle.jdbc.*
+    oracle.jdbc.*,
+    java.util.Date
 "%>
 
 <%
@@ -318,43 +319,70 @@ catch(Exception E) {
         </div>
 
         <div id="comments" class="tab">
-            <input type="text" placeholder="comment" style="
-                width: 50%;
-                padding: 10px;
-                outline: none;
-                border: 1px solid black;
-                border-radius: 10px;
-                font-size: 1em;
-                margin-left: 10%;
-            ">
-            <button class="buttonAccent" style="font-size: 0.7em; margin: 0; margin-top: 0.5em; margin-bottom: 2em; margin-left: 10%;">Comment</button>
-
-            <div class="questionContainer">
-                <div>
-                    <p class="instructor">Bruce The Prof (instructor)</p>
-                    <p>01/22/24 at 2:30pm</p>
-                </div>
-                
-                <p>Thanks for all of the feedback everyone!</p>
-            </div>
             
-            <div class="questionContainer">
-                <div>
-                    <p>userHere</p>
-                    <p>01/21/24 at 1:23pm</p>
-                </div>
-                
-                <p>Great course.</p>
-            </div>
+            <form action="" method="post">
+                <input type="hidden" name="action" value="comment">
+                <input type="text" name="comment" placeholder="Add a comment..." style="width: 50%; padding: 10px; outline: none; border: 1px solid black; border-radius: 10px; font-size: 1em; margin-left: 10%;" required>
+                <input type="hidden" name="courseId" value="<%= courseId %>">
+                <button type="submit" class="buttonAccent" style="font-size: 0.7em; margin: 0; padding: 5px 10px; margin-top: 0.5em; margin-bottom: 2em; margin-left: 10%;">Post Comment</button>
+            </form>
 
-            <div class="questionContainer">
-                <div>
-                    <p>anotherUser</p>
-                    <p>01/21/24 at 1:20pm</p>
+            <% 
+            String commentQuery = "SELECT s_username, s_comment, cdate FROM view_comments WHERE course_id = ? ORDER BY cdate DESC";
+            PreparedStatement commentStmt = con.prepareStatement(commentQuery);
+            commentStmt.setString(1, courseId);
+            ResultSet commentsResultSet = commentStmt.executeQuery();
+
+            while (commentsResultSet.next()) {
+                String commenter = commentsResultSet.getString("s_username");
+                String commentText = commentsResultSet.getString("s_comment");
+                Timestamp commentTime = commentsResultSet.getTimestamp("cdate");
+            %>
+                <div class="questionContainer">
+                    <div>
+                        <p><%= commenter %></p>
+                        <p><%= new java.text.SimpleDateFormat("MM/dd/yy 'at' HH:mm").format(commentTime) %></p>
+                    </div>
+                    
+                    <p><%= commentText %></p>
                 </div>
-                
-                <p>I learned a lot of usefull stuff.</p>
-            </div>
+            <%
+            }
+
+            commentsResultSet.close();
+            commentStmt.close();
+            %>
+
+            <%
+            String action = request.getParameter("action");
+            if ("comment".equals(action)) {
+                String comment = request.getParameter("comment");
+            
+            
+                try {
+                    String insertSql = "INSERT INTO TARP_S_COMMENT (course_id, s_username, s_comment, cdate) VALUES (?, ?, ?, ?)";
+                    PreparedStatement pstmt = con.prepareStatement(insertSql);
+                    pstmt.setString(1, courseId);
+                    pstmt.setString(2, username);
+                    pstmt.setString(3, comment);
+                    pstmt.setTimestamp(4, new java.sql.Timestamp(new Date().getTime()));
+            
+                    int rowsAffected = pstmt.executeUpdate();
+                    pstmt.close();
+            
+                    if (rowsAffected > 0) {
+                        out.println("<script>alert('You have successfully left a comment.'); window.location.href='courseView.jsp';</script>");
+                    } else {
+                        out.println("<script>alert('Failed to post a comment.'); window.location.href='courseView.jsp';</script>");
+                    }
+                } catch (SQLException e) {
+                    out.println("SQL Error: " + e.getMessage());
+                    out.println("<script>alert('Database error while posting comment.'); window.location.href='courseView.jsp';</script>");
+                }
+            }
+        %>
+
+            
             
         </div>
         
