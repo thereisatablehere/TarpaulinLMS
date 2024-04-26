@@ -148,7 +148,27 @@ catch(Exception E) {
                 <p>Description</p>
 
                 <!-- TODO -->
-                <p>The description of this course would go here - not yet implemented.</p>
+                <% 
+                String c_description = "";
+
+                String query2 = 
+                "SELECT descrip" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement preparedStmt2 = con.prepareStatement(query2);
+
+                ResultSet result2 = preparedStmt2.executeQuery();
+
+                while(result2.next()) {
+                    c_description = result2.getString(1);
+                    break;
+                }
+
+                result2.close();
+                preparedStmt2.close();
+                %>
+                <p><%=c_description%></p>
             </div>
 
         </div>

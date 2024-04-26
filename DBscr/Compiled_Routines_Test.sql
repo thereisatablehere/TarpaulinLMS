@@ -48,7 +48,7 @@ SELECT * FROM tarp_lecture WHERE course_id = 'CSCI101';
 -- TEST DELETE_COURSE (3)
 
 SELECT * FROM tarp_course;
-INSERT INTO tarp_course (course_id, username) VALUES ('CSCI222', 'imad2000');
+INSERT INTO tarp_course (course_id, username) VALUES ('CSCI222', 'imad2000', 'Maybe a course');
 SELECT * FROM tarp_course;
 EXEC delete_course('CSCI222');
 SELECT * FROM tarp_course;

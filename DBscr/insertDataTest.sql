@@ -37,11 +37,11 @@ INSERT INTO tarp_community (comm_id, username, date_created, c_description, num_
 INSERT INTO tarp_community (comm_id, username, date_created, c_description, num_students) VALUES ('MN', 'maahs35', TIMESTAMP '2024-03-29 10:30:00', 'This group is for in-state students!', 0);
 
 
-INSERT INTO tarp_course (course_id, username) VALUES ('CSCI101', 'imad2000');
-INSERT INTO tarp_course (course_id, username) VALUES ('CSCI331', 'imad2000');
-INSERT INTO tarp_course (course_id, username) VALUES ('MATH101', 'bill34');
-INSERT INTO tarp_course (course_id, username) VALUES ('MATH231', 'bill34');
-INSERT INTO tarp_course (course_id, username) VALUES ('THEO111', 'erin1234');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('CSCI101', 'imad2000', 'Intro CSCI course');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('CSCI331', 'imad2000', 'Databases');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('MATH101', 'bill34', 'Intro math class');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('MATH231', 'bill34', 'Advanced math class');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('THEO111', 'erin1234', 'Intro theo class');
 
 
 INSERT INTO tarp_s_comment (course_id, s_username, s_comment, cdate) VALUES ('CSCI101', 'grove5', 'Great course!', TIMESTAMP '2024-03-28 10:30:00');

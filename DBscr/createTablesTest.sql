@@ -40,6 +40,7 @@ DROP TABLE tarp_course CASCADE CONSTRAINTS;
 CREATE TABLE tarp_course (
   course_id  varchar(20),
   username    varchar(20),
+  descrip       varchar(100),
   primary key (course_id),
   Constraint FK_TARP_COURSE foreign key (username) references tarp_instructor(username)
 );
