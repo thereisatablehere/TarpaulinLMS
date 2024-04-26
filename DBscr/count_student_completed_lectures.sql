@@ -6,6 +6,6 @@ AS
 	numLectures int := 0;
 	Begin
 		Select Count(*) into numLectures from TARP_WATCHES T 
-        where uname = T.username and T.completed = 'y';
+        where uname = T.username;
 		Return  numLectures;
 	End ;

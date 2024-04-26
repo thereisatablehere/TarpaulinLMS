@@ -102,49 +102,58 @@ different enought from normal courseView.jsp, then this would be fine.
                 <p>Description</p>
 
                 <!-- TODO -->
-                <p>The description of this course would go here - not yet implemented.</p>
+                <%
+                String c_description = "";
+
+                String query2 = 
+                "SELECT descrip" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement preparedStmt2 = con.prepareStatement(query2);
+
+                ResultSet result2 = preparedStmt2.executeQuery();
+
+                while(result2.next()) {
+                    c_description = result2.getString(1);
+                    break;
+                }
+
+                result2.close();
+                preparedStmt2.close();
+                %>
+                <p><%=c_description%></p>
             </div>
 
         </div>
 
         <div id="lectures" class="tab">
-
-            <div class="todo">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Unfinished Lectures</p>
-
-                <div class="lectureContainer">
-                    <p>Data Types Part 3</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Structures</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Structures Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-            </div>
-
-            <div class="finished">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Completed Lectures</p>
-
-                <div class="lectureContainer">
-                    <p>Your First Program</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Types</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Types Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
+            <%int u_lectures = 0;%>
+            <div class="todo"style="border-color:transparent;margin:0;">
+                
+                
+                <%
+                
+                String tot_lects = 
+                "SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_LECTURE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement tot_lect_stmt = con.prepareStatement(tot_lects);
+                
+                ResultSet res_tot_lect = tot_lect_stmt.executeQuery();
+                
+                while(res_tot_lect.next()) { %>
+                    <div class="lectureContainer"style="order: 5;">
+                        <p><%=res_tot_lect.getString(2)%></p>
+                        <div class="video">Video placeholder</div>
+                    </div>
+                    <%  u_lectures++;
+                }
+                
+                %>
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order:1;"><%=u_lectures%> Total Lectures</p>
+                
             </div>
 
 

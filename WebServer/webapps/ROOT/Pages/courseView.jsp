@@ -176,41 +176,58 @@ catch(Exception E) {
         <div id="lectures" class="tab">
 
             <div class="todo">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Unfinished Lectures</p>
-
-                <div class="lectureContainer">
-                    <p>Data Types Part 3</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Structures</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Structures Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
+                
+                <%
+                int u_lectures = 0;
+                
+                String tot_lects = 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_LECTURE" + "\n" + 
+                "WHERE course_id='" + courseId + "')" + 
+                "MINUS" + 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "')"  
+                ;
+                
+                PreparedStatement tot_lect_stmt = con.prepareStatement(tot_lects);
+                
+                ResultSet res_tot_lect = tot_lect_stmt.executeQuery();
+                
+                while(res_tot_lect.next()) { %>
+                    <div class="lectureContainer"style="order: 5;">
+                        <p><%=res_tot_lect.getString(2)%></p>
+                        <div class="video">Video placeholder</div>
+                    </div>
+                    <%  u_lectures++;
+                }
+                %>
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=u_lectures%> Unfinished Lectures</p>
             </div>
 
             <div class="finished">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Completed Lectures</p>
-
-                <div class="lectureContainer">
-                    <p>Your First Program</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Types</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Types Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
+                <%
+                int c_lectures = 0;
+                
+                String c_lects = 
+                "SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "'"  
+                ;
+                
+                PreparedStatement c_lect_stmt = con.prepareStatement(c_lects);
+                
+                ResultSet res_c_lect = c_lect_stmt.executeQuery();
+                
+                while(res_c_lect.next()) { %>
+                    <div class="lectureContainer"style="order: 5;">
+                        <p><%=res_c_lect.getString(2)%></p>
+                        <div class="video">Video placeholder</div>
+                    </div>
+                    <%  c_lectures++;
+                }
+                %>
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=c_lectures%> Finished Lectures</p>
             </div>
 
 

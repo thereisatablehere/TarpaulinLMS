@@ -48,7 +48,7 @@ SELECT * FROM tarp_lecture WHERE course_id = 'CSCI101';
 -- TEST DELETE_COURSE (3)
 
 SELECT * FROM tarp_course;
-INSERT INTO tarp_course (course_id, username) VALUES ('CSCI222', 'imad2000', 'Maybe a course');
+INSERT INTO tarp_course (course_id, username, descrip) VALUES ('CSCI222', 'imad2000', 'Maybe a course');
 SELECT * FROM tarp_course;
 EXEC delete_course('CSCI222');
 SELECT * FROM tarp_course;
@@ -272,9 +272,9 @@ SELECT * FROM tarp_student;
 
 -- TEST COUNT_STUDENT_COMPLETED_LECTURES (19)
 
-Select Count(*) from TARP_WATCHES T where 'grove5' = T.username and T.completed = 'y';
+Select Count(*) from TARP_WATCHES T where 'grove5' = T.username;
 SELECT count_student_completed_lectures('grove5')  from DUal;
-Select Count(*) from TARP_WATCHES T where 'bartness2' = T.username and T.completed = 'y';
+Select Count(*) from TARP_WATCHES T where 'bartness2' = T.username;
 SELECT count_student_completed_lectures('bartness2')  from DUal;
 
 --

@@ -99,16 +99,11 @@ INSERT INTO tarp_enrolls (course_id, username) VALUES ('MATH101', 'erickson25');
 INSERT INTO tarp_enrolls (course_id, username) VALUES ('THEO111', 'grove5');
 
 
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'bartness2', 'y');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 2', 'MATH101', 'bartness2', 'y');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'grove5', 'y');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 2', 'MATH101', 'grove5', 'n');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'maahs35', 'y');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 2', 'MATH101', 'maahs35', 'n');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'davis12', 'y');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 2', 'MATH101', 'davis12', 'n');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 1', 'MATH101', 'erickson25', 'n');
-INSERT INTO tarp_watches (lecture_id, course_id, username, completed) VALUES ('Lecture 2', 'MATH101', 'erickson25', 'n');
+INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES ('Lecture 1', 'MATH101', 'bartness2');
+INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES ('Lecture 2', 'MATH101', 'bartness2');
+INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES ('Lecture 1', 'MATH101', 'grove5');
+INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES ('Lecture 1', 'MATH101', 'maahs35');
+INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES ('Lecture 1', 'MATH101', 'davis12');
 
 
 INSERT INTO tarp_rates (s_username, i_username, instructor_score) VALUES ('davis12', 'bill34', 4);
