@@ -368,80 +368,70 @@ catch(Exception E) {
         -->
 
         <div id="comments" class="tab">
-            
-            <form action="" method="post">
-                <input type="hidden" name="action" value="comment">
-                <input type="text" name="comment" placeholder="Add a comment..." style="width: 50%; padding: 10px; outline: none; border: 1px solid black; border-radius: 10px; font-size: 1em; margin-left: 10%;" required>
-                <input type="hidden" name="courseId" value="<%= courseId %>">
-                <button type="submit" class="buttonAccent" style="font-size: 0.7em; margin: 0; padding: 5px 10px; margin-top: 0.5em; margin-bottom: 2em; margin-left: 10%;">Post Comment</button>
-            </form>
+            <%
+            Boolean postCommentFailed = false;
 
-            <% 
-            String commentQuery = "SELECT s_username, s_comment, cdate FROM view_comments WHERE course_id = ? ORDER BY cdate DESC";
-            PreparedStatement commentStmt = con.prepareStatement(commentQuery);
-            commentStmt.setString(1, courseId);
-            ResultSet commentsResultSet = commentStmt.executeQuery();
+            try{
+                postCommentFailed = Boolean.parseBoolean((String) session.getAttribute("failedToPostComment"));
+            }
+            catch(Exception E) {
+                postCommentFailed = false;
+            }
 
-            while (commentsResultSet.next()) {
-                String commenter = commentsResultSet.getString("s_username");
-                String commentText = commentsResultSet.getString("s_comment");
-                Timestamp commentTime = commentsResultSet.getTimestamp("cdate");
+            if(postCommentFailed) {
+                out.println("Failed to post comment");
+                session.setAttribute("failedToPostComment", "false");
+            }
             %>
-                <div class="questionContainer">
-                    <div>
-                        <%
-                        if(commenter.equals(instructor)) {
-                        %>
-                            <p class="instructor"><%= commenter %> (instructor)</p>
-                        <%
-                        }
-                        else {
-                        %>
-                            <p><%= commenter %></p>
-                        <%
-                        }
-                        %>
-                        <p><%= new java.text.SimpleDateFormat("MM/dd/yy 'at' HH:mm").format(commentTime) %></p>
+
+            <section id="commentsList">
+                <% 
+                String commentQuery = "SELECT s_username, s_comment, cdate FROM view_comments WHERE course_id = ? ORDER BY cdate DESC";
+                PreparedStatement commentStmt = con.prepareStatement(commentQuery);
+                commentStmt.setString(1, courseId);
+                ResultSet commentsResultSet = commentStmt.executeQuery();
+
+                while (commentsResultSet.next()) {
+                    String commenter = commentsResultSet.getString("s_username");
+                    String commentText = commentsResultSet.getString("s_comment");
+                    Timestamp commentTime = commentsResultSet.getTimestamp("cdate");
+                %>
+                    <div class="questionContainer">
+                        <div>
+                            <%
+                            if(commenter.equals(instructor)) {
+                            %>
+                                <p class="instructor"><%= commenter %> (instructor)</p>
+                            <%
+                            }
+                            else {
+                            %>
+                                <p><%= commenter %></p>
+                            <%
+                            }
+                            %>
+                            <p><%= new java.text.SimpleDateFormat("MM/dd/yy 'at' HH:mm").format(commentTime) %></p>
+                        </div>
+                        
+                        <p><%= commentText %></p>
                     </div>
-                    
-                    <p><%= commentText %></p>
-                </div>
-            <%
-            }
-
-            commentsResultSet.close();
-            commentStmt.close();
-            %>
-
-            <%
-            String action = request.getParameter("action");
-            if ("comment".equals(action)) {
-                String comment = request.getParameter("comment");
-            
-            
-                try {
-                    String insertSql = "INSERT INTO TARP_S_COMMENT (course_id, s_username, s_comment, cdate) VALUES (?, ?, ?, ?)";
-                    PreparedStatement pstmt = con.prepareStatement(insertSql);
-                    pstmt.setString(1, courseId);
-                    pstmt.setString(2, username);
-                    pstmt.setString(3, comment);
-                    pstmt.setTimestamp(4, new java.sql.Timestamp(new Date().getTime()));
-            
-                    int rowsAffected = pstmt.executeUpdate();
-                    pstmt.close();
-            
-                    if (rowsAffected > 0) {
-                        out.println("<script>alert('You have successfully left a comment.'); window.location.href='courseView.jsp';</script>");
-                    } else {
-                        out.println("<script>alert('Failed to post a comment.'); window.location.href='courseView.jsp';</script>");
-                    }
-                } catch (SQLException e) {
-                    out.println("SQL Error: " + e.getMessage());
-                    out.println("<script>alert('Database error while posting comment.'); window.location.href='courseView.jsp';</script>");
+                <%
                 }
-            }
-        %>            
-            
+
+                commentsResultSet.close();
+                commentStmt.close();
+                %>
+            </section>
+
+            <form id="postCommmentContainer" action="sendComment_action.jsp" method="post">
+                <input type="hidden" name="courseId" value="<%= courseId %>">
+                
+                <input type="text" name="comment" placeholder="Add a comment...">
+
+                <button type="submit">
+                    <img src="../Images/send.svg">
+                </button>
+            </form>
         </div>
         
     </section>

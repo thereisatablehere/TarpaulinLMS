@@ -1806,6 +1806,51 @@ header div #you {
     width: 34em;
     align-self: center;
 }
+.courseView #comments #commentsList {
+    max-height: 50vh;
+    overflow: auto;
+}
+.courseView #comments #postCommmentContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0.5em;
+    margin-top: 2em;
+    border-radius: 50px;
+    background-color: #00409020;
+    width: fit-content;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.courseView #comments #postCommmentContainer input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2em;
+    font-size: 1em;
+    margin-left: 0.5em;
+    /* border: 1px solid black; */
+}
+.courseView #comments #postCommmentContainer button {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 20px;
+    margin: 0;
+    margin-left: -2.5em;
+}
+.courseView #comments #postCommmentContainer button:hover {
+    cursor: pointer;
+    background-color: #00000030;
+}
+.courseView #comments #postCommmentContainer button img {
+    width: 20px;
+}
 
 .courseView .questionContainer {
     display: flex;
