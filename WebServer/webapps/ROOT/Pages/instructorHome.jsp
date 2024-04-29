@@ -37,7 +37,7 @@
     %>
         <div id="createCourseFailedMessage">
             <img class="errorIcon" src="../Images/exclamation-outline.svg">
-            <p>Failed to create course, courese name already exists</p>
+            <p>Failed to create course</p>
             <img class="closeIcon" src="../Images/close.svg" 
             onclick="this.parentNode.style.display='none'">
         </div>

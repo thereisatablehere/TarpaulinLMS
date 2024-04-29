@@ -1311,7 +1311,7 @@ header div #you {
     line-height: 1.25em;
 }
 #createCourseFailedMessage {
-    width: 35em;
+    width: 20em;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -1326,7 +1326,7 @@ header div #you {
     left: 0;
     right: 0;
     margin: auto;
-    transform: translateX(-20%);
+    transform: translateX(-45%);
 }
 #createCourseFailedMessage p {
     font-size: 1.1em;

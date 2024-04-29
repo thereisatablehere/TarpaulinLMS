@@ -50,6 +50,10 @@
         }
         %>
 
+        <div id="errorPopup" class="createCourseErrorPopup">
+            <p>Error: make sure input fields are not blank.</p>
+        </div>
+
         <p class="bigTitle" style="text-align: center;">Create a Community</p>
 
         <!-- not a form because handled by JS so can get date -->
@@ -70,10 +74,16 @@
     <script src="../Scripts/navbarToggle.js"></script>
 
     <script>
+        let errorPopupRef = document.getElementById("errorPopup");
+        let op = 0;
+        let interval;
         let failed = false;
 
         function submitForm() {
             failed = false;
+            let emptyInput = false;
+            errorPopupRef.style.display = "none";
+
             let form = document.createElement("form");
             form.action="createCommunity_action.jsp";
             form.method="post";
@@ -84,6 +94,7 @@
             
             if(nameInputed.length == 0) {
                 failed = true;
+                emptyInput = true;
             }
 
             if(nameInputed.includes("'")) {
@@ -99,6 +110,7 @@
 
             if(descriptionInputed.length == 0) {
                 failed = true;
+                emptyInput = true;
             }
 
             descriptionInput.value = descriptionInputed.replace("'", "''");
@@ -121,10 +133,31 @@
             
             
             if(failed) {
-                // ensure that there will be a SQL error
-                nameInput.value = null;
+                if(emptyInput) {
+                    errorPopupRef.style.opacity = "0";
+                    errorPopupRef.style.display = "flex";
+                    
+                    op = 0;
+                    interval = window.setInterval(animateErrorPopup, 1000 / 60);
+                }
+                else {
+                    // ensure that there will be a SQL error
+                    nameInput.value = null;
+                    form.submit();
+                }
             }
-            form.submit();
+            else {
+                form.submit();
+            }
+        }
+
+        function animateErrorPopup() {
+            op += 0.035;
+            errorPopupRef.style.opacity = op;
+
+            if(op >= 1) {
+                window.clearInterval(interval);
+            }
         }
     </script>
   </body>
