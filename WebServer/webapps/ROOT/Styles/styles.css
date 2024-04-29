@@ -791,6 +791,39 @@ header div #you {
     padding-right: 10px;
 }
 
+/* join a community */
+
+#joinCourseContainer {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    width: 20em;
+    align-self: center;
+    align-items: center;
+    /* background-color: #00000030; */
+}
+#joinCourseContainer input {
+    outline: none;
+    border: 1px solid #00000050;
+    border-radius: 15px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin: 0;
+    font-size: 1.2em;
+    width: 100%;
+    height: 2.5em;
+}
+#joinCourseContainer button {
+    background-color: var(--accentLighterColor);
+    margin-left: -3.5em;
+    scale: 0.8;
+}
+#joinCourseContainer button:hover {
+    background-color: var(--accentDarkerColor);
+}
+
 /* search for a course */
 
 .courseSearch {
