@@ -703,21 +703,21 @@ header div #you {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.allGradeReportContainer div:not(:last-of-type) {
     margin-bottom: 1.5em;
+    order: 5;
 }
 .allGradeReportContainer div p {
     font-size: 1.2em;
 }
-.allGradeReportContainer div p:first-of-type {
+.allGradeReportContainer .total p {
     font-weight: 500;
 }
-.allGradeReportContainer div:first-of-type {
+.allGradeReportContainer .total {
     border-bottom: 1px solid rgba(0, 0, 0, 0.301);
     padding-bottom: 0.5em;
+    order: 1;
 }
-.allGradeReportContainer div:first-of-type p {
+.allGradeReportContainer .total p {
     font-weight: bold;
 }
 
