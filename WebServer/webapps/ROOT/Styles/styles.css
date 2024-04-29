@@ -1242,43 +1242,68 @@ header div #you {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     width: 100%;
 }
 .instructorCoursePreview .controls form button, .instructorCoursePreview .controls button {
     font-size: 0.92em;
     border-radius: var(--buttonBorderRadius);
-    border: 2px solid var(--accentColor);
+    border: 2px solid black;
+    border: none;
     color: var(--accentLighterColor);
     background-color: transparent;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
     line-height: 1.5em;
     display: flex;
     align-items: center;
     margin: 0;
 }
 .instructorCoursePreview .controls button {
-    line-height: 1em;
+    line-height: 0;
+    height: 35px;
+}
+.instructorCoursePreview .controls button img {
+    height: 20px;
 }
 .instructorCoursePreview .controls form:not(:last-child) {
-    margin-right: 0.5em;
+    margin-right: 0.2em;
 }
 .instructorCoursePreview .controls form button:hover, .instructorCoursePreview .controls button:hover {
     cursor: pointer;
-    color: var(--accentDarkerColor);
-    border-color: var(--accentDarkerColor);
+    background-color: #00000030;
 }
-.instructorCoursePreview .controls form .delete, .instructorCoursePreview .controls .delete {
-    color: #ff0095;
-    border-color: #ff0095;
+.instructorCoursePreview .controls .notyet:hover {
+    cursor: not-allowed;
+}
+.instructorCoursePreview .controls .notyet:hover > .editSoon {
+    display: flex;
+}
+.instructorCoursePreview .controls button .editSoon {
+    position: absolute;
+    z-index: 5;
+    margin-top: -3.5em;
+    background-color: grey;
+    padding: 0.75em;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: black;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+.instructorCoursePreview .controls form .delete, .instructorCoursePreview .controls .delete img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(-50deg) brightness(80%) contrast(119%);
 }
 .instructorCoursePreview .controls form .delete:hover, .instructorCoursePreview .controls .delete:hover {
-    color: #c20071;
-    border-color: #c20071;
+    background-color: #ff009570;
+}
+.instructorCoursePreview .controls form .delete:hover, .instructorCoursePreview .controls .delete:hover > img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(-50deg) brightness(55%) contrast(150%);
 }
 .confirmDeleteCourse {
     display: flex;

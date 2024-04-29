@@ -80,7 +80,7 @@
                     
                     <div>
                         <button class="buttonAccent" type="button" onclick=hideConfirmDeleteCourse()>No</button>
-                        <button class="buttonNormal" type="submit" onclick="let a = 5;">Yes</button>
+                        <button class="buttonNormal" type="submit">Yes</button>
                     </div>
                 </form>
                 
@@ -158,21 +158,19 @@
                                 <div id="controls" class="controls">
                                     <form action="setCourseIdSessionAttributeAsInstructor_action.jsp" method="post">
                                         <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
-                                        <button type="submit">View</button>
+                                        <button type="submit"><img src="../Images/eye.png"></button>
                                     </form>
                                     
-                                    <!-- TODO later -->
-                                    <form action="loadEditCourse_action.jsp" method="post">
-                                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
-                                        <button type="submit">Edit</button>
-                                    </form>
+                                    <button class="notyet" type="submit">
+                                        <img src="../Images/edit-pencil.svg">
+                                        <p class="editSoon">Comming soon</p>
+                                    </button>
                                     
-                                    <!-- TODO later -->
                                     <form>
-                                        <button type="submit" href="instructorHome.jsp">QBoard</button>
+                                        <button type="submit" href="instructorHome.jsp"><img src="../Images/chat-bubble-dots.svg"></button>
                                     </form>
                                     
-                                    <button class="delete" onclick=openDeleteCourseConfirm(this)>Delete</button>
+                                    <button class="delete" onclick=openDeleteCourseConfirm(this)><img src="../Images/trash.svg"></button>
                                 </div>
                             </div>
                     
