@@ -196,7 +196,7 @@ catch(Exception E) {
                 
                 while(res_tot_lect.next()) { %>
                     <form class="course" action="setLectureIdSessionAttribute_action.jsp" method="post" style="order: 5;">
-                        <input type="text" name="lectureId" value=<%=res_tot_lect.getString(2)%> style="display: none;">
+                        <input type="text" name="lectureId" value=<%="\"" + res_tot_lect.getString(2) + "\""%> style="display: none;">
                         <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
 
                             <div class="lectureContainer"style="order: 5;">
@@ -225,10 +225,15 @@ catch(Exception E) {
                 ResultSet res_c_lect = c_lect_stmt.executeQuery();
                 
                 while(res_c_lect.next()) { %>
-                    <div class="lectureContainer"style="order: 5;">
-                        <p><%=res_c_lect.getString(2)%></p>
-                        <div class="video">Video placeholder</div>
-                    </div>
+                    <form class="course" action="setLectureIdSessionAttribute_action.jsp" method="post" style="order: 5;">
+                        <input type="text" name="lectureId" value=<%="\"" + res_c_lect.getString(2) + "\""%> style="display: none;">
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+
+                            <div class="lectureContainer"style="order: 5;">
+                                <button type="submit"><%=res_c_lect.getString(2)%></button>
+                                <div class="video">Video placeholder</div>
+                            </div>
+                    </form>
                     <%  c_lectures++;
                 }
                 %>
