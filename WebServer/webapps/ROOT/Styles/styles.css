@@ -105,6 +105,23 @@ button {
     background-color: var(--accentDarkerColor);
 }
 
+.backNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    line-height: 0;
+    font-size: 0.9em;
+    padding: 0.5em;
+}
+.backNav img {
+    width: 25px;
+    filter: invert(1);
+}
+.backNav p {
+    padding-right: 0.35em;
+}
+
 p {
     margin: 0;
 }
@@ -1666,28 +1683,63 @@ header div #you {
 
 .courseView #lectures {
     flex-direction: row;
-    width: 50em !important;
-    justify-content: center;
+    width: fit-content;
+    justify-content: space-between;
     align-self: center;
-    margin-left: 7em;
 }
-.courseView #lectures .todo {
+.courseView #lectures .todo, 
+.courseView #lectures .finished {
     display: flex;
     flex-direction: column;
-    margin-right: 2em;
+    justify-items: flex-start;
+    margin: 0;
+    padding: 0;
+    width: 18em;
+}
+.courseView #lectures .finished {
+    margin-left: 5em;
+}
+.courseView #lectures .divider {
     border-right: 1px solid #00000050;
-    padding-right: 2em;
-    width: 50%;
+}
+.courseView #lectures .todo .course, 
+.courseView #lectures .finished .course {
+    padding: 0;
+    margin: 0;
+}
+.courseView #lectures .todo .course .lectureContainer
+.courseView #lectures .finished .course .lectureContainer {
+    padding: 0;
+    margin: 0;
+}
+.courseView #lectures .todo .course .lectureContainer .goToLecture, 
+.courseView #lectures .finished .course .lectureContainer .goToLecture {
+    border: none;
+    outline: none;
+    padding: 1em;
+    color: var(--accentColor);
+    font-size: 1.1em;
+    background-color: transparent;
+    margin: 0;
+}
+.courseView #lectures .todo .course .lectureContainer .goToLecture:hover, 
+.courseView #lectures .finished .course .lectureContainer .goToLecture:hover {
+    cursor: pointer;
+    color: var(--accentDarkerColor);
+    font-weight: bold;
+}
+.courseView #lectures .todo .course:not(:last-of-type), 
+.courseView #lectures .finished .course:not(:last-of-type) {
+    border-bottom: 1px solid #00000050;
 }
 .courseView #lectures .finished {
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 .courseView #lectures .lectureContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 .courseView #lectures .lectureContainer:not(:first-of-type) {
     padding-top: 1em;
@@ -1777,6 +1829,57 @@ header div #you {
 }
 .courseView .questionContainer div p:first-of-type {
     font-weight: bold;
+}
+
+/* view lecture */
+
+.watchLecture .bigTitle {
+    margin-bottom: 0.5em;
+}
+.watchLecture video {
+    background-color: #00000030;
+    border-radius: 10px;
+}
+.watchLecture .link {
+    color: var(--accentColor);
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+.watchLecture .link:hover {
+    cursor: pointer;
+    color: var(--accentDarkerColor);
+    margin-top: 0.5em;
+}
+.watchLecture form {
+    padding: 0;
+    margin: 0;
+    margin-top: 1.5em;
+}
+.watchLecture form button {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    line-height: 0;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.watchLecture form .markAsWatched img {
+    width: 20px;
+    margin-right: 0.5em;
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(80%) contrast(130%);
+}
+.watchLecture form .markAsWatched:hover > img {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(110%) contrast(130%);
+}
+.watchLecture form .alreadyWatched {
+    background-color: #00000030;
+    border-color: #00000050;
+    color: #0000008C;
+}
+.watchLecture form .alreadyWatched:hover {
+    cursor: not-allowed;
+    color: #0000008C;
 }
 
 .coursesList, .communitiesList {

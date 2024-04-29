@@ -21,10 +21,8 @@
 
 <script src="../Scripts/loadSidebar.js"></script>
 
-<section class="mainContainer">
-  
+<section class="mainContainer watchLecture">
     <%
-
     String username = "username";
 
     try{
@@ -52,8 +50,14 @@
         lecture_id = "Lecture";
     }
     %>
+
+    <button class="buttonAccent backNav" onclick="window.open('courseView.jsp', '_self')">
+        <img src="../Images/cheveron-left.svg"><p>Go Back</p>
+    </button>
+    
     <p class="bigTitle"><%=lecture_id%></p>
-    <video width="320" height="240" controls></video>
+
+    <video width="320" height="180" controls></video>
 
     <%
     String getLink = 
@@ -66,14 +70,12 @@
     ResultSet res_link = getLinkStmt.executeQuery();
     
     while(res_link.next()) { 
-        String link = res_link.getString(1); %>
-        <div class="lectureContainer">
-            <a href=<%=link%>><%=link%></a>
-        </div>
-        <%}
+        String link = res_link.getString(1);
     %>
-
+        <a class="link" href=<%=link%>>(<%=link%>)</a>
     <%
+    }
+    
     String isWatched = 
         "SELECT *" + "\n" + 
         "FROM TARP_WATCHES" + "\n" + 
@@ -90,9 +92,12 @@
         <input type="text" name="lectureId" value=<%="\"" + lecture_id + "\""%> style="display: none;">
         <input type="text" name="username" value=<%="\"" + username + "\""%> style="display: none;">
         <%if(res_watched.next()) { %>
-            <button type="button">Already Watched</button>
+            <button type="button" class="buttonNormal alreadyWatched">Already Watched</button>
         <%}else{%>
-            <button type="submit" class="buttonNormal">Watch Lecture</button>
+            <button type="submit" class="buttonNormal markAsWatched">
+                <img src="../Images/checkmark.svg">
+                <p>Mark As Watched</p>
+            </button>
         <%}%>
     </form>
 

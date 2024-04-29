@@ -179,7 +179,6 @@ catch(Exception E) {
         <div id="lectures" class="tab">
 
             <div class="todo">
-                
                 <%
                 int u_lectures = 0;
                 
@@ -203,8 +202,7 @@ catch(Exception E) {
                         <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
 
                             <div class="lectureContainer"style="order: 5;">
-                                <button type="submit"><%=res_tot_lect.getString(2)%></button>
-                                <div class="video">Video placeholder</div>
+                                <button class="goToLecture" type="submit"><%=res_tot_lect.getString(2)%></button>
                             </div>
                     </form>
                     <%  u_lectures++;
@@ -233,8 +231,7 @@ catch(Exception E) {
                         <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
 
                             <div class="lectureContainer"style="order: 5;">
-                                <button type="submit"><%=res_c_lect.getString(2)%></button>
-                                <div class="video">Video placeholder</div>
+                                <button class="goToLecture" type="submit"><%=res_c_lect.getString(2)%></button>
                             </div>
                     </form>
                     <%  c_lectures++;
@@ -443,9 +440,7 @@ catch(Exception E) {
                     out.println("<script>alert('Database error while posting comment.'); window.location.href='courseView.jsp';</script>");
                 }
             }
-        %>
-
-            
+        %>            
             
         </div>
         
