@@ -151,7 +151,27 @@ catch(Exception E) {
                 <p>Description</p>
 
                 <!-- TODO -->
-                <p>The description of this course would go here - not yet implemented.</p>
+                <% 
+                String c_description = "";
+
+                String query2 = 
+                "SELECT descrip" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement preparedStmt2 = con.prepareStatement(query2);
+
+                ResultSet result2 = preparedStmt2.executeQuery();
+
+                while(result2.next()) {
+                    c_description = result2.getString(1);
+                    break;
+                }
+
+                result2.close();
+                preparedStmt2.close();
+                %>
+                <p><%=c_description%></p>
             </div>
 
         </div>
@@ -159,41 +179,68 @@ catch(Exception E) {
         <div id="lectures" class="tab">
 
             <div class="todo">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Unfinished Lectures</p>
+                
+                <%
+                int u_lectures = 0;
+                
+                String tot_lects = 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_LECTURE" + "\n" + 
+                "WHERE course_id='" + courseId + "')" + 
+                "MINUS" + 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "')"  
+                ;
+                
+                PreparedStatement tot_lect_stmt = con.prepareStatement(tot_lects);
+                
+                ResultSet res_tot_lect = tot_lect_stmt.executeQuery();
+                
+                while(res_tot_lect.next()) { %>
+                    <form class="course" action="setLectureIdSessionAttribute_action.jsp" method="post" style="order: 5;">
+                        <input type="text" name="lectureId" value=<%="\"" + res_tot_lect.getString(2) + "\""%> style="display: none;">
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
 
-                <div class="lectureContainer">
-                    <p>Data Types Part 3</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Structures</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Structures Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
+                            <div class="lectureContainer"style="order: 5;">
+                                <button type="submit"><%=res_tot_lect.getString(2)%></button>
+                                <div class="video">Video placeholder</div>
+                            </div>
+                    </form>
+                    <%  u_lectures++;
+                }
+                %>
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=u_lectures%> Unfinished Lectures</p>
             </div>
 
             <div class="finished">
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;">3 Completed Lectures</p>
+                <%
+                int c_lectures = 0;
+                
+                String c_lects = 
+                "SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "'"  
+                ;
+                
+                PreparedStatement c_lect_stmt = con.prepareStatement(c_lects);
+                
+                ResultSet res_c_lect = c_lect_stmt.executeQuery();
+                
+                while(res_c_lect.next()) { %>
+                    <form class="course" action="setLectureIdSessionAttribute_action.jsp" method="post" style="order: 5;">
+                        <input type="text" name="lectureId" value=<%="\"" + res_c_lect.getString(2) + "\""%> style="display: none;">
+                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
 
-                <div class="lectureContainer">
-                    <p>Your First Program</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Intro to Data Types</p>
-                    <div class="video">Video placeholder</div>
-                </div>
-    
-                <div class="lectureContainer">
-                    <p>Data Types Part 2</p>
-                    <div class="video">Video placeholder</div>
-                </div>
+                            <div class="lectureContainer"style="order: 5;">
+                                <button type="submit"><%=res_c_lect.getString(2)%></button>
+                                <div class="video">Video placeholder</div>
+                            </div>
+                    </form>
+                    <%  c_lectures++;
+                }
+                %>
+                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=c_lectures%> Finished Lectures</p>
             </div>
 
 

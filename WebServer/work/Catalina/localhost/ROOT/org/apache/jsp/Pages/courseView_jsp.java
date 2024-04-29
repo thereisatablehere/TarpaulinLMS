@@ -8,13 +8,7 @@
  */
 package org.apache.jsp.Pages;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.jsp.*;
 import java.sql.*;
-import oracle.jdbc.*;
-import java.sql.*;
-import oracle.jdbc.*;
 import java.util.Date;
 
 public final class courseView_jsp extends org.apache.jasper.runtime.HttpJspBase
@@ -171,7 +165,7 @@ catch(Exception E) {
         Class.forName("oracle.jdbc.OracleDriver");
         con = DriverManager.getConnection("jdbc:oracle:thin:@//cscioraclerh7srv.ad.csbsju.edu:1521/" +
                                                                 "csci.cscioraclerh7srv.ad.csbsju.edu",
-                                                                "TEAM06", "TEAM06");
+                                                                "cgrove001", "900242682");
     }
     catch(Exception E) {
         out.println("EXCEPTION encountered");
@@ -345,7 +339,31 @@ catch(Exception E) {
       out.write("                <p>Description</p>\n");
       out.write("\n");
       out.write("                <!-- TODO -->\n");
-      out.write("                <p>The description of this course would go here - not yet implemented.</p>\n");
+      out.write("                ");
+ 
+                String c_description = "";
+
+                String query2 = 
+                "SELECT descrip" + "\n" + 
+                "FROM TARP_COURSE" + "\n" + 
+                "WHERE course_id='" + courseId + "'";
+                
+                PreparedStatement preparedStmt2 = con.prepareStatement(query2);
+
+                ResultSet result2 = preparedStmt2.executeQuery();
+
+                while(result2.next()) {
+                    c_description = result2.getString(1);
+                    break;
+                }
+
+                result2.close();
+                preparedStmt2.close();
+                
+      out.write("\n");
+      out.write("                <p>");
+      out.print(c_description);
+      out.write("</p>\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("        </div>\n");
@@ -353,41 +371,92 @@ catch(Exception E) {
       out.write("        <div id=\"lectures\" class=\"tab\">\n");
       out.write("\n");
       out.write("            <div class=\"todo\">\n");
-      out.write("                <p class=\"bigDescription\" style=\"margin-bottom: 1em; font-weight: bold;\">3 Unfinished Lectures</p>\n");
+      out.write("                \n");
+      out.write("                ");
+
+                int u_lectures = 0;
+                
+                String tot_lects = 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_LECTURE" + "\n" + 
+                "WHERE course_id='" + courseId + "')" + 
+                "MINUS" + 
+                "(SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "')"  
+                ;
+                
+                PreparedStatement tot_lect_stmt = con.prepareStatement(tot_lects);
+                
+                ResultSet res_tot_lect = tot_lect_stmt.executeQuery();
+                
+                while(res_tot_lect.next()) { 
       out.write("\n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Data Types Part 3</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
-      out.write("    \n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Intro to Data Structures</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
-      out.write("    \n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Data Structures Part 2</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
+      out.write("                    <form class=\"course\" action=\"setLectureIdSessionAttribute_action.jsp\" method=\"post\" style=\"order: 5;\">\n");
+      out.write("                        <input type=\"text\" name=\"lectureId\" value=");
+      out.print("\"" + res_tot_lect.getString(2) + "\"");
+      out.write(" style=\"display: none;\">\n");
+      out.write("                        <input type=\"text\" name=\"courseId\" value=");
+      out.print(courseId);
+      out.write(" style=\"display: none;\">\n");
+      out.write("\n");
+      out.write("                            <div class=\"lectureContainer\"style=\"order: 5;\">\n");
+      out.write("                                <button type=\"submit\">");
+      out.print(res_tot_lect.getString(2));
+      out.write("</button>\n");
+      out.write("                                <div class=\"video\">Video placeholder</div>\n");
+      out.write("                            </div>\n");
+      out.write("                    </form>\n");
+      out.write("                    ");
+  u_lectures++;
+                }
+                
+      out.write("\n");
+      out.write("                <p class=\"bigDescription\" style=\"margin-bottom: 1em; font-weight: bold;order: 1;\">");
+      out.print(u_lectures);
+      out.write(" Unfinished Lectures</p>\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div class=\"finished\">\n");
-      out.write("                <p class=\"bigDescription\" style=\"margin-bottom: 1em; font-weight: bold;\">3 Completed Lectures</p>\n");
+      out.write("                ");
+
+                int c_lectures = 0;
+                
+                String c_lects = 
+                "SELECT course_id, lecture_id" + "\n" + 
+                "FROM TARP_WATCHES" + "\n" + 
+                "WHERE course_id='" + courseId + "' AND username='" + username + "'"  
+                ;
+                
+                PreparedStatement c_lect_stmt = con.prepareStatement(c_lects);
+                
+                ResultSet res_c_lect = c_lect_stmt.executeQuery();
+                
+                while(res_c_lect.next()) { 
       out.write("\n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Your First Program</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
-      out.write("    \n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Intro to Data Types</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
-      out.write("    \n");
-      out.write("                <div class=\"lectureContainer\">\n");
-      out.write("                    <p>Data Types Part 2</p>\n");
-      out.write("                    <div class=\"video\">Video placeholder</div>\n");
-      out.write("                </div>\n");
+      out.write("                    <form class=\"course\" action=\"setLectureIdSessionAttribute_action.jsp\" method=\"post\" style=\"order: 5;\">\n");
+      out.write("                        <input type=\"text\" name=\"lectureId\" value=");
+      out.print("\"" + res_c_lect.getString(2) + "\"");
+      out.write(" style=\"display: none;\">\n");
+      out.write("                        <input type=\"text\" name=\"courseId\" value=");
+      out.print(courseId);
+      out.write(" style=\"display: none;\">\n");
+      out.write("\n");
+      out.write("                            <div class=\"lectureContainer\"style=\"order: 5;\">\n");
+      out.write("                                <button type=\"submit\">");
+      out.print(res_c_lect.getString(2));
+      out.write("</button>\n");
+      out.write("                                <div class=\"video\">Video placeholder</div>\n");
+      out.write("                            </div>\n");
+      out.write("                    </form>\n");
+      out.write("                    ");
+  c_lectures++;
+                }
+                
+      out.write("\n");
+      out.write("                <p class=\"bigDescription\" style=\"margin-bottom: 1em; font-weight: bold;order: 1;\">");
+      out.print(c_lectures);
+      out.write(" Finished Lectures</p>\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("\n");

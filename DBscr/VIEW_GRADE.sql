@@ -14,7 +14,7 @@ AS
 		Select Count(*) * 2 into courseLectures from TARP_LECTURE where course_id = c_id;
         
         Select Count(*) * 2 into studentLectures from TARP_WATCHES 
-        where uname = username and course_id = c_id and completed = 'y';
+        where uname = username and course_id = c_id;
         
         Select Count(*) * 5 into courseTests from TARP_TEST where course_id = c_id;
         Select Count(*) * 5 into studentTests from TARP_TAKEN_BY 

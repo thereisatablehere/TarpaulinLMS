@@ -8,11 +8,7 @@ CREATE OR REPLACE PROCEDURE watch_lecture(
 )
 AS
 BEGIN
-    UPDATE tarp_watches
-    SET completed = 'y'
-    WHERE lecture_id = p_lecture_id
-      AND course_id = p_course_id
-      AND username = p_username;
+    INSERT INTO tarp_watches (lecture_id, course_id, username) VALUES (p_lecture_id, p_course_id, p_username);
 
 END;
 
