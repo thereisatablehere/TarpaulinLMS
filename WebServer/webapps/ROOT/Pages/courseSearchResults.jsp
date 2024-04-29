@@ -34,13 +34,14 @@
     </select>
     -->
 
-    <section class="list coursesList" style="border: 1px solid #00000040; width: 40vw; max-width: 30em; min-width: 15em;">
+    <section class="list coursesList courseSearchResultsContainer" style="border: 1px solid #00000040; width: 40vw; max-width: 30em; min-width: 15em;">
         
         <%
         String username = (String) session.getAttribute("username");
 
         String coursename = request.getParameter("coursename");
         String instructor = request.getParameter("instructor");
+        String description = "";
 
         if(coursename == null || instructor == null) {
             try {
@@ -59,12 +60,12 @@
         String query = "";
         PreparedStatement prepStmt = null;
         if(coursename.equals("") && instructor.equals("")){
-            query = "SELECT course_id, username FROM TARP_COURSE";
+            query = "SELECT course_id, username, descrip FROM TARP_COURSE";
             prepStmt = con.prepareStatement(query);
             prepStmt.clearParameters();
         }
         else {
-            query = "SELECT course_id, username FROM TARP_COURSE where course_id = ? OR username = ?";
+            query = "SELECT course_id, username, descrip FROM TARP_COURSE where course_id = ? OR username = ?";
             prepStmt = con.prepareStatement(query);
             prepStmt.clearParameters();
             prepStmt.setString(1, coursename);
@@ -76,10 +77,11 @@
         while(result.next()) {
             coursename = result.getString(1);
             instructor = result.getString(2);
+            description = result.getString(3);
         %>
 
             <!-- inline CSS because this specific page has a slightly different courses list -->
-            <form class="course" action="setCourseIdSessionAttribute_action.jsp" method="post"
+            <form class="courseResult course" action="setCourseIdSessionAttribute_action.jsp" method="post"
             style="width: fit-content;">
                 <input type="text" name="courseId" value=<%=coursename%> style="display: none;">
 
@@ -97,7 +99,7 @@
                     <p class="instructorName"><%= instructor %></p>
                 </div>
 
-                <p>The description of this course would go here. Not yet implemented.</p>
+                <p><%=description%></p>
             </form>
 
         <%

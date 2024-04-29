@@ -19,10 +19,41 @@
 
     <section class="mainContainer">
 
+        <%
+        Boolean communityCreateFailed = false;
+
+        try{
+            communityCreateFailed = Boolean.parseBoolean(
+            (String) session.getAttribute("failedToCreateCommunity")
+            );
+        }
+        catch(Exception E) {
+            communityCreateFailed = false;
+        }
+
+        if(communityCreateFailed) {
+            session.setAttribute("failedToCreateCommunity", "false");
+        %>
+            <!-- inline CSS becase student home error message 
+            should be further down than instructor -->
+            <div id="createCourseFailedMessage" style="
+            margin-top: -28em;
+            width: 25em;
+            transform: none;
+            ">
+                <img class="errorIcon" src="../Images/exclamation-outline.svg">
+                <p>Failed to create community</p>
+                <img class="closeIcon" src="../Images/close.svg" 
+                onclick="this.parentNode.style.display='none'">
+            </div>
+        <%
+        }
+        %>
+
         <p class="bigTitle" style="text-align: center;">Create a Community</p>
 
         <!-- not a form because handled by JS so can get date -->
-        <section class="allGradeReportContainer createCommunity">
+        <section class="createCommunity">
             <div>
                 <p>Name</p>
                 <input id="name" type="text" placeholder="Name">
@@ -39,45 +70,60 @@
     <script src="../Scripts/navbarToggle.js"></script>
 
     <script>
+        let failed = false;
+
         function submitForm() {
+            failed = false;
             let form = document.createElement("form");
             form.action="createCommunity_action.jsp";
             form.method="post";
 
             let nameInput = document.createElement("input");
             nameInput.name = "name";
-            nameInput.value = document.getElementById("name").value;
+            let nameInputed = document.getElementById("name").value;
+            
+            if(nameInputed.length == 0) {
+                failed = true;
+            }
+
+            if(nameInputed.includes("'")) {
+                failed = true;
+            }
+            
+            nameInput.value = nameInputed;
             form.appendChild(nameInput);
 
             let descriptionInput = document.createElement("input");
             descriptionInput.name = "description";
-            descriptionInput.value = document.getElementById("description").value;
+            let descriptionInputed = document.getElementById("description").value;
+
+            if(descriptionInputed.length == 0) {
+                failed = true;
+            }
+
+            descriptionInput.value = descriptionInputed.replace("'", "''");
+            console.log(descriptionInput.value)
             form.appendChild(descriptionInput);
 
             let dateInput = document.createElement("input");
             dateInput.name = "date";
-            
             let date = new Date();
-            let months = [
-                "jan", "feb", "mar", "apr", 
-                "may", "jun", "jul", "aug", 
-                "sep", "oct", "nov", "dec" 
-            ];
             let fullYear = date.getFullYear();
-            
-            // DD - MM - YY
             let dateFormatted = 
-                date.getDate() + "-" + 
-                months[date.getMonth()] + "-" + 
-                // only get the last 2 digits of the year
-                (fullYear.toString()).substring(2);
-            
+                fullYear.toString() + "-" +
+                (date.getMonth() + 1) + "-" + 
+                date.getDate();            
             dateInput.value = dateFormatted;
             form.appendChild(dateInput);
 
             form.style.display = "none";
             document.body.appendChild(form);
-
+            
+            
+            if(failed) {
+                // ensure that there will be a SQL error
+                nameInput.value = null;
+            }
             form.submit();
         }
     </script>

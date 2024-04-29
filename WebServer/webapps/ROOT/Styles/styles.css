@@ -860,9 +860,11 @@ header div #you {
     width: 30%;
     border-radius: 10px;
     border: none;
-    border: 1px solid black;
+    border: 1px solid #00000070;
     outline: none;
-    padding: 5px;
+    padding: 0.5em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
 }
 .courseSearch .search div input:focus {
     color: var(--accentColor);
@@ -926,18 +928,26 @@ header div #you {
     display: flex;
     align-self: center;
 }
-
-.searchResultsContainer {
+.courseSearchResultsContainer .courseResult {
     display: flex;
-    flex-direction: row;
-}
-.searchResultsContainer .right {
-    margin-left: 10em;
+    flex-direction: column;
+    width: 35% !important;
+    padding-left: 10%;
+    padding-right: 5%;
 }
 
 /* create community */
 
 .createCommunity {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: var(--buttonBorderRadius);
+    padding: 3em;
+    margin-top: 1em;
+    width: 18em;
+    align-self: center;
     width: 25em;
     display: flex;
     flex-direction: column;
@@ -949,15 +959,22 @@ header div #you {
 .createCommunity div {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-bottom: 1em;
 }
 .createCommunity input {
     outline: none;
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1px solid #00000050;
-    padding: 5px;
+    padding: 1em;
+    font-size: 1em;
+    height: 2.5em;
+    width: 100%;
 }
-.createCommunity input:nth-child(3) {
+.createCommunity #name {
+    margin-left: 0.75em;
+}
+.createCommunity #description {
     margin-top: 0.75em;
 }
 .createCommunity input:focus {
@@ -997,6 +1014,10 @@ header div #you {
 .communityView .controls {
     margin-top: 0.5em;
     margin-bottom: 1em;
+}
+.communityView .controls button {
+    display: flex;
+    align-items: center;
 }
 .communityView .title {
     margin-left: 1em;
@@ -1612,6 +1633,12 @@ header div #you {
 }
 .profile .profileSettings div input:focus {
     color: var(--accentLighterColor)
+}
+.profile .profileSettings div .nonedit:hover {
+    cursor: not-allowed;
+}
+.profile .profileSettings div .nonedit:focus {
+    color: black;
 }
 .profile .profileSettings div .passwordToggleIcon {
     position: absolute;

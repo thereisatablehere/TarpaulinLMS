@@ -47,7 +47,7 @@
                 username = "username";
                 }
                 %>
-                <input name="username" type="text" placeholder="Username" value=<%=username%>>
+                <input class="nonedit" readonly name="username" type="text" placeholder="Username" value=<%=username%>>
             </div>
 
             <div>
@@ -87,7 +87,7 @@
                     firstName = "exception";
                 }
                 %>
-                <input name="fname" type="text" placeholder="First" value=<%=firstName%>>
+                <input class="nonedit" readonly name="fname" type="text" placeholder="First" value=<%=firstName%>>
             </div>
 
             <div>
@@ -127,7 +127,7 @@
                     lastName = "exception";
                 }
                 %>
-                <input name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+                <input class="nonedit" readonly name="lname" type="text" placeholder="Last" value=<%=lastName%>>
             </div>
 
             <div>

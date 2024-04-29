@@ -19,16 +19,21 @@ try {
     String description = request.getParameter("description");
     String date = request.getParameter("date");
 
+    out.println("<strong>Inputs:</strong>");
+    out.println("<br>" + name + "<br>" + description + "<br>" + date);
+    
     String query = 
-    "INSERT INTO TARP_COMMUNITY " + 
-    "(comm_id, username, date_created, c_description, num_students) " + "\n" + 
-    "VALUES(" + 
-    "'" + name + "'" + "," + 
-    "'" + username + "'" + "," + 
-    "'" + date + "'" + ", " + 
-    "'" + description + "'" + ", " + 
-    "'" + "0" + "'" + 
-    ")";
+    "INSERT INTO TARP_COMMUNITY" +
+    "(comm_id, username, date_created, c_description, num_students) " + 
+    "values(" + 
+    "'" + name + "', '" + 
+    username + "', " + 
+    "TIMESTAMP '" + date + " 0:0:0', '" + 
+    description + "', " + 
+    "0)";
+    
+    out.println("<br><p style='color: blue'>" + query + "</p>");
+    
     PreparedStatement preparedStmt = con.prepareStatement(query);
 
     preparedStmt.execute();
@@ -43,12 +48,15 @@ try {
     PreparedStatement preparedStmtJoin = con.prepareStatement(queryJoin);
 
     preparedStmtJoin.execute();
-    out.println("Course created successfully!");
+    out.println("<p style='color: green;'>Course created successfully!</p>");
+
+    response.sendRedirect("joinedCommunitiesList.jsp");
 }
 catch(Exception E) {
     session.setAttribute("failedToCreateCommunity", "true");
-    out.println(E);
+    out.println("<p style='color: red'>" + E + "</p>");
+    
+    response.sendRedirect("createCommunity.jsp");
 }
 
-response.sendRedirect("../index.jsp");
 %>

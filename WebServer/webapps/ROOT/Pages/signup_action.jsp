@@ -28,6 +28,10 @@ try {
     if(password.length() == 0) {
         response.sendRedirect("signup.jsp");
     }
+
+    if(username.contains("'")) {
+        response.sendRedirect("signup");
+    }
     
     CallableStatement cs = con.prepareCall("{call CREATE_NEW_USER(?, ?, ?, ?, ?)}");
 	
@@ -53,9 +57,7 @@ try {
     out.println("added user!");
 
     response.sendRedirect("../index.jsp");
-} catch (Exception E) {
+}catch (Exception E) {
     out.println(E);
-
-    response.sendRedirect("signup.jsp");
 }
 %>

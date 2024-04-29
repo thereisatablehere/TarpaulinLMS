@@ -22,33 +22,6 @@
     
     <script src="../Scripts/loadSidebar.js"></script>
 
-    <%
-    Boolean communityCreateFailed = false;
-
-    try{
-        communityCreateFailed = Boolean.parseBoolean(
-          (String) session.getAttribute("failedToCreateCommunity")
-        );
-    }
-    catch(Exception E) {
-        communityCreateFailed = false;
-    }
-
-    if(communityCreateFailed) {
-        session.setAttribute("failedToCreateCommunity", "false");
-    %>
-        <!-- inline CSS becase student home error message 
-        should be further down than instructor -->
-        <div id="createCourseFailedMessage" style="margin-top: 4.5em;">
-            <img class="errorIcon" src="../Images/exclamation-outline.svg">
-            <p>Failed to create community, community name already exists</p>
-            <img class="closeIcon" src="../Images/close.svg" 
-            onclick="this.parentNode.style.display='none'">
-        </div>
-    <%
-    }
-    %>
-
     <section class="mainContainerLeft">
       
       <div class="studentWelcome title">
