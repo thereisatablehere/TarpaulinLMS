@@ -9,6 +9,7 @@ function getHeader() {
         <div>
             <button class="buttonNormal" onclick='logout()'>Logout</button>
             <img class="profile" draggable="false" src="../Images/user.svg" onclick="goToProfile()">
+            <p id="you"></p>
         </div>
     </header>`;
 
@@ -26,6 +27,9 @@ function goToProfile() {
 }
 
 document.write(getHeader());
+document.getElementById("you").innerText = document.getElementById("usernameForHeader").innerText;
+// after get value, don't need p element anymore so can remove
+document.getElementById("usernameForHeader").remove();
 document.getElementsByClassName("logoContainer")[0].addEventListener("click", goToHome);
 
 window.onload = () => document.body.style.visibility = "visible";

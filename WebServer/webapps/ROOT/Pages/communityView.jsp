@@ -5,7 +5,7 @@
 <%@page import="
     java.sql.*, 
     oracle.jdbc.*, 
-    java.util.ArrayList, 
+    java.util.*, 
     java.util.Collections
 "%>
 
@@ -57,6 +57,7 @@
     String description = "description";
     String size = "-1";
     String rank = "-1";
+    HashMap<Integer, String> scoresMap = new HashMap<Integer, String>();
 
     try {
         // get description
@@ -104,8 +105,6 @@
 
         String currentUser = "";
         ArrayList<Integer> scores = new ArrayList<Integer>();
-        int myIndex = 0;
-        int myScore = 0;
 
         while(result.next()) {
             currentUser = result.getString(1);
@@ -128,16 +127,17 @@
 
             int score = 0;
             while(resultInnerInner.next()) {
-                // add the score of student to arrayList
                 score = Integer.parseInt(resultInnerInner.getString(2));
-                scores.add(score);
-
-                // if the current user looking at is the actual user, keep track of their score
-                String nameCheck = resultInnerInner.getString(1);
-                if(nameCheck.equals(username)) {
-                    myScore = score;
-                }
+                scoresMap.put(score, resultInnerInner.getString(1));
                 
+                /*
+                out.println(
+                    resultInnerInner.getString(1) + 
+                    " : " + 
+                    String.valueOf(score) + "<br>"
+                );
+                */
+
                 break;
             }
 
@@ -148,12 +148,17 @@
         result.close();
         preparedStmt.close();
 
-        // sort arrayList of scores to easily calculate rank
-        Collections.sort(scores);
+        // probably not the best way of doing this because 
+        // go through again below for leaderboard
+        List<Integer> keys = new ArrayList(scoresMap.keySet());
+        Collections.sort(keys);
 
-        // find rank my getting the index of sorted scores arrayList, based off of actual user score
-        myIndex = scores.indexOf(myScore);
-        rank = String.valueOf(myIndex + 1);
+        for (int i = keys.size() - 1; i >= 0; i--) {
+            if(scoresMap.get(keys.get(i)).equals(username)) {
+                rank = String.valueOf(keys.size() - i);
+                break;
+            }
+        }
     }
     catch(Exception E) {
         out.println(E);
@@ -208,32 +213,37 @@
             <p class="title">Leaderboard</p>
 
             <div class="leaderboard">
-                <div class="person">
-                    <div>
-                        <p>1.</p>
-                        <p>Not</p>
-                    </div>
-                    
-                    <p>123 pts</p>
-                </div>
-                
-                <div class="person">
-                    <div>
-                        <p>2.</p>
-                        <p class="you">Yet</p>
-                    </div>
+                <%
+                // sort all scores
+                if(scoresMap.size() > 0) {
+                    List<Integer> keys = new ArrayList(scoresMap.keySet());
+                    Collections.sort(keys);
 
-                    <p>100 pts</p>
-                </div>
-                
-                <div class="person">
-                    <div>
-                        <p>3.</p>
-                        <p>Finished</p>
+                    for (int i = keys.size() - 1; i >= 0; i--) {
+                %>
+                    <div class="person">
+                        <div>
+                            <p><%=keys.size() - i%>.</p>
+                            <%
+                            if(scoresMap.get(keys.get(i)).equals(username)) {
+                            %>
+                                <p class="you"><%=scoresMap.get(keys.get(i))%> (You)</p>
+                            <%
+                            }
+                            else {
+                            %>
+                                <p><%=scoresMap.get(keys.get(i))%></p>
+                            <%
+                            }
+                            %>
+                        </div>
+                        
+                        <p><%=keys.get(i)%> pts</p>
                     </div>
-
-                    <p>50 pts</p>
-                </div>
+                <%
+                    }
+                }
+                %>
                 
             </div>
 

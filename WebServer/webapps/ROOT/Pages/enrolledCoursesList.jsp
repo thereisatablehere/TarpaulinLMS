@@ -1,9 +1,12 @@
+<%@include file="../userAuth.jsp"%>
+
 <%@include file="../DBconnection.jsp"%>
 
 <%@page import="
     java.sql.*, 
     oracle.jdbc.*
 "%>
+
 <!DOCTYPE html>
 <html>
 <head>

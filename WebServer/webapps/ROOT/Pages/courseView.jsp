@@ -29,7 +29,8 @@ catch(Exception E) {
     <title>Tarpaulin - View a Course</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
-  <body class="instructorHomeBody">
+  <!-- hiden at first, and only shown from courseViewNav.ja incase it has to load a tab -->
+  <body class="instructorHomeBody" style="display: none;">
     <script src="../Scripts/headerLoggedIn.js"></script>
 
     <script src="../Scripts/loadSidebar.js"></script>
@@ -68,13 +69,15 @@ catch(Exception E) {
         }
         %>
         
-        <p class="title"><%=courseId%></p>
+        <p id="courseTitle" class="title"><%=courseId%></p>
 
         <nav id="nav">
             <p onclick="changeTab(this)" style="font-weight: bold;">Overview</p>
             <p onclick="changeTab(this)">Lectures</p>
             <p onclick="changeTab(this)">Tests</p>
+            <!--
             <p onclick="changeTab(this)">Q Board</p>
+            -->
             <p onclick="changeTab(this)">Comments</p>
         </nav>
 
@@ -331,6 +334,7 @@ catch(Exception E) {
             
         </div>
 
+        <!--
         <div id="q board" class="tab">
 
             <div class="questionContainer">
@@ -364,6 +368,7 @@ catch(Exception E) {
             </div>
             
         </div>
+        -->
 
         <div id="comments" class="tab">
             
@@ -387,7 +392,18 @@ catch(Exception E) {
             %>
                 <div class="questionContainer">
                     <div>
-                        <p><%= commenter %></p>
+                        <%
+                        if(commenter.equals(instructor)) {
+                        %>
+                            <p class="instructor"><%= commenter %> (instructor)</p>
+                        <%
+                        }
+                        else {
+                        %>
+                            <p><%= commenter %></p>
+                        <%
+                        }
+                        %>
                         <p><%= new java.text.SimpleDateFormat("MM/dd/yy 'at' HH:mm").format(commentTime) %></p>
                     </div>
                     

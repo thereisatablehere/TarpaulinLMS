@@ -1,12 +1,11 @@
 /* so, this has become quite unmaintainable and a big mess */
 
 /* main */
-
-/* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
 /* titles */
-/* @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* general stuff */
 
@@ -153,6 +152,9 @@ header .profile {
 header .profile:hover {
     cursor: pointer;
     filter: contrast(0.1);
+}
+header div #you {
+    margin-left: 0.5em;
 }
 
 .logoContainer {
@@ -701,21 +703,21 @@ header .profile:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.allGradeReportContainer div:not(:last-of-type) {
     margin-bottom: 1.5em;
+    order: 5;
 }
 .allGradeReportContainer div p {
     font-size: 1.2em;
 }
-.allGradeReportContainer div p:first-of-type {
+.allGradeReportContainer .total p {
     font-weight: 500;
 }
-.allGradeReportContainer div:first-of-type {
+.allGradeReportContainer .total {
     border-bottom: 1px solid rgba(0, 0, 0, 0.301);
     padding-bottom: 0.5em;
+    order: 1;
 }
-.allGradeReportContainer div:first-of-type p {
+.allGradeReportContainer .total p {
     font-weight: bold;
 }
 
@@ -1746,6 +1748,11 @@ header .profile:hover {
     font-size: 1em;
     align-self: center;
     text-align: center;
+}
+
+.courseView #comments {
+    width: 34em;
+    align-self: center;
 }
 
 .courseView .questionContainer {
