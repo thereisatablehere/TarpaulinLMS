@@ -30,7 +30,7 @@
         
         %>
         <section class="allGradeReportContainer">
-            <div>
+            <div class="total">
                 <p>Class</p>
                 <p>Percent Complete</p>
             </div>

@@ -5,17 +5,17 @@
 <%@page import="
     java.sql.*, 
     oracle.jdbc.*,
-    java.util.Date
+    java.util.*
 "%>
 
 <%
-String username = "username";
+String username = "";
 
 try{
     username = (String) session.getAttribute("username");
 }
 catch(Exception E) {
-    username = "username";
+    username = "";
 }
 %>
 
@@ -137,13 +137,53 @@ catch(Exception E) {
                     <p class="instructor" onclick='window.open("instructorPage.jsp", "_self")'><%=instructor%></p>
                 </div>
                 
-                <!-- Course rating - not yet implemented, but maybe do later if enough time and want to -->
+                <!-- get rating of instructor - copied from instructorPage.jsp -->
                 <div>
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
+                    <%
+                    String rating = "";
+
+                    queryString = 
+                    "SELECT instructor_score" + "\n" + 
+                    "FROM TARP_RATES" + "\n" + 
+                    "WHERE i_username='" + instructor + "'";
                     
-                    <p>(3.2)</p>
+                    preparedStmt = con.prepareStatement(queryString);
+
+                    result = preparedStmt.executeQuery();
+
+                    ArrayList<Integer> ratings = new ArrayList<Integer>();
+                    int ratingsSum = 0;
+
+                    while(result.next()) {
+                        int currentRating = Integer.parseInt(result.getString(1));
+                        ratingsSum += currentRating;
+
+                        ratings.add(currentRating);
+                    }
+
+                    result.close();
+                    preparedStmt.close();
+
+                    String ratingToDisplay = "No Ratings";
+
+                    if(ratings.size() > 0) {
+                        // calculate average rating
+                        double avgRating = ratingsSum / ((double) ratings.size());
+                        avgRating /= 2;
+                        // round to 2 decimal ppoints
+                        avgRating = Math.round(avgRating * 100.0) / 100.0;
+
+                        ratingToDisplay = "(" + String.valueOf(avgRating) + ")";
+
+                        for(int i = 0; i < Math.floor(avgRating); i++) {
+                    %>
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                    <%
+                        }
+                    }
+                    %>
+                    
+                    <p><%=ratingToDisplay%></p>
                 </div>
             </div>
 
@@ -207,8 +247,18 @@ catch(Exception E) {
                     </form>
                     <%  u_lectures++;
                 }
+
+                if(u_lectures == 1) {
                 %>
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=u_lectures%> Unfinished Lectures</p>
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=u_lectures%> Unfinished Lecture</p>
+                <%
+                }
+                else {
+                %>
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=u_lectures%> Unfinished Lectures</p>
+                <%
+                }
+                %>
             </div>
 
             <div class="finished">
@@ -236,8 +286,18 @@ catch(Exception E) {
                     </form>
                     <%  c_lectures++;
                 }
+                
+                if(c_lectures == 1) {
                 %>
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=c_lectures%> Finished Lectures</p>
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=c_lectures%> Finished Lecture</p>
+                <%
+                }
+                else {
+                %>
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1;"><%=c_lectures%> Finished Lectures</p>
+                <%
+                }
+                %>
             </div>
 
 
@@ -247,13 +307,15 @@ catch(Exception E) {
 
             <%
             queryString = 
-            "SELECT test_id" + "\n" + 
+            "SELECT test_id, num_q" + "\n" + 
             "FROM TARP_TEST" + "\n" + 
             "WHERE course_id='" + courseId + "'";
             
             preparedStmt = con.prepareStatement(queryString);
 
             result = preparedStmt.executeQuery();
+
+            boolean noTests = true;
 
             while(result.next()) {
                 String testId = result.getString(1);
@@ -273,6 +335,8 @@ catch(Exception E) {
                 boolean took = false;
                 String score = "-1";
 
+                boolean noQuestions = (result.getInt(2) == 0);
+
                 while(resultInner.next()) {
                     took = true;
                     score = resultInner.getString(2);
@@ -282,39 +346,56 @@ catch(Exception E) {
 
                 resultInner.close();
                 preparedStmtInner.close();
+
+                if(!(noQuestions)) {
+                    noTests = false;
             %>
 
-                <form class="testContainer" action="takeTest_action.jsp" method="post">
-                    <input type="text" name="testId" value=<%="\"" + testId + "\""%> style="display: none;">
-                    
-                    <p><%=testId%></p>
-                    <p>The description of the test would go here - not yet implemented.</p>
+                    <form class="testContainer" action="takeTest_action.jsp" method="post">
+                        <input type="text" name="testId" value=<%="\"" + testId + "\""%> style="display: none;">
+                        
+                        <p><%=testId%></p>
+                        <p>The description of the test would go here - not yet implemented.</p>
 
-                    <input type="text" name="took" value=<%=took%> style="display: none;">
+                        <input type="text" name="took" value=<%=took%> style="display: none;">
 
-                    <%
-                    if(took) {
-                    %>
-                        <div>
-                            <p class="takenText">Completed!</p>
-                            <p class="score">Score: <%=score%></p>
-                        </div>
-                    <%
-                    }
-                    else {
-                    %>
-                        <button tye="submit" class="buttonNormal">Start</button>
-                    <%
-                    }
-                    %>
+                        <%
+                        if(took) {
+                        %>
+                            <div>
+                                <p class="takenText">Completed!</p>
+                                <p class="score">Score: <%=score%></p>
+                            </div>
+                        <%
+                        }
+                        else {
+                        %>
+                            <button tye="submit" class="buttonNormal">Start</button>
+                        <%
+                        }
+                        %>
 
-                </form>
+                    </form>
 
             <%
+                }
             }
 
             result.close();
             preparedStmt.close();
+
+            if(noTests) {
+            %>
+                <p style="
+                font-weight: bold;
+                text-align: center;
+                font-size: 1.25em;
+                ">
+                    This course does not have any tests.
+                </p>
+            <%
+            }
+
             %>
 
             <!--
@@ -391,7 +472,11 @@ catch(Exception E) {
                 commentStmt.setString(1, courseId);
                 ResultSet commentsResultSet = commentStmt.executeQuery();
 
+                boolean noComments = true;
+
                 while (commentsResultSet.next()) {
+                    noComments = false;
+
                     String commenter = commentsResultSet.getString("s_username");
                     String commentText = commentsResultSet.getString("s_comment");
                     Timestamp commentTime = commentsResultSet.getTimestamp("cdate");
@@ -420,6 +505,18 @@ catch(Exception E) {
 
                 commentsResultSet.close();
                 commentStmt.close();
+
+                if(noComments) {
+                %>
+                    <p style="
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 1.25em;
+                    ">
+                        This course does not have any comments.
+                    </p>
+                <%
+                }
                 %>
             </section>
 

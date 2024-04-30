@@ -5,13 +5,11 @@
 <%@page import="
     java.sql.*, 
     oracle.jdbc.*, 
-    java.util.ArrayList, 
-    java.util.Collections
+    java.util.*
 "%>
 
-
 <%
-String username = "username";
+String username = "";
 
 try{
     username = (String) session.getAttribute("username");
@@ -45,6 +43,9 @@ catch(Exception E) {
         <section class="communitiesListContainer">
 
             <%
+            String rank = "NA";
+            HashMap<Integer, String> scoresMap = new HashMap<Integer, String>();
+
             try {
                 String query = 
                 "SELECT community_id " + "\n" + 
@@ -75,24 +76,26 @@ catch(Exception E) {
                     resultInner.close();
                     preparedStmtInner.close();
 
-                    // get scores of each student to calculate rank
+                    // calculate rank - copied from communityView.jsp
+                    
+                    rank = "NA";
 
-                    // start by getting each studnet in the community
-                    queryInner = 
+                    String rankQuery = 
                     "SELECT username " + "\n" + 
                     "FROM TARP_JOINED_BY" + "\n" + 
-                    "WHERE community_id='" + communityId + "'"; 
-                    preparedStmtInner = con.prepareStatement(queryInner);
+                    "WHERE community_id='" + communityId + "'";
                     
-                    resultInner = preparedStmtInner.executeQuery();
+                    PreparedStatement rankPreparedStmt = con.prepareStatement(rankQuery);
+                    
+                    ResultSet rankResult = rankPreparedStmt.executeQuery();
 
                     String currentUser = "";
                     ArrayList<Integer> scores = new ArrayList<Integer>();
-                    int myIndex = 0;
-                    int myScore = 0;
 
-                    while(resultInner.next()) {
-                        currentUser = resultInner.getString(1);
+                    while(rankResult.next()) {
+                        currentUser = rankResult.getString(1);
+                        
+                        // out.println("currentUser: " + currentUser);
 
                         // then get the score of each student
                         String queryInnerInner = 
@@ -108,20 +111,19 @@ catch(Exception E) {
                         "    e.username='" + currentUser + "'";
                         PreparedStatement preparedStmtInnerInner = con.prepareStatement(queryInnerInner);
                         
+                        // out.println("<p style='color: blue;'>" + queryInnerInner + "</p>");
+                        
                         ResultSet resultInnerInner = preparedStmtInnerInner.executeQuery();
+
+                        // out.println("  |  ");
 
                         int score = 0;
                         while(resultInnerInner.next()) {
-                            // add the score of student to arrayList
-                            score = Integer.parseInt(resultInnerInner.getString(2));
-                            scores.add(score);
-
-                            // if the current user looking at is the actual user, keep track of their score
-                            String nameCheck = resultInnerInner.getString(1);
-                            if(nameCheck.equals(username)) {
-                                myScore = score;
-                            }
+                            // out.println("InnerInner iteration");
                             
+                            score = Integer.parseInt(resultInnerInner.getString(2));
+                            scoresMap.put(score, resultInnerInner.getString(1));
+
                             break;
                         }
 
@@ -129,14 +131,19 @@ catch(Exception E) {
                         preparedStmtInnerInner.close();
                     }
 
-                    resultInner.close();
-                    preparedStmtInner.close();
+                    rankResult.close();
+                    rankPreparedStmt.close();
 
-                    // sort arrayList of scores to easily calculate rank
-                    Collections.sort(scores);
+                    List<Integer> keys = new ArrayList(scoresMap.keySet());
+                    Collections.sort(keys);
 
-                    // find rank my getting the index of sorted scores arrayList, based off of actual user score
-                    myIndex = scores.indexOf(myScore);
+                    for (int i = keys.size() - 1; i >= 0; i--) {
+                        if(scoresMap.get(keys.get(i)).equals(username)) {
+                            rank = String.valueOf(keys.size() - i);
+
+                            break;
+                        }
+                    }
             %>
             
                     <form class="community" action="setCommunityIdSessionAttribute_action.jsp" method="post">
@@ -146,7 +153,7 @@ catch(Exception E) {
                         
                         <div>
                             <p>Your Rank:</p>
-                            <p><%=myIndex + 1%></p>
+                            <p><%=rank%></p>
                         </div>
                         
                         <input type="text" name="communityId" value=<%=communityId%> style="display: none;">

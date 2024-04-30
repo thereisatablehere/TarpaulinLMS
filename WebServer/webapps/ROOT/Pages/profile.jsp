@@ -6,6 +6,36 @@
     oracle.jdbc.*
 "%>
 
+<%
+String username = "";
+
+try{
+    username = (String) session.getAttribute("username");
+}
+catch(Exception E) {
+    username = "";
+}
+%>
+
+<%
+boolean student = true;
+try {
+    String queryString = 
+    "SELECT f_name" + "\n" + 
+    "FROM TARP_INSTRUCTOR" + "\n" + 
+    "WHERE username='" + username + "'";
+    
+    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+    ResultSet result = preparedStmt.executeQuery();
+
+    student = !(result.next());
+}
+catch(Exception E) {
+    student = true;
+}
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +51,13 @@
 
     <img class="openNavbar" src="../Images/menu.svg">
 
-    <script src="../Scripts/loadSidebar.js"></script>
+    <%
+    if(student) {
+    %>
+        <script src="../Scripts/loadSidebar.js"></script>
+    <%
+    }
+    %>
 
     <form class="mainContainer profile" action="profile_action.jsp" method="post">
         <div class="top">
@@ -36,18 +72,11 @@
 
             <div>
                 <p>Username</p>
-
-                <%
-                String username = "username";
-
-                try{
-                username = (String) session.getAttribute("username");
-                }
-                catch(Exception E) {
-                username = "username";
-                }
-                %>
-                <input class="nonedit" readonly name="username" type="text" placeholder="Username" value=<%=username%>>
+                
+                <div class="comingSoonContainer">
+                    <input class="nonedit" readonly name="username" type="text" placeholder="Username" value=<%=username%>>
+                    <p class="comingSoon">Being able to edit coming soon!</p>
+                </div>
             </div>
 
             <div>
@@ -87,7 +116,11 @@
                     firstName = "exception";
                 }
                 %>
-                <input class="nonedit" readonly name="fname" type="text" placeholder="First" value=<%=firstName%>>
+                
+                <div class="comingSoonContainer">
+                    <input class="nonedit" readonly name="fname" type="text" placeholder="First" value=<%=firstName%>>
+                    <p class="comingSoon">Being able to edit coming soon!</p>
+                </div>
             </div>
 
             <div>
@@ -127,7 +160,11 @@
                     lastName = "exception";
                 }
                 %>
-                <input class="nonedit" readonly name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+                
+                <div class="comingSoonContainer">
+                    <input class="nonedit" readonly name="lname" type="text" placeholder="Last" value=<%=lastName%>>
+                    <p class="comingSoon">Being able to edit coming soon!</p>
+                </div>
             </div>
 
             <div>

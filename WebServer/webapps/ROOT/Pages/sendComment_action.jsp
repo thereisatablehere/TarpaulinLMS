@@ -8,7 +8,7 @@
 "%>
 
 <%
-String username = "username";
+String username = "";
 
 try{
     username = (String) session.getAttribute("username");
@@ -16,6 +16,24 @@ try{
 catch(Exception E) {
     username = "";
 }
+
+boolean student = true;
+try {
+    String queryString = 
+    "SELECT f_name" + "\n" + 
+    "FROM TARP_INSTRUCTOR" + "\n" + 
+    "WHERE username='" + username + "'";
+    
+    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+    ResultSet result = preparedStmt.executeQuery();
+
+    student = !(result.next());
+}
+catch(Exception E) {
+    student = true;
+}
+
 String comment = request.getParameter("comment");
 String courseId = request.getParameter("courseId");
 
@@ -23,7 +41,15 @@ out.println(username + ", " + comment + ", " + courseId + "<br>");
             
 if(comment.length() > 0) {
     try {
-        String insertSql = "INSERT INTO TARP_S_COMMENT (course_id, s_username, s_comment, cdate) VALUES (?, ?, ?, ?)";
+        String insertSql = "";
+        
+        if(student) {
+            insertSql = "INSERT INTO TARP_S_COMMENT (course_id, s_username, s_comment, cdate) VALUES (?, ?, ?, ?)";
+        }
+        else {
+            insertSql = "INSERT INTO TARP_I_COMMENT (course_id, i_username, i_comment, cdate) VALUES (?, ?, ?, ?)";
+        }
+        
         PreparedStatement pstmt = con.prepareStatement(insertSql);
         pstmt.setString(1, courseId);
         pstmt.setString(2, username);
@@ -42,5 +68,10 @@ if(comment.length() > 0) {
     }
 }
 
-response.sendRedirect("courseView.jsp");
+if(student) {
+    response.sendRedirect("courseView.jsp");
+}
+else {
+    response.sendRedirect("courseViewAsInstructor.jsp");
+}
 %>

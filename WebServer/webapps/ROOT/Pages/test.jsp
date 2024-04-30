@@ -18,6 +18,36 @@ catch(Exception E) {
 }
 %>
 
+<%
+String username = "";
+
+try{
+    username = (String) session.getAttribute("username");
+}
+catch(Exception E) {
+    username = "";
+}
+%>
+
+<%
+boolean student = true;
+try {
+    String queryString = 
+    "SELECT f_name" + "\n" + 
+    "FROM TARP_INSTRUCTOR" + "\n" + 
+    "WHERE username='" + username + "'";
+    
+    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+    ResultSet result = preparedStmt.executeQuery();
+
+    student = !(result.next());
+}
+catch(Exception E) {
+    student = true;
+}
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -109,7 +139,18 @@ catch(Exception E) {
 
         <input type="text" name="questionCount" value=<%=count%> style="display: none;">
 
-        <button class="buttonAccent" onclick='window.open("courseView.jsp", "_self")'>Submit</button>
+        <%
+        if(student) {
+        %>
+          <button type="submit" class="buttonAccent" onclick='window.open("courseView.jsp", "_self")'>Submit</button>
+        <%
+        }
+        else {
+        %>
+          <button type="button" class="buttonAccent" onclick='window.open("courseViewAsInstructor.jsp", "_self")'>Go Back</button>
+        <%
+        }
+        %>
 
     </form>
   </body>

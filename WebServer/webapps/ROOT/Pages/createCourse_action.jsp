@@ -6,12 +6,12 @@
 "%>
 
 <%
-String username = "username";
+String username = "";
 try{
     username = (String) session.getAttribute("username");
 }
 catch(Exception E) {
-    username = "username";
+    username = "";
 }
 
 try {

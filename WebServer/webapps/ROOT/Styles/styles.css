@@ -1645,6 +1645,22 @@ header div #you {
 .profile .profileSettings div:not(:last-of-type) {
     margin-bottom: 2em;
 }
+.profile .profileSettings div .comingSoon {
+    position: absolute;
+    margin-left: 0.5em;
+    margin-top: -1.8em;
+    background-color: #00000050;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 20px;
+    font-weight: 500;
+    display: none;
+}
+
+.profile .profileSettings div .comingSoonContainer:hover > .comingSoon {
+    display: flex;
+}
 .profile .profileSettings div p:first-of-type {
     font-weight: 500;
     font-size: 1.2em;

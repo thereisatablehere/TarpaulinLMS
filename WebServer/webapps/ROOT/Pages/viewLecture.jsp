@@ -4,6 +4,36 @@
     java.sql.*, 
     oracle.jdbc.*
 "%>
+
+<%
+String username = "";
+
+try{
+    username = (String) session.getAttribute("username");
+}
+catch(Exception E) {
+    username = "";
+}
+
+String course_id = "";
+
+try{
+    course_id = (String) session.getAttribute("courseId");
+}
+catch(Exception E) {
+    course_id = "Course";
+}
+
+String lecture_id = "";
+
+try{
+    lecture_id = (String) session.getAttribute("lectureId");
+}
+catch(Exception E) {
+    lecture_id = "Lecture";
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,41 +49,50 @@
 
 <img class="openNavbar" src="../Images/menu.svg">
 
-<script src="../Scripts/loadSidebar.js"></script>
+<%
+// don't load sidebar if user is an instructor
+
+boolean student = true;
+try {
+    String queryString = 
+    "SELECT f_name" + "\n" + 
+    "FROM TARP_INSTRUCTOR" + "\n" + 
+    "WHERE username='" + username + "'";
+    
+    PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+    ResultSet result = preparedStmt.executeQuery();
+
+    student = !(result.next());
+}
+catch(Exception E) {
+    student = true;
+}
+
+if(student) {
+%>
+    <script src="../Scripts/loadSidebar.js"></script>
+<%
+}
+%>
 
 <section class="mainContainer watchLecture">
     <%
-    String username = "username";
-
-    try{
-        username = (String) session.getAttribute("username");
+    if(student) {
+    %>
+        <button class="buttonAccent backNav" onclick="window.open('courseView.jsp', '_self')">
+            <img src="../Images/cheveron-left.svg"><p>Go Back</p>
+        </button>
+    <%
     }
-    catch(Exception E) {
-        username = "username";
-    }
-
-    String course_id = "";
-
-    try{
-      course_id = (String) session.getAttribute("courseId");
-    }
-    catch(Exception E) {
-        course_id = "Course";
-    }
-
-    String lecture_id = "";
-
-    try{
-        lecture_id = (String) session.getAttribute("lectureId");
-    }
-    catch(Exception E) {
-        lecture_id = "Lecture";
+    else {
+    %>
+        <button class="buttonAccent backNav" onclick="window.open('courseViewAsInstructor.jsp', '_self')">
+            <img src="../Images/cheveron-left.svg"><p>Go Back</p>
+        </button>
+    <%
     }
     %>
-
-    <button class="buttonAccent backNav" onclick="window.open('courseView.jsp', '_self')">
-        <img src="../Images/cheveron-left.svg"><p>Go Back</p>
-    </button>
     
     <p class="bigTitle"><%=lecture_id%></p>
 
@@ -94,10 +133,16 @@
         <%if(res_watched.next()) { %>
             <button type="button" class="buttonNormal alreadyWatched">Already Watched</button>
         <%}else{%>
+            <%
+            if(student) {
+            %>
             <button type="submit" class="buttonNormal markAsWatched">
                 <img src="../Images/checkmark.svg">
                 <p>Mark As Watched</p>
             </button>
+            <%
+            }
+            %>
         <%}%>
     </form>
 

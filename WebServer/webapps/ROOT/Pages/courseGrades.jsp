@@ -8,7 +8,7 @@
 "%>
 
 <%
-String username = "username";
+String username = "";
 
 try{
     username = (String) session.getAttribute("username");

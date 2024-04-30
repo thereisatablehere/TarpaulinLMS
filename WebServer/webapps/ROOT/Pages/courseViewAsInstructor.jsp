@@ -10,7 +10,8 @@ different enought from normal courseView.jsp, then this would be fine.
 
 <%@page import="
     java.sql.*, 
-    oracle.jdbc.*
+    oracle.jdbc.*, 
+    java.util.*
 "%>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ different enought from normal courseView.jsp, then this would be fine.
     <title>Tarpaulin - View a Course</title>
   <link rel="icon" type="image/x-icon" href="../Images/Tarpaulin_Logo_Alt_2.png">
 </head>
-  <body class="instructorHomeBody">
+  <body class="instructorHomeBody" style="display: none;">
     <script src="../Scripts/headerLoggedIn.js"></script>
 
     <section class="mainContainer courseView">
@@ -39,13 +40,13 @@ different enought from normal courseView.jsp, then this would be fine.
         }
         %>
         
-        <p class="title"><%=courseId%> (Student View)</p>
+        <p id="courseTitle" class="title"><%=courseId%> (Student View)</p>
 
         <nav id="nav">
             <p onclick="changeTab(this)" style="font-weight: bold;">Overview</p>
             <p onclick="changeTab(this)">Lectures</p>
             <p onclick="changeTab(this)">Tests</p>
-            <p onclick="changeTab(this)">Q Board</p>
+            <!--<p onclick="changeTab(this)">Q Board</p>-->
             <p onclick="changeTab(this)">Comments</p>
         </nav>
 
@@ -55,7 +56,7 @@ different enought from normal courseView.jsp, then this would be fine.
                 <!-- not yet implemented, but maybe do so later if enought time and want to -->
                 <button id="join" class="buttonNormal">Unenroll</button>
                 
-                <button id="join" class="buttonAccent" onclick='window.open("courseGrades.jsp", "_self")'>View Sample Grades</button>
+                <button id="join" class="buttonAccent">View Grades</button>
             </div>
 
             <div class="topInfo">
@@ -85,16 +86,56 @@ different enought from normal courseView.jsp, then this would be fine.
 
                 <div style="margin-left: -0.5em;">
                     <p>Taught by</p>
-                    <p class="instructor" onclick='window.open("instructorPage.jsp", "_self")'><%=instructor%> (You)</p>
+                    <p class="instructor"><%=instructor%> (You)</p>
                 </div>
                 
-                <!-- Course rating - not yet implemented, but maybe do later if enough time and want to -->
+                <!-- get rating of instructor - copied from instructorPage.jsp -->
                 <div>
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
+                    <%
+                    String rating = "";
+
+                    queryString = 
+                    "SELECT instructor_score" + "\n" + 
+                    "FROM TARP_RATES" + "\n" + 
+                    "WHERE i_username='" + instructor + "'";
                     
-                    <p>(3.2)</p>
+                    preparedStmt = con.prepareStatement(queryString);
+
+                    result = preparedStmt.executeQuery();
+
+                    ArrayList<Integer> ratings = new ArrayList<Integer>();
+                    int ratingsSum = 0;
+
+                    while(result.next()) {
+                        int currentRating = Integer.parseInt(result.getString(1));
+                        ratingsSum += currentRating;
+
+                        ratings.add(currentRating);
+                    }
+
+                    result.close();
+                    preparedStmt.close();
+
+                    String ratingToDisplay = "No Ratings";
+
+                    if(ratings.size() > 0) {
+                        // calculate average rating
+                        double avgRating = ratingsSum / ((double) ratings.size());
+                        avgRating /= 2;
+                        // round to 2 decimal ppoints
+                        avgRating = Math.round(avgRating * 100.0) / 100.0;
+
+                        ratingToDisplay = "(" + String.valueOf(avgRating) + ")";
+
+                        for(int i = 0; i < Math.floor(avgRating); i++) {
+                    %>
+                            <img draggable="false" class="star" src="../Images/star-full.svg">
+                    <%
+                        }
+                    }
+                    %>
+                    
+                    <p><%=ratingToDisplay%></p>
                 </div>
             </div>
 
@@ -128,63 +169,122 @@ different enought from normal courseView.jsp, then this would be fine.
         </div>
 
         <div id="lectures" class="tab">
-            <%int u_lectures = 0;%>
-            <div class="todo"style="border-color:transparent;margin:0;">
-                
-                
+            
+            <div class="finished" style="
+            padding: 0;
+            margin: 0;
+            ">
                 <%
+                int c_lectures = 0;
                 
-                String tot_lects = 
+                String c_lects = 
                 "SELECT course_id, lecture_id" + "\n" + 
                 "FROM TARP_LECTURE" + "\n" + 
-                "WHERE course_id='" + courseId + "'";
+                "WHERE course_id='" + courseId + "'"  
+                ;
                 
-                PreparedStatement tot_lect_stmt = con.prepareStatement(tot_lects);
+                PreparedStatement c_lect_stmt = con.prepareStatement(c_lects);
                 
-                ResultSet res_tot_lect = tot_lect_stmt.executeQuery();
+                ResultSet res_c_lect = c_lect_stmt.executeQuery();
                 
-                while(res_tot_lect.next()) { %>
-                    <div class="lectureContainer"style="order: 5;">
-                        <p><%=res_tot_lect.getString(2)%></p>
-                        <div class="video">Video placeholder</div>
-                    </div>
-                    <%  u_lectures++;
+                while(res_c_lect.next()) { %>
+                    <form class="course" action="setLectureIdSessionAttribute_action.jsp" method="post" style="
+                    order: 5;
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-self: flex-start;
+                    justify-content: center;
+                    ">
+
+                            <div class="lectureContainer"style="order: 5;">
+                                <input type="text" name="lectureId" value=<%="\"" + res_c_lect.getString(2) + "\""%> style="display: none;">
+                                <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+
+                                <button class="goToLecture" type="submit"><%=res_c_lect.getString(2)%></button>
+                            </div>
+                    </form>
+                    <%  c_lectures++;
                 }
                 
+                // if(c_lectures == 1) {
                 %>
-                <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order:1;"><%=u_lectures%> Total Lectures</p>
-                
-            </div>
-
-
-        </div>
-
-        <div id="tests" class="tab">
-
-            <div class="testContainer">
-                <p>Test Title</p>
-                <p>This test is about something, and that is described right here.</p>
-                <button class="buttonNormal" onclick='window.open("test.jsp", "_self")'>Start</button>
-            </div>
-
-            <div class="testContainer">
-                <p>Test Title</p>
-                <p>This test is about something, and that is described right here.</p>
-                <div>
-                    <p>completed on</p>
-                    <p>01/23/12 at 12:34pm</p>
-                </div>
-                <button class="buttonAccent" onclick='window.open("testResults.jsp", "_self")'>View Results</button>
-            </div>
-
-            <div class="testContainer">
-                <p>Test Title</p>
-                <p>This test is about something, and that is described right here.</p>
-                <button class="buttonNormal" onclick='window.open("test.jsp", "_self")'>Start</button>
+                <!--
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1; text-align: center;"><%=c_lectures%> Lecture</p>
+                -->
+                <%
+                // }
+                // else {
+                %>
+                <!--
+                    <p class="bigDescription" style="margin-bottom: 1em; font-weight: bold;order: 1; text-align: center;"><%=c_lectures%> Lectures</p>
+                -->
+                <%
+                // }
+                %>
             </div>
             
         </div>
 
+        <div id="tests" class="tab">
+
+            <%
+            queryString = 
+            "SELECT test_id, num_q" + "\n" + 
+            "FROM TARP_TEST" + "\n" + 
+            "WHERE course_id='" + courseId + "'";
+            
+            preparedStmt = con.prepareStatement(queryString);
+
+            result = preparedStmt.executeQuery();
+
+            boolean noTests = true;
+
+            while(result.next()) {
+                String testId = result.getString(1);
+
+                // only show tests that have at least a single question
+                if(result.getInt(2) > 0) {
+                    noTests = false;
+            %>
+
+                    <form class="testContainer" action="takeTest_action.jsp" method="post">
+                        <input type="text" name="testId" value=<%="\"" + testId + "\""%> style="display: none;">
+                        
+                        <p><%=testId%></p>
+                        <p>The description of the test would go here - not yet implemented.</p>
+
+                        <input type="text" name="took" value="false" style="display: none;">
+                        <button tye="submit" class="buttonNormal">View</button>
+                    </form>
+
+            <%
+                }
+            }
+
+            result.close();
+            preparedStmt.close();
+            
+            if(noTests) {
+            %>
+                <p style="
+                font-weight: 500;
+                text-align: center;
+                font-size: 1.1em;
+                ">
+                    This course does not have any tests with at least 1 question. 
+                    <br>
+                    Remember that students will not see any tests that you have created 
+                    that do not have any questions.
+                </p>
+            <%
+            }
+            %>
+            
+        </div>
+
+        <!--
         <div id="q board" class="tab">
 
             <div class="questionContainer">
@@ -218,45 +318,90 @@ different enought from normal courseView.jsp, then this would be fine.
             </div>
             
         </div>
+        -->
 
         <div id="comments" class="tab">
-            <input type="text" placeholder="comment" style="
-                width: 50%;
-                padding: 10px;
-                outline: none;
-                border: 1px solid black;
-                border-radius: 10px;
-                font-size: 1em;
-                margin-left: 10%;
-            ">
-            <button class="buttonAccent" style="font-size: 0.7em; margin: 0; margin-top: 0.5em; margin-bottom: 2em; margin-left: 10%;">Comment</button>
-
-            <div class="questionContainer">
-                <div>
-                    <p class="instructor">Bruce The Prof (instructor)</p>
-                    <p>01/22/24 at 2:30pm</p>
-                </div>
-                
-                <p>Thanks for all of the feedback everyone!</p>
-            </div>
             
-            <div class="questionContainer">
-                <div>
-                    <p>userHere</p>
-                    <p>01/21/24 at 1:23pm</p>
-                </div>
-                
-                <p>Great course.</p>
-            </div>
+            <%
+            Boolean postCommentFailed = false;
 
-            <div class="questionContainer">
-                <div>
-                    <p>anotherUser</p>
-                    <p>01/21/24 at 1:20pm</p>
-                </div>
+            try{
+                postCommentFailed = Boolean.parseBoolean((String) session.getAttribute("failedToPostComment"));
+            }
+            catch(Exception E) {
+                postCommentFailed = false;
+            }
+
+            if(postCommentFailed) {
+                out.println("Failed to post comment");
+                session.setAttribute("failedToPostComment", "false");
+            }
+            %>
+
+            <section id="commentsList">
+                <% 
+                String commentQuery = "SELECT s_username, s_comment, cdate FROM view_comments WHERE course_id = ? ORDER BY cdate DESC";
+                PreparedStatement commentStmt = con.prepareStatement(commentQuery);
+                commentStmt.setString(1, courseId);
+                ResultSet commentsResultSet = commentStmt.executeQuery();
+
+                boolean noComments = true;
+
+                while (commentsResultSet.next()) {
+                    noComments = false;
+
+                    String commenter = commentsResultSet.getString("s_username");
+                    String commentText = commentsResultSet.getString("s_comment");
+                    Timestamp commentTime = commentsResultSet.getTimestamp("cdate");
+                %>
+                    <div class="questionContainer">
+                        <div>
+                            <%
+                            if(commenter.equals(instructor)) {
+                            %>
+                                <p class="instructor"><%= commenter %> (instructor) (you)</p>
+                            <%
+                            }
+                            else {
+                            %>
+                                <p><%= commenter %></p>
+                            <%
+                            }
+                            %>
+                            <p><%= new java.text.SimpleDateFormat("MM/dd/yy 'at' HH:mm").format(commentTime) %></p>
+                        </div>
+                        
+                        <p><%= commentText %></p>
+                    </div>
+                <%
+                }
+
+                commentsResultSet.close();
+                commentStmt.close();
+
+                if(noComments) {
+                %>
+                    <p style="
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 1.25em;
+                    ">
+                        This course does not have any comments.
+                    </p>
+                <%
+                }
+                %>
+            </section>
+
+            <form id="postCommmentContainer" action="sendComment_action.jsp" method="post">
+                <input type="hidden" name="courseId" value="<%= courseId %>">
                 
-                <p>I learned a lot of usefull stuff.</p>
-            </div>
+                <input type="text" name="comment" placeholder="Add a comment...">
+
+                <button type="submit">
+                    <img src="../Images/send.svg">
+                </button>
+            </form>
             
         </div>
         

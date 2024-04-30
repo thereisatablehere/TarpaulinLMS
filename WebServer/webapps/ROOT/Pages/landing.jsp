@@ -23,7 +23,7 @@
       <div class="landingIntro">
         <p class="giantTitle">Tarpaulin</p>
 
-        <p class="bigDescription">Gain access to a large array of educational content that can be accessed at anytime, and from anywhere.</p>
+        <p class="bigDescription">Gain access to a large array of educational content that can be accessed at anytime, from anywhere.</p>
 
         <button class="buttonNormal" onclick="window.open('learnMore.jsp', '_self')">Learn More</button>
       </div>

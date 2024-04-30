@@ -30,13 +30,13 @@
         <%
         session.setAttribute("loadBackToSearch", "false");
         
-        String username = "username";
+        String username = "";
 
         try{
           username = (String) session.getAttribute("username");
         }
         catch(Exception E) {
-          username = "username";
+          username = "";
         }
         %>
         <p id="username"><%=username%></p>

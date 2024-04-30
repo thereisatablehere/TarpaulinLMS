@@ -4,7 +4,8 @@
 
 <%@page import="
     java.sql.*, 
-    oracle.jdbc.*
+    oracle.jdbc.*, 
+    java.util.*
 "%>
 
 <%@include file="../dontCacheJSP.jsp"%>
@@ -47,21 +48,74 @@
 
     <section class="mainContainer">
         
+        <!-- welcome message -->
         <div class="studentWelcome title">
             <p>Welcome back, </p>
             
             <%
-            String username = "username";
+            String username = "";
 
             try{
                 username = (String) session.getAttribute("username");
             }
             catch(Exception E) {
-                username = "username";
+                username = "";
             }
             %>
             <p id="username"><%=username%></p>
             <p>!</p>
+        </div>
+
+        <!-- rating -->
+        <div class="studentWelcome" style="font-size: 1.2em;">
+            <p>Your rating:</p>
+            
+            <%
+            String ratingToDisplay = "NA";
+
+            try {
+                String rating = "";
+
+                String queryString = 
+                "SELECT instructor_score" + "\n" + 
+                "FROM TARP_RATES" + "\n" + 
+                "WHERE i_username='" + username + "'";
+                
+                PreparedStatement preparedStmt = con.prepareStatement(queryString);
+
+                ResultSet result = preparedStmt.executeQuery();
+
+                ArrayList<Integer> ratings = new ArrayList<Integer>();
+                int ratingsSum = 0;
+
+                while(result.next()) {
+                    int currentRating = Integer.parseInt(result.getString(1));
+                    ratingsSum += currentRating;
+
+                    ratings.add(currentRating);
+                }
+
+                result.close();
+                preparedStmt.close();
+
+                ratingToDisplay = "No Ratings";
+
+                if(ratings.size() > 0) {
+                    // calculate average rating
+                    double avgRating = ratingsSum / ((double) ratings.size());
+                    avgRating /= 2;
+                    // round to 2 decimal ppoints
+                    avgRating = Math.round(avgRating * 100.0) / 100.0;
+
+                    ratingToDisplay = String.valueOf(avgRating);
+                }
+            }
+            catch(Exception E) {
+                ratingToDisplay = "NA";
+            }
+            %>
+            
+            <p style="margin-left: 0.35em"><%=ratingToDisplay%></p>
         </div>
 
         <button class="buttonAccent createCourseButton" onclick='window.open("createCourse.jsp", "_self")'>Create a Course</button>
@@ -140,7 +194,19 @@
 
                                 <div class="students">
                                     <p><%=count%></p>
-                                    <p>students</p>
+                                    
+                                    <%
+                                    if(count == 1) {
+                                    %>
+                                        <p>students</p>
+                                    <%
+                                    }
+                                    else {
+                                    %>
+                                        <p>student</p>
+                                    <%
+                                    }
+                                    %>
 
                                     <%
                                     if(count == 0) {
@@ -166,8 +232,10 @@
                                         <p class="editSoon">Comming soon</p>
                                     </button>
                                     
-                                    <form>
-                                        <button type="submit" href="instructorHome.jsp"><img src="../Images/chat-bubble-dots.svg"></button>
+                                    <form action="setCourseIdSessionAttributeAsInstructor_action.jsp" method="post" 
+                                    onsubmit="openCourseChat(this)">
+                                        <input type="text" name="courseId" value=<%=courseId%> style="display: none;">
+                                        <button type="submit"><img src="../Images/chat-bubble-dots.svg"></button>
                                     </form>
                                     
                                     <button class="delete" onclick=openDeleteCourseConfirm(this)><img src="../Images/trash.svg"></button>
@@ -203,8 +271,9 @@
         
     </section>
 
-    <!-- handle confirm course delete stuff -->
     <script>
+        // handle confirm course delete stuff
+
         let ref = document.getElementsByClassName("confirmDeleteCourse")[0];
         let courseIdElem = ref.getElementsByTagName("p")[0];
         let inputElem = ref.getElementsByTagName("input")[0];
@@ -220,6 +289,20 @@
             courseIdElem.innerText = "Are you sure you want to delete " + courseId + "?";
 
             ref.style.display = "flex";
+        }
+        
+        // handle go to course chat
+
+        function openCourseChat(elem) {
+            // get course name
+            let courseId = elem.parentNode.parentNode.children[0].innerText;
+            courseId += " (Student View)";
+
+            // set session attributes so that courseViewAsInstructor.jsp will load into comments tab
+            localStorage.setItem("courseViewCourseId", courseId);
+            localStorage.setItem("courseViewTab", "comments");
+
+            return true;
         }
     </script>
   </body>

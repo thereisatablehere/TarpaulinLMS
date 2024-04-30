@@ -30,7 +30,7 @@ maybe just leave it -->
 
         <%
         // get username (needed for calculating rank)
-        String username = "username";
+        String username = "";
     
         try{
             username = (String) session.getAttribute("username");
@@ -89,20 +89,26 @@ maybe just leave it -->
                 result.close();
                 preparedStmt.close();
 
-                // calculate average rating
-                double avgRating = ratingsSum / ((double) ratings.size());
-                avgRating /= 2;
-                // round to 2 decimal ppoints
-                avgRating = Math.round(avgRating * 100.0) / 100.0;
+                String ratingToDisplay = "No Ratings";
 
-                for(int i = 0; i < Math.floor(avgRating); i++) {
+                if(ratings.size() > 0) {
+                    // calculate average rating
+                    double avgRating = ratingsSum / ((double) ratings.size());
+                    avgRating /= 2;
+                    // round to 2 decimal ppoints
+                    avgRating = Math.round(avgRating * 100.0) / 100.0;
+
+                    ratingToDisplay = "(" + String.valueOf(avgRating) + ")";
+
+                    for(int i = 0; i < Math.floor(avgRating); i++) {
                 %>
-                    <img draggable="false" class="star" src="../Images/star-full.svg">
+                        <img draggable="false" class="star" src="../Images/star-full.svg">
                 <%
+                    }
                 }
                 %>
             </div>
-            <p style="margin-left: 0.5em;">(<%=avgRating%>)</p>
+            <p style="margin-left: 0.5em;"><%=ratingToDisplay%></p>
         </div>
 
         <section id="ratingContainer">
@@ -152,9 +158,10 @@ maybe just leave it -->
                 <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
                     <input type="text" name="courseId2" value=<%=courseId2%> style="display: none;">
 
-                    <button class="name"><%=courseId2%></button>
+                    <button class="name" style="margin-left: -0.5em;"><%=courseId2%></button>
                     
                     <!-- rating - maybe implement later if have time and want to -->
+                    <!--
                     <div style="
                         display: flex;
                         flex-direction: row;
@@ -168,6 +175,7 @@ maybe just leave it -->
                         </div>
                         <p style="margin-left: 0.5em;">(4.5)</p>
                     </div>
+                    -->
 
                     <%
 

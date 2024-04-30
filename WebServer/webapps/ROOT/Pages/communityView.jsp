@@ -5,19 +5,18 @@
 <%@page import="
     java.sql.*, 
     oracle.jdbc.*, 
-    java.util.*, 
-    java.util.Collections
+    java.util.*
 "%>
 
 <%
     // get username (needed for calculating rank)
-    String username = "username";
+    String username = "";
 
     try{
         username = (String) session.getAttribute("username");
     }
     catch(Exception E) {
-        username = "username";
+        username = "";
     }
 
     // get community id from session attribute
