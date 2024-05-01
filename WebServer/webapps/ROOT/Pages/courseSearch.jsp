@@ -24,31 +24,38 @@
     <script src="../Scripts/loadSidebar.js"></script>
 
     <section class="mainContainer mainContainerLeft courseSearch">
-       <form method="post" action="courseSearchResults.jsp">
+       <form method="post" action="courseSearchResults.jsp" onsubmit="setLocalStorage()">
         <section class="search">
             <p class="title">Find a New Course to Enroll In</p>
 
             <p class="bigDescription">Fill out any number of parameters</p>
             <div>
                 <p>Course Name</p>
-                <input type="text" name="coursename" id="coursename" placeholder="Course">
+                <input id="courseInput" type="text" name="coursename" id="coursename" placeholder="Course">
             </div>
 
             <div>
                 <p>Created By</p>
-                <input type="text" name="instructor" id="instructor" placeholder="Name">
+                <input id="createdInput" type="text" name="instructor" id="instructor" placeholder="Instructor">
             </div>
 
-            <button class="buttonAccent" type= "submit" onclick='
-                let results = document.getElementsByClassName("results")[0];
-                // results.style.display = "block";
-            '>search</button>
-
+            <button class="buttonAccent" type="submit">search</button>
         </section>
         </form>
-
-
     </section>
 
+    <script>
+        function setLocalStorage() {
+            localStorage.setItem("courseInputValue", document.getElementById("courseInput").value);
+            localStorage.setItem("createdInputValue", document.getElementById("createdInput").value);
+        }
+
+        if(localStorage.getItem("goingBackToSearch") == "true") {
+            localStorage.setItem("goingBackToSearch", "false");
+
+            document.getElementById("courseInput").value = localStorage.getItem("courseInputValue");
+            document.getElementById("createdInput").value = localStorage.getItem("createdInputValue");
+        }
+    </script>
   </body>
 </html>

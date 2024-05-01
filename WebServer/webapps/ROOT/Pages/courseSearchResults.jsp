@@ -20,8 +20,8 @@
     
     <p class="bigTitle" style="text-align: center; margin: 0;">Results</p>
     
-    <form action="courseSearch.jsp" method="post" style="display: flex; align-self: center; margin-top: 1em; margin-bottom: 2em;">
-        <button class="buttonAccent" type= "submit" onclick= "courseSearch">Search Again</button>
+    <form action="courseSearch.jsp" method="post" onsubmit="setLocalStorage()" style="display: flex; align-self: center; margin-top: 1em; margin-bottom: 2em;">
+        <button class="buttonAccent" type= "submit" onclick= "courseSearch">Back to Search</button>
     </form>
 
     <!--
@@ -74,7 +74,11 @@
 
         ResultSet result = prepStmt.executeQuery();
 
+        boolean noResults = true;
+
         while(result.next()) {
+            noResults = false;
+
             coursename = result.getString(1);
             instructor = result.getString(2);
             description = result.getString(3);
@@ -107,11 +111,31 @@
 
         result.close();
         prepStmt.close();
+
+        if(noResults) {
+        %>
+            <p style="
+            text-align: center;
+            font-size: 1.35em;
+            font-weight: 500;
+            ">
+                No results found
+            </p>
+        <%  
+        }
         %>
 
     </section>
 
 </section>
+
+<script>
+    function setLocalStorage() {
+        localStorage.setItem("goingBackToSearch", "true");
+
+        return true;
+    }
+</script>
 </body>
 </html>
 
