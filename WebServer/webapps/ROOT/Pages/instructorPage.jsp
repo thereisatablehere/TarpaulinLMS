@@ -144,7 +144,7 @@ maybe just leave it -->
             <%
             queryString = 
             "SELECT course_id" + "\n" + 
-            "FROM TARP_COURSE" + "\n" + 
+            "FROM VIEW_COURSES_TAUGHT" + "\n" + 
             "WHERE username='" + instructor + "'";
             
             preparedStmt = con.prepareStatement(queryString);
