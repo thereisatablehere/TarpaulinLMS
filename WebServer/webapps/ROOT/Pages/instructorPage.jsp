@@ -183,7 +183,7 @@ maybe just leave it -->
                     String query2 = 
                     "SELECT descrip" + "\n" + 
                     "FROM TARP_COURSE" + "\n" + 
-                    "WHERE course_id='" + courseId + "'";
+                    "WHERE course_id='" + courseId2 + "'";
                     
                     PreparedStatement preparedStmt2 = con.prepareStatement(query2);
 

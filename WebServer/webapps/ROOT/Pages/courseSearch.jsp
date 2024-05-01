@@ -29,6 +29,8 @@
             <p class="title">Find a New Course to Enroll In</p>
 
             <p class="bigDescription">Fill out any number of parameters</p>
+            <p class="notice">(leave blank to browse all courses)</p>
+
             <div>
                 <p>Course Name</p>
                 <input id="courseInput" type="text" name="coursename" id="coursename" placeholder="Course">

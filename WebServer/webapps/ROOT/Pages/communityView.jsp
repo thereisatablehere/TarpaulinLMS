@@ -200,7 +200,15 @@
 
             <!-- TODO -->
             <div class="controls">
-                <button class="buttonNormal">Invite Another Student</button>
+                <div class="comingSoonContainer">
+                    <button class="buttonNormal noClick">Invite Another Student</button>
+                    <p class="comingSoon" style="
+                    margin-left: 3em;
+                    ">
+                        Coming soon!
+                    </p>
+                </div>
+                
                 <form action="" method="post">
                     <input type="hidden" name="action" value="leave">
                     <input type="hidden" name="communityId" value="<%=communityId%>">

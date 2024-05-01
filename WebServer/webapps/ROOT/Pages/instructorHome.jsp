@@ -227,10 +227,20 @@
                                         <button type="submit"><img src="../Images/eye.png"></button>
                                     </form>
                                     
-                                    <button class="notyet" type="submit">
-                                        <img src="../Images/edit-pencil.svg">
-                                        <p class="editSoon">Comming soon</p>
-                                    </button>
+                                    <div class="comingSoonContainer" style="
+                                    height: 1.5em;
+                                    ">
+                                        <button class="notYet" type="submit">
+                                            <img src="../Images/edit-pencil.svg">
+                                        </button>
+                                        
+                                        <p class="comingSoon" style="
+                                        filter: brightness(80%);
+                                        box-shadow: 0 0 5px grey;
+                                        ">
+                                            Coming soon!
+                                        </p>
+                                    </div>
                                     
                                     <form action="setCourseIdSessionAttributeAsInstructor_action.jsp" method="post" 
                                     onsubmit="openCourseChat(this)">
