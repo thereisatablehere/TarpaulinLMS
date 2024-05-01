@@ -2031,3 +2031,34 @@ header div #you {
 .coursesList, .communitiesList {
     justify-content: flex-start;
 }
+
+/* custom 404 page */
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+.errorContainer .errorCode {
+    font-weight: bolder;
+    font-size: 4em;
+    padding: 0;
+}
+.errorContainer .errorCodeBottom {
+    font-weight: 500;
+    font-size: 2em;
+    margin-bottom: 3em;
+}
+.errorContainer img {
+    width: calc(480px * 1.25);
+    border-radius: 10px;
+}
+.errorContainer .message {
+    font-weight: bold;
+    font-size: 1.7em;
+    font-style: italic;
+}
