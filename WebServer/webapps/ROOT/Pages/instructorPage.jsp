@@ -156,7 +156,7 @@ maybe just leave it -->
             %>
 
                 <form class="taught" action="setCourseIdSessionAttribute_action.jsp" method="post">
-                    <input type="text" name="courseId2" value=<%=courseId2%> style="display: none;">
+                    <input type="text" name="courseId" value=<%=courseId2%> style="display: none;">
 
                     <button class="name" style="margin-left: -0.5em;"><%=courseId2%></button>
                     
@@ -177,32 +177,28 @@ maybe just leave it -->
                     </div>
                     -->
 
-                    <%
+                    <% 
+                    String c_description = "";
 
+                    String query2 = 
+                    "SELECT descrip" + "\n" + 
+                    "FROM TARP_COURSE" + "\n" + 
+                    "WHERE course_id='" + courseId + "'";
+                    
+                    PreparedStatement preparedStmt2 = con.prepareStatement(query2);
+
+                    ResultSet result2 = preparedStmt2.executeQuery();
+
+                    while(result2.next()) {
+                        c_description = result2.getString(1);
+                        break;
+                    }
+
+                    result2.close();
+                    preparedStmt2.close();
                     %>
 
-                    <!-- TODO -->
-                    <% 
-                String c_description = "";
-
-                String query2 = 
-                "SELECT descrip" + "\n" + 
-                "FROM TARP_COURSE" + "\n" + 
-                "WHERE course_id='" + courseId + "'";
-                
-                PreparedStatement preparedStmt2 = con.prepareStatement(query2);
-
-                ResultSet result2 = preparedStmt2.executeQuery();
-
-                while(result2.next()) {
-                    c_description = result2.getString(1);
-                    break;
-                }
-
-                result2.close();
-                preparedStmt2.close();
-                %>
-                <p><%=c_description%></p>
+                    <p><%=c_description%></p>
                 </form>
 
             <%
