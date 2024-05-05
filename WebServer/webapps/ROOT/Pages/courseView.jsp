@@ -336,6 +336,7 @@ catch(Exception E) {
                 String score = "-1";
 
                 boolean noQuestions = (result.getInt(2) == 0);
+                int numQuestions = result.getInt(2);
 
                 while(resultInner.next()) {
                     took = true;
@@ -365,6 +366,7 @@ catch(Exception E) {
                             <div>
                                 <p class="takenText">Completed!</p>
                                 <p class="score">Score: <%=score%></p>
+                                <p class="numQuestions">Number of Questions: <%=numQuestions%></p>
                             </div>
                         <%
                         }
