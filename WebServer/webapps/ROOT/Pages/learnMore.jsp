@@ -1,3 +1,10 @@
+<%@include file="../DBconnection.jsp"%>
+
+<%@page import="
+    java.sql.*, 
+    oracle.jdbc.*
+"%>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -13,6 +20,7 @@
     <section class="mainContainer">
         <section class="titleBodySection">
             <p class="bigTitle">What exactly is Tarpaulin?</p>
+
             <div class="bodyText">
                 <p>
                     Tarpaulin is an Online Learning Management System (OLMS) designed to facilitate the creation, management, and delivery of educational courses. Tarpualin provides a user-friendly interface for students and instructors, allowing efficient handling of course materials, assessments, and student progress tracking. 
@@ -62,6 +70,85 @@
             </div>
         </section>
     </section>
+
+    <!-- copied from landing.jsp -->
+    <footer>
+        <%
+        String dateInfo = "";
+
+        try {
+            String query = "SELECT sysdate FROM DUAL";
+            
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            ResultSet result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                dateInfo = result.getString(1);
+
+                try {
+                    String yearQuery = "SELECT SUBSTR('" + dateInfo + "', 1, 10) FROM DUAL";
+                    
+                    PreparedStatement yearPreparedStmt = con.prepareStatement(yearQuery);
+
+                    ResultSet yearResult = yearPreparedStmt.executeQuery();
+
+                    while(yearResult.next()) {
+                        dateInfo = yearResult.getString(1);
+                        
+                        break;
+                    }
+                }
+                catch(Exception D) {
+                    out.println("INNER FAIL: " + D);
+                }
+
+                break;
+            }
+
+            result.close();
+            preparedStmt.close();
+        }
+        catch(Exception E) {
+            out.println("OUTER FAIL: " + E);
+            dateInfo = "";
+        }
+
+        if(dateInfo.length() > 0) {
+        %>
+            <p id="copyright">&copy <%=dateInfo%></p>
+        <%        
+        }
+
+        String version = "";
+
+        try {
+            String query = "SELECT * FROM v$version";
+
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            ResultSet result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                version = result.getString(1);
+                
+                break;
+            }
+
+            result.close();
+            preparedStmt.close();
+        }
+        catch(Exception E) {
+            version = "";
+        }
+
+        if(version.length() > 0) {
+        %>
+            <p><%=version%></p>
+        <%
+        }
+        %>
+    </footer>
 
     <script src="../Scripts/faqAccordian.js"></script>
 </body>

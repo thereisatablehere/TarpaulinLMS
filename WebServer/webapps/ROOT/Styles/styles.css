@@ -2076,3 +2076,21 @@ header div #you {
     font-size: 1.7em;
     font-style: italic;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    background-color: #003a92;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 103%;
+    margin-left: -0.7em;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+}
+footer p:not(:last-of-type):after {
+    content: "\00a0\00a0|\00a0\00a0";
+}

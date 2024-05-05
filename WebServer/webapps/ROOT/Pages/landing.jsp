@@ -82,5 +82,83 @@
         </div>
       </div>
     </section>
+
+    <footer>
+        <%
+        String dateInfo = "";
+
+        try {
+            String query = "SELECT sysdate FROM DUAL";
+            
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            ResultSet result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                dateInfo = result.getString(1);
+
+                try {
+                    String yearQuery = "SELECT SUBSTR('" + dateInfo + "', 1, 10) FROM DUAL";
+                    
+                    PreparedStatement yearPreparedStmt = con.prepareStatement(yearQuery);
+
+                    ResultSet yearResult = yearPreparedStmt.executeQuery();
+
+                    while(yearResult.next()) {
+                        dateInfo = yearResult.getString(1);
+                        
+                        break;
+                    }
+                }
+                catch(Exception D) {
+                    out.println("INNER FAIL: " + D);
+                }
+
+                break;
+            }
+
+            result.close();
+            preparedStmt.close();
+        }
+        catch(Exception E) {
+            out.println("OUTER FAIL: " + E);
+            dateInfo = "";
+        }
+
+        if(dateInfo.length() > 0) {
+        %>
+            <p id="copyright">&copy <%=dateInfo%></p>
+        <%        
+        }
+
+        String version = "";
+
+        try {
+            String query = "SELECT * FROM v$version";
+
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            ResultSet result = preparedStmt.executeQuery();
+
+            while(result.next()) {
+                version = result.getString(1);
+                
+                break;
+            }
+
+            result.close();
+            preparedStmt.close();
+        }
+        catch(Exception E) {
+            version = "";
+        }
+
+        if(version.length() > 0) {
+        %>
+            <p><%=version%></p>
+        <%
+        }
+        %>
+    </footer>
   </body>
 </html>
