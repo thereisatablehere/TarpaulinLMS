@@ -11,7 +11,7 @@
 <%
     // get username (needed for calculating rank)
     String username = "";
-
+    String communityLevel = "Unspecified";
     try{
         username = (String) session.getAttribute("username");
     }
@@ -162,7 +162,37 @@
     catch(Exception E) {
         out.println(E);
     }
+
+try {
+    String query = 
+    "SELECT c_description, num_students, " +
+    "CASE " + 
+        "WHEN num_students < 2 THEN 'Low Level Community' " +
+        "WHEN num_students BETWEEN 2 AND 10 THEN 'Mid Level Community' " +
+        "WHEN num_students > 10 THEN 'Senior Level Community' " +
+        "ELSE 'Unspecified' " +
+    "END AS community_level " +
+    "FROM TARP_COMMUNITY " + 
+    "WHERE comm_id='" + communityId + "'"; 
+    PreparedStatement preparedStmt = con.prepareStatement(query);
+    
+    ResultSet result = preparedStmt.executeQuery();
+
+     
+    if(result.next()) {
+        description = result.getString(1);
+        size = result.getString(2);
+        communityLevel = result.getString(3);
+    }
+
+    result.close();
+    preparedStmt.close();
+}
+catch(Exception E) {
+    out.println("Error fetching community details: " + E.getMessage());
+}
 %>
+
 
 <!DOCTYPE html>
 <html>
@@ -187,10 +217,10 @@
 
         <section class="communityView">
             <p class="bigDescription"><%=description%></p>
-
+            
             <div style="margin-top: 0.5em;">
                 <p>Members: </p>
-                <p><%=size%></p>
+                <p><%=size%> - <%=communityLevel%></p>
             </div>
 
             <div style="margin-bottom: 0.2em;">
