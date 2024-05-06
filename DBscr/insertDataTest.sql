@@ -73,6 +73,27 @@ INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VAL
 INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 3 - 3?', '3', '14', '0', '6', 'C', 'test 1', 'MATH101');
 INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 3 / 1?', '33', '4', '3', '6', 'C', 'test 1', 'MATH101');
 
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 12 / 1?', '12', '6', '8', '4', 'A', 'test 2', 'MATH101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 12 / 2?', '12', '6', '8', '4', 'B', 'test 2', 'MATH101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is 12 / 3?', '12', '6', '8', '4', 'D', 'test 2', 'MATH101');
+
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is integer division?', '/', '//', '%', '!', 'B', 'test 1', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is regular division?', '/', '//', '%', '!', 'A', 'test 1', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is modulus?', '/', '//', '%', '!', 'C', 'test 1', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is not?', '/', '//', '%', '!', 'D', 'test 1', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is new line?', '\n', '/n', 'n', '//', 'A', 'test 1', 'CSCI101');
+
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is not in a for loop?', 'condition', 'incrementation', 'var declaration', 'case statement', 'D', 'test 2', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What is a problem with loops?', 'Infinite Loops', 'Repeated Code', 'Condition', 'None', 'A', 'test 2', 'CSCI101');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What type is this variable: 3.5', 'int', 'str', 'float', 'Integer', 'C', 'test 2', 'CSCI101');
+
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('What language is best?', 'Python', 'Java', 'Assembly', 'Raptor', 'D', 'test 3', 'CSCI101');
+
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('Who is God?', 'Father', 'Son', 'Holy Spirit', 'All 3', 'D', 'test 1', 'THEO111');
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('Where was Jesus born?', 'Bethlaham', 'Jerusalem', 'Nazareth', 'Omaha', 'A', 'test 1', 'THEO111');
+
+INSERT INTO tarp_question (t_prompt, a, b, c, d, answer, test_id, course_id) VALUES ('Jesus turned water into what?', 'Kool Aid', 'Wine', 'Blood', 'Cranberry Juice', 'B', 'test 2', 'THEO111');
+
 
 INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'davis12');
 INSERT INTO tarp_joined_by (community_id, username) VALUES ('csbsju', 'maahs35');
