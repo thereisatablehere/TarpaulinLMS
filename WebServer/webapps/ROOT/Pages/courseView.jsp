@@ -224,7 +224,7 @@ catch(Exception E) {
                 
                 String tot_lects = 
                 "(SELECT course_id, lecture_id" + "\n" + 
-                "FROM TARP_LECTURE" + "\n" + 
+                "FROM View_All_Lectures" + "\n" + 
                 "WHERE course_id='" + courseId + "')" + 
                 "MINUS" + 
                 "(SELECT course_id, lecture_id" + "\n" + 
