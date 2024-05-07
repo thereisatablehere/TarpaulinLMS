@@ -45,7 +45,7 @@
             CallableStatement cstmt = con.prepareCall(callSQL);
             cstmt.setString(1, courseId);
             cstmt.setString(2, username);
-            cstmt.setInt(3, rating);
+            cstmt.setInt(3, rating * 2);
 
             cstmt.executeUpdate();
             cstmt.close();
@@ -72,7 +72,7 @@
                 CallableStatement cstmt = con.prepareCall(callSQL);
                 cstmt.setString(1, courseId);
                 cstmt.setString(2, username);
-                cstmt.setInt(3, rating);
+                cstmt.setInt(3, rating * 2);
 
                 cstmt.executeUpdate();
                 cstmt.close();
