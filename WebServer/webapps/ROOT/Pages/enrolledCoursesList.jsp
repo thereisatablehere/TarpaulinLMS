@@ -25,9 +25,36 @@
 <script src="../Scripts/loadSidebar.js"></script>
 
 <section class="mainContainer">
-  
-  <p class="bigTitle">Your Enrolled Courses</p>
-
+ 
+    <%  
+    session.setAttribute("loadBackToSearch", "false");
+    int num = -1;
+    try {
+        // Set the username here
+        String username = (String) session.getAttribute("username");
+        
+        // Prepare SQL query to select from the created view
+        String query = "SELECT num_courses FROM tarp_student WHERE username = ?";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        
+        // Set parameter
+        pstmt.setString(1, username);
+        
+        // Execute query
+        ResultSet rs = pstmt.executeQuery();
+        
+        // Iterate over the result set
+        while (rs.next()){
+            num = rs.getInt(1);
+        }
+            // Close resources
+            rs.close();
+            pstmt.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+%>   
+<p class="bigTitle">Your Enrolled Courses: <%=num%></p>
     <section class="coursesList" style="border: 1px solid #00000040;">
 
         <%  
@@ -72,14 +99,13 @@
                         -->
                     </form>
         <%
-                }
-                
-                // Close resources
-                rs.close();
-                pstmt.close();
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+    }
+    // Close resources
+    rs.close();
+    pstmt.close();
+} catch(Exception e) {
+    e.printStackTrace();
+}
         %>
 
     </section>
