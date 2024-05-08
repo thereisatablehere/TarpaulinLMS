@@ -1,7 +1,7 @@
 # **TARP**
 
 ## Problem Statement
-*Tarp is a group project for our CSCI331 Databases Course. It was created to fulfill all the requirements for our semester long project.*
+*Tarp is a group project for our CSCI331 Databases Course. It was created to fulfill all the requirements for our semester-long project.*
 
 ## Running Tarp
 1. Please navigate to your linux terminal
