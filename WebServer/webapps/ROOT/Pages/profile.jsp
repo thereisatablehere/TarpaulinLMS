@@ -208,7 +208,43 @@ if(student) {
             <p>Changed <%=numChangedPassword%> time(s)</p>
             <input name="password" type="password" id="password" placeholder="password" value=<%=password%>>
         </div>
-        
+        <div>
+            <%
+            String oldpassword = "password";
+            try {
+                String from = "";
+
+                if(((int) session.getAttribute("userType")) == 1) {
+                    from = "instructor";
+                }
+                else if(((int) session.getAttribute("userType")) == 2) {
+                    from = "student";
+                }
+
+                String queryString = 
+                    "SELECT PASSWORD" + "\n" + // Retrieve num_changed_password from the database
+                    "FROM TARP_" + from + "\n" +
+                    " AS OF TIMESTAMP (SYSTIMESTAMP - INTERVAL '5' HOUR) " +
+                    "WHERE USERNAME = ?";
+                
+                PreparedStatement preparedStmt2 = con.prepareStatement(queryString);
+                preparedStmt2.setString(1, username);
+                ResultSet result2 = preparedStmt2.executeQuery();
+
+                while(result2.next()) {
+                    oldpassword = result2.getString(1);
+                    break;
+                }
+
+                result2.close();
+                preparedStmt2.close();
+            }
+            catch(Exception E) {
+                oldpassword = "exception";
+            }
+            %>
+        <p>Password 5 hours ago: <%=oldpassword%></p>
+        </div>
         <div style="
             border-top: none;
             display: flex;
