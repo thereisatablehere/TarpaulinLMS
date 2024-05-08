@@ -372,6 +372,7 @@ catch(Exception E) {
                         }
                         else {
                         %>
+                            <p class="numQuestions">Number of Questions: <%=numQuestions%></p>
                             <button tye="submit" class="buttonNormal">Start</button>
                         <%
                         }
